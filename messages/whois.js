@@ -49,7 +49,7 @@ function get_data(name) {
 }
 
 function make_story(data) {
-	return "Entry number of "+data.name+" is "+data.entry+". You can contact at - "+data.email+"\n";
+	return "Entry number of "+data.name+" is "+data.entry+". You can contact at - "+data.email+"\n\n";
 }
 
 module.exports = {
