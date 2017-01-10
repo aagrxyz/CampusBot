@@ -55,7 +55,7 @@ bot.dialog('whois', [
         builder.Prompts.text(session, 'Give me a name or an entry number');
     },
     function (session, results) {
-        result = whois(results.response);
+        result = whois.identify(results.response);
         if(result.length == 0)
         {
             session.send("No matches found. Please try again.");
@@ -67,6 +67,10 @@ bot.dialog('whois', [
         else
         {
             ans = "";
+            for(var i=0;i<result.length;i++)
+            {
+                ans += whois.make_story(result[i]) + "\n";
+            }
             session.send("ans");
         }
 

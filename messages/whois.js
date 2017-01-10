@@ -1,4 +1,5 @@
-var jsonFile = "database/name_database.json";
+// var jsonFile = "database/name_database.json";
+var jsonFile = "D:\\home\\site\\wwwroot\\messages\\database\\name_database.json";
 var fs = require("fs-extra");
 var database_file = fs.readFileSync(jsonFile);
 var database = JSON.parse(database_file);
@@ -47,4 +48,11 @@ function get_data(name) {
 	return result;
 }
 
-module.exports = get_data;
+function make_story(data) {
+	return data.name+" is a student of IIT Delhi. Entry number is "+data.entry+". You can contact at - "+data.email+"\n";
+}
+
+module.exports = {
+	identify: get_data,
+	story: make_story
+};
