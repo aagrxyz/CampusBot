@@ -60,7 +60,7 @@ bot.dialog('/whois', [
    var nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
 
      //session.send(typeof(nameoren[0].entity));
-      session.send("Entity found is-"+nameoren[0].entity + " " + nameoren[1].entity);
+      // session.send("Entity found is-"+nameoren[0].entity + " " + nameoren[1].entity);
         if (!nameoren) {
            builder.Prompts.text(session, 'Give me a name or an entry number');
           //  session.send("3");
@@ -90,7 +90,7 @@ bot.dialog('/whois', [
             var ans = "";
             for(var i=0;i<result.length;i++)
             {
-                ans += whois.story(result[i]) + "\n";
+                ans += whois.story(result[i]) + "\n\n";
             }
             session.send(ans);
         }
