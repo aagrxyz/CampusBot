@@ -53,13 +53,13 @@ intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 bot.dialog('/whois', [
     function (session,args) {
 //session.send("1");
-console.log("Starting");
+session.send("Starting");
         builder.Prompts.text(session, 'Give me a name or an entry number');
     },
     function (session, results) {
-console.log("calld?");
+session.send("calld?");
         result = whois.identify(results.response);
-console.log("got result?");
+session.send("got result?");
         if(result.length == 0)
         {
             session.send("No matches found. Please try again.");
