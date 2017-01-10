@@ -51,7 +51,7 @@ intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 //bot.dialog('/qna', basicQnAMakerDialog);
 
 bot.dialog('/whois', [
-    function (session,args) {
+    function (session,args,next) {
 //session.send("1");
 //session.send("Starting");
    var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'whoisent');
