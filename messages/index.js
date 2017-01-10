@@ -119,7 +119,7 @@ bot.dialog('/papers', [
 
        // } 
 //else {
-               var t;
+               var t = "sun";
             next({ response: t });
            // session.send("4");
        // }
