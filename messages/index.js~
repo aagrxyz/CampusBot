@@ -120,7 +120,7 @@ session.send(session.userData.en);
     },
     function (session,results) {
 		session.send("33");
-	if (!session.userData.en) {
+	if (session.userData.en === undefined) {
            session.userData.en = results.response;
 		session.send("11");
           //  session.send("3");
@@ -205,7 +205,7 @@ bot.dialog('/converse', [
 ]);
 bot.dialog('/profile', [
     function (session, args, next) {
-        session.dialogData.profile = args || {};
+       // session.dialogData.profile = args || {};
         if (!session.userData.name) {
             builder.Prompts.text(session, "What's your name?");
         } else {
