@@ -77,7 +77,7 @@ session.send("got result?");
             {
                 ans += whois.story(result[i]) + "\n";
             }
-            session.send("ans");
+            session.send(ans);
         }
 
         session.endDialog();
