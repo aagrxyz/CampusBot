@@ -72,7 +72,7 @@ session.send("got result?");
         }
         else
         {
-            ans = "";
+            var ans = "";
             for(var i=0;i<result.length;i++)
             {
                 ans += whois.story(result[i]) + "\n";
