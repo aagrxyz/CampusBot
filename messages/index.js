@@ -51,7 +51,7 @@ bot.dialog('/qna', [
     function (session) {
        // builder.Prompts.text(session, 'Hi! What is your name?');
         //session.send("What's ur query?");
-        builder.Prompts.text(session, 'Ask anything!');
+        builder.Prompts.text(session, 'Ask me anything!');
      //  session.beginDialogue(basicQnAMakerDialog);
         //session.endDialog();
 
