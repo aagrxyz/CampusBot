@@ -103,7 +103,7 @@ bot.dialog('/papers', [
     function (session,args,next) {
 //session.send("1");
 //session.send("Starting");
-   var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'papersentry');
+   var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'entryno');
 
       session.send("Entity found is-"+nameoren.entity);
         if (!nameoren) {
