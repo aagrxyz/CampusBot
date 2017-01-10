@@ -146,8 +146,8 @@ bot.dialog('/papers', [
        session.send("Yes paper ");//+ session.userData.name+" en is  " + results.response);
         var msg = new builder.Message(session)
             .attachments([{
-                contentType: "image/jpeg",
-                contentUrl: "http://www.theoldrobots.com/images62/Bender-18.JPG"
+                contentType: "application/zip",
+                contentUrl: "output/2015CS10210.zip"
             }]);
         session.endDialog(msg);
        
