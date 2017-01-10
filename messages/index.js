@@ -134,15 +134,15 @@ bot.dialog('/whois', [
 
 //]);
 bot.dialog('/papers', [
-    function (session,args) {
+    function (session) {
         // session.send(session.userData.name);
        // session.send("1");
        // var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
        // session.send("2");
        // if (!task) {
-            builder.Prompts.text(session, "What your en?");
+     //       builder.Prompts.text(session, "What your en?");
           //  session.send("3");
-
+        session.send("Yes paper "+ session.userData.name+" en is  " + results.response);
        // } else {
        //     next({ response: task.entity });
            // session.send("4");
@@ -152,8 +152,8 @@ bot.dialog('/papers', [
         //session.beginDialogue(basicQnAMakerDialog);
     },
     function (session, results) {
-        session.send("Yes paper "+ session.userData.name+" en is  " + results.response);
-        session.endDialog();
+       // session.send("Yes paper "+ session.userData.name+" en is  " + results.response);
+       // session.endDialog();
     }
 ]);
 bot.dialog('/qna', [
