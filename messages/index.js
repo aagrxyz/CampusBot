@@ -58,8 +58,8 @@ session.send("Starting");
     },
     function (session, results) {
 session.send("calld?");
-        var result = whois.identify("Madhur");
-session.send("calld2?");
+      //  var result = whois.identify("Madhur");
+//session.send("calld2?");
         var result = whois.identify(results.response);
 session.send("got result?");
         if(result.length == 0)
