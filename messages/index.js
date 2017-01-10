@@ -46,7 +46,7 @@ intents.matches('profile', '/profile');
 
 intents.matches('repeat', '/repeat');
 intents.matches('whois', '/whois');
-intents.matches('papers', '/papers');
+intents.matches('downpaper', '/papers');
 
 
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
@@ -108,47 +108,19 @@ bot.dialog('/whois', [
 ]);
 
 bot.dialog('/papers', [
-    function (session,args,next) {
-//session.send("1");
-//session.send("Starting");
-   var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'entryno');
-
-      session.send("Entity found is-"+nameoren.entity);
-      papers.get_papers("2015cs10210");
-        if (!nameoren) {
+    function (session,next) {
+        if (!session.userdata.en) {
            builder.Prompts.text(session, 'Give me your entry number');
-          //  session.send("3");
-
         } else {
-            next({ response: nameoren.entity });
-           // session.send("4");
+		next();
         }
-
     },
     function (session, results) {
-//session.send("calld?");
-      //  var result = whois.identify("Madhur");
-//session.send("calld2?");
-        //papers.get_papers(results.response);
-//session.send("got result?");
-        // if(result.length == 0)
-        // {
-        //     session.send("No matches found. Please try again.");
-        // }
-        // else if(result.length > 3)
-        // {
-        //     session.send("Sorry, your query was too general. Please try a more specific query");
-        // }
-        // else
-        // {
-        //     var ans = "";
-        //     for(var i=0;i<result.length;i++)
-        //     {
-        //         ans += whois.story(result[i]) + "\n";
-        //     }
-        //     session.send(ans);
-        // }
-        session.send("downloaddd")
+	if (!session.userdata.en) {
+           session.userdata.en = results.response;
+          //  session.send("3");
+        } 
+        session.send("Yur EN is " +session.userdata.en);
 
         session.endDialog();
     }
