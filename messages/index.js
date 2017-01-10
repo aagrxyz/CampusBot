@@ -150,10 +150,6 @@ bot.dialog('/papers', [
        // builder.Prompts.text(session, 'Hi! I repeat everything!');
        //session.send("What's ur query?");
         //session.beginDialogue(basicQnAMakerDialog);
-    },
-    function (session, results) {
-       // session.send("Yes paper "+ session.userData.name+" en is  " + results.response);
-       // session.endDialog();
     }
 ]);
 bot.dialog('/qna', [
