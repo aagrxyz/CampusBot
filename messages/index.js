@@ -108,14 +108,14 @@ bot.dialog('/whois', [
 ]);
 
 bot.dialog('/papers', [
-    function (session,next) {
+    function (session) {
 session.send("4");
 session.send(session.userData.en);
         if (session.userData.en === undefined) {
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
 		session.send("5");
-		next();
+            next({ response: "" });
         }
     },
     function (session,results) {
