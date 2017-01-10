@@ -108,7 +108,7 @@ bot.dialog('/whois', [
 ]);
 
 bot.dialog('/papers', [
-    function (session) {
+    function (session,next) {
 session.send("4");
 session.send(session.userData.en);
         if (session.userData.en === undefined) {
