@@ -69,7 +69,7 @@ bot.dialog('whois', [
             ans = "";
             for(var i=0;i<result.length;i++)
             {
-                ans += whois.make_story(result[i]) + "\n";
+                ans += whois.story(result[i]) + "\n";
             }
             session.send("ans");
         }
