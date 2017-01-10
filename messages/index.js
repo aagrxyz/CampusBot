@@ -113,15 +113,16 @@ bot.dialog('/papers', [
        // session.send("1");
       //  var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
        // session.send("2");
-        if (!1===1) {
-            builder.Prompts.text(session, "What would you like to talk about?");
+       // if (!1===1) {
+          //  builder.Prompts.text(session, "What would you like to talk about?");
           //  session.send("3");
 
-        } else {
+       // } 
+//else {
                var t;
             next({ response: t });
            // session.send("4");
-        }
+       // }
        // builder.Prompts.text(session, 'Hi! I repeat everything!');
        //session.send("What's ur query?");
         //session.beginDialogue(basicQnAMakerDialog);
