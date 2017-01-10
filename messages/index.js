@@ -142,7 +142,7 @@ bot.dialog('/papers', [
        // if (!task) {
      //       builder.Prompts.text(session, "What your en?");
           //  session.send("3");
-        session.send("Yes paper "+ session.userData.name+" en is  " + results.response);
+        session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
        // } else {
        //     next({ response: task.entity });
            // session.send("4");
