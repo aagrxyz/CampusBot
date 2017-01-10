@@ -109,20 +109,20 @@ bot.dialog('/whois', [
 
 bot.dialog('/papers', [
     function (session,next) {
-session.send("4");
-session.send(session.userData.en);
+//session.send("4");
+//session.send(session.userData.en);
         if (session.userData.en === undefined) {
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
-session.send("5");
+		//session.send("5");
 		next();
         }
     },
     function (session, results) {
-session.send("33");
+		//session.send("33");
 	if (!session.userData.en) {
            session.userData.en = results.response;
-session.send("11");
+		//session.send("11");
           //  session.send("3");
         } 
         session.send("Yur EN is " +session.userData.en);
