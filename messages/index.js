@@ -51,7 +51,12 @@ intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 //bot.dialog('/qna', basicQnAMakerDialog);
 
 bot.dialog('whois', [
+function (session) {
+session.send("55");
+        builder.Prompts.text(session, 'Give me a name or an entry number');
+    },
     function (session,args) {
+session.send("1");
         builder.Prompts.text(session, 'Give me a name or an entry number');
     },
     function (session, results) {
