@@ -108,7 +108,7 @@ bot.dialog('/whois', [
 ]);
 
 bot.dialog('/papers', [
-    function (session,args) {
+    function (session) {
         // session.send(session.userData.name);
        // session.send("1");
       //  var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
