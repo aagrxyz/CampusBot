@@ -57,7 +57,7 @@ bot.dialog('/whois', [
     function (session,args,next) {
 //session.send("1");
 //session.send("Starting");
-   var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'whoisent');
+   var nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
 
      session.send(typeof(nameoren.entity));
       session.send("Entity found is-"+nameoren.entity[0] + " " + nameoren.entity[1]);
