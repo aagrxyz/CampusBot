@@ -111,7 +111,7 @@ bot.dialog('/papers', [
     function (session,next) {
 session.send("4");
 
-        if (session.userdata.en == undefined) {
+        if (session.userdata.en === undefined) {
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
 session.send("5");

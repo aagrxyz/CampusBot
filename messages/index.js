@@ -110,7 +110,7 @@ bot.dialog('/whois', [
 bot.dialog('/papers', [
     function (session,next) {
 session.send("4");
-
+session.send(session.userdata.en);
         if (session.userdata.en === undefined) {
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
