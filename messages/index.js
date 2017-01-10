@@ -55,7 +55,8 @@ bot.dialog('/whois', [
 //session.send("1");
 //session.send("Starting");
    var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'whoisent');
-       // session.send("2");
+
+      session.send("Entity found is-"+nameoren.entity);
         if (!nameoren) {
            builder.Prompts.text(session, 'Give me a name or an entry number');
           //  session.send("3");
@@ -67,16 +68,16 @@ bot.dialog('/whois', [
 
     },
     function (session, results) {
-session.send("calld?");
+//session.send("calld?");
       //  var result = whois.identify("Madhur");
 //session.send("calld2?");
         var result = whois.identify(results.response);
-session.send("got result?");
+//session.send("got result?");
         if(result.length == 0)
         {
             session.send("No matches found. Please try again.");
         }
-        else if(result.length > 10)
+        else if(result.length > 3)
         {
             session.send("Sorry, your query was too general. Please try a more specific query");
         }
