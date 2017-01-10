@@ -150,6 +150,7 @@ bot.dialog('/papers', [
        // builder.Prompts.text(session, 'Hi! I repeat everything!');
        //session.send("What's ur query?");
         //session.beginDialogue(basicQnAMakerDialog);
+
     }
 ]);
 bot.dialog('/qna', [
