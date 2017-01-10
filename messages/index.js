@@ -109,23 +109,23 @@ bot.dialog('/whois', [
 
 bot.dialog('/papers', [
     function (session,next) {
-session.send("4");
-session.send(session.userdata.en);
-        if (session.userdata.en === undefined) {
+//session.send("4");
+//session.send(session.userData.en);
+        if (session.userData.en === undefined) {
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
-session.send("5");
+		//session.send("5");
 		next();
         }
     },
     function (session, results) {
-session.send("33");
-	if (!session.userdata.en) {
-           session.userdata.en = results.response;
-session.send("11");
+		//session.send("33");
+	if (!session.userData.en) {
+           session.userData.en = results.response;
+		//session.send("11");
           //  session.send("3");
         } 
-        session.send("Yur EN is " +session.userdata.en);
+        session.send("Yur EN is " +session.userData.en);
 
         session.endDialog();
     }
@@ -225,6 +225,8 @@ bot.dialog('/profile', [
     function (session, results) {
         if (results.response) {
             session.userData.en = results.response;
+            session.send("Thanks "+session.userData.name);
+
         }
         session.endDialogWithResult({ response: session.userData });
     }
