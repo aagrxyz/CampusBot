@@ -152,7 +152,13 @@ bot.dialog('/papers', [
         //session.beginDialogue(basicQnAMakerDialog);
     },
     function (session, results) {
-       // session.send("Yes paper "+ session.userData.name+" en is  " + results.response);
+       session.send("Yes paper ");//+ session.userData.name+" en is  " + results.response);
+        var msg = new builder.Message(session)
+            .attachments([{
+                contentType: "image/jpeg",
+                contentUrl: "http://www.theoldrobots.com/images62/Bender-18.JPG"
+            }]);
+        session.endDialog(msg);
        // session.endDialog();
     }
 ]);
