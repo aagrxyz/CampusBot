@@ -58,6 +58,16 @@ bot.dialog('whois', [
         result = whois(results.response);
         if(result.length == 0)
         {
+            session.send("No matches found. Please try again.");
+        }
+        else if(result.length > 10)
+        {
+            session.send("Sorry, your query was too general. Please try a more specific query");
+        }
+        else
+        {
+            ans = "";
+            session.send("ans");
         }
 
         session.endDialog();

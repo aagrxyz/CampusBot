@@ -1,4 +1,4 @@
-var jsonFile = "./database/name_database.json";
+var jsonFile = "database/name_database.json";
 var fs = require("fs-extra");
 var database_file = fs.readFileSync(jsonFile);
 var database = JSON.parse(database_file);
