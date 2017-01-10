@@ -9,7 +9,8 @@ var whois = require('./whois');
 
 var useEmulator = (process.env.NODE_ENV == 'development');
 
-var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
+// var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
+var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
     appId: process.env['MicrosoftAppId'],
     appPassword: process.env['MicrosoftAppPassword'],
     stateEndpoint: process.env['BotStateEndpoint'],
@@ -54,7 +55,11 @@ bot.dialog('whois', [
         builder.Prompts.text(session, 'Give me a name or an entry number');
     },
     function (session, results) {
-        session.send(results.response);
+        result = whois(results.response);
+        if(result.length == 0)
+        {
+        }
+
         session.endDialog();
     }
 
@@ -160,12 +165,12 @@ bot.dialog('/profile', [
 //bot.dialog('/', basicQnAMakerDialog);
 
 if (useEmulator) {
-    var restify = require('restify');
-    var server = restify.createServer();
-    server.listen(3978, function() {
-        console.log('test bot endpont at http://localhost:3978/api/messages');
-    });
-    server.post('/api/messages', connector.listen());    
+    // var restify = require('restify');
+    // var server = restify.createServer();
+    // server.listen(3978, function() {
+    //     console.log('test bot endpont at http://localhost:3978/api/messages');
+    // });
+    // server.post('/api/messages', connector.listen());    
 } else {
     module.exports = { default: connector.listen() }
 }
