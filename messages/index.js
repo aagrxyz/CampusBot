@@ -115,10 +115,10 @@ session.send(session.userData.en);
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
 		session.send("5");
-		//next();
+		next();
         }
     },
-    function (session, results) {
+    function (session) {
 		session.send("33");
 	if (!session.userData.en) {
            session.userData.en = results.response;
