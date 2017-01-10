@@ -5,7 +5,7 @@ var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var builder_cognitiveservices = require("botbuilder-cognitiveservices");
 var request = require('request');
-
+var whois = require('./whois');
 
 var useEmulator = (process.env.NODE_ENV == 'development');
 
@@ -43,9 +43,22 @@ intents.matches('Converse', '/converse');
 intents.matches('profile', '/profile');
 
 intents.matches('repeat', '/repeat');
+intents.matches('whois', '/whois');
+
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 //bot.dialog('/qna', basicQnAMakerDialog);
+
+bot.dialog('whois', [
+    function (session) {
+        builder.Prompts.text(session, 'Give me a name or an entry number');
+    },
+    function (session, results) {
+        session.send(results.response);
+        session.endDialog();
+    }
+
+]);
 
 bot.dialog('/qna', [
     function (session) {
@@ -97,12 +110,17 @@ bot.dialog('/repeat', [
 ]);
 bot.dialog('/converse', [
     function (session) {
-       // session.send(session.userData.name);
+        // session.send(session.userData.name);
+        session.send("1");
         var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
+        session.send("2");
         if (!task) {
             builder.Prompts.text(session, "What would you like to talk about?");
+            session.send("3");
+
         } else {
             next({ response: task.entity });
+            session.send("4");
         }
        // builder.Prompts.text(session, 'Hi! I repeat everything!');
        //session.send("What's ur query?");
