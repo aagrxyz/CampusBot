@@ -66,7 +66,14 @@ bot.dialog('/whois', [
           //  session.send("3");
 
         } else {
-            next({ response: nameoren[0].entity + " " + nameoren[1].entity });
+        	var name ="";
+        	for( var i =0; i<nameoren.length-1;i++)
+        	{
+        		name += nameoren[i].entity + " ";
+        	}
+        	name += nameoren[nameoren.length-1].entity;
+
+            next({ response: name });
            // session.send("4");
         }
 
