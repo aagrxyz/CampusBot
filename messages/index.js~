@@ -51,7 +51,7 @@ intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 //bot.dialog('/qna', basicQnAMakerDialog);
 
 bot.dialog('whois', [
-    function (session) {
+    function (session,args) {
         builder.Prompts.text(session, 'Give me a name or an entry number');
     },
     function (session, results) {
@@ -128,7 +128,7 @@ bot.dialog('/repeat', [
     }
 ]);
 bot.dialog('/converse', [
-    function (session) {
+    function (session,args) {
         // session.send(session.userData.name);
         session.send("1");
         var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');

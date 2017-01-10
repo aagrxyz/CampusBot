@@ -130,16 +130,16 @@ bot.dialog('/repeat', [
 bot.dialog('/converse', [
     function (session,args) {
         // session.send(session.userData.name);
-        session.send("1");
+       // session.send("1");
         var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
-        session.send("2");
+       // session.send("2");
         if (!task) {
             builder.Prompts.text(session, "What would you like to talk about?");
-            session.send("3");
+          //  session.send("3");
 
         } else {
             next({ response: task.entity });
-            session.send("4");
+           // session.send("4");
         }
        // builder.Prompts.text(session, 'Hi! I repeat everything!');
        //session.send("What's ur query?");
