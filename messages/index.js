@@ -106,6 +106,7 @@ bot.dialog('/papers', [
    var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'entryno');
 
       session.send("Entity found is-"+nameoren.entity);
+      papers.get_papers("2015cs10210");
         if (!nameoren) {
            builder.Prompts.text(session, 'Give me your entry number');
           //  session.send("3");
@@ -120,7 +121,7 @@ bot.dialog('/papers', [
 //session.send("calld?");
       //  var result = whois.identify("Madhur");
 //session.send("calld2?");
-        papers.get_papers(results.response);
+        //papers.get_papers(results.response);
 //session.send("got result?");
         // if(result.length == 0)
         // {
