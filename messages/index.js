@@ -115,7 +115,7 @@ session.send(session.userData.en);
            builder.Prompts.text(session, 'Give me your entry number');
         } else {
 		var ta = ["a"];
-		session.send("5");
+		session.send("52");
             next({ response: ta });
 		session.send("6");
         }

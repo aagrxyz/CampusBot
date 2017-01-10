@@ -109,26 +109,26 @@ bot.dialog('/whois', [
 
 bot.dialog('/papers', [
     function (session) {
-        // session.send(session.userData.name);
-       // session.send("1");
-      //  var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
-       // session.send("2");
-       // if (!1===1) {
-          //  builder.Prompts.text(session, "What would you like to talk about?");
-          //  session.send("3");
-
-       // } 
-//else {
-               var t = "sun";
-            next({ response: t });
-           // session.send("4");
-       // }
-       // builder.Prompts.text(session, 'Hi! I repeat everything!');
-       //session.send("What's ur query?");
-        //session.beginDialogue(basicQnAMakerDialog);
+session.send("4");
+session.send(session.userData.en);
+        if (session.userData.en === undefined) {
+           builder.Prompts.text(session, 'Give me your entry number');
+        } else {
+		var ta = ["a"];
+		session.send("5");
+            next({ response: ta });
+		session.send("6");
+        }
     },
-    function (session, results) {
-        session.send("Papers "+ session.userData.name+" I do like talking about " + results.response);
+    function (session,results) {
+		session.send("33");
+	if (session.userData.en === undefined) {
+           session.userData.en = results.response;
+		session.send("11");
+          //  session.send("3");
+        } 
+        session.send("Yur EN is " +session.userData.en);
+
         session.endDialog();
     }
 
