@@ -6,6 +6,7 @@ var botbuilder_azure = require("botbuilder-azure");
 var builder_cognitiveservices = require("botbuilder-cognitiveservices");
 var request = require('request');
 var whois = require('./whois');
+var papers = require('./get_papers')
 
 var useEmulator = (process.env.NODE_ENV == 'development');
 
@@ -45,6 +46,8 @@ intents.matches('profile', '/profile');
 
 intents.matches('repeat', '/repeat');
 intents.matches('whois', '/whois');
+intents.matches('papers', '/papers');
+
 
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
@@ -90,6 +93,53 @@ bot.dialog('/whois', [
             }
             session.send(ans);
         }
+
+        session.endDialog();
+    }
+
+]);
+
+bot.dialog('/papers', [
+    function (session,args,next) {
+//session.send("1");
+//session.send("Starting");
+   var nameoren = builder.EntityRecognizer.findEntity(args.entities, 'papersentry');
+
+      session.send("Entity found is-"+nameoren.entity);
+        if (!nameoren) {
+           builder.Prompts.text(session, 'Give me your entry number');
+          //  session.send("3");
+
+        } else {
+            next({ response: nameoren.entity });
+           // session.send("4");
+        }
+
+    },
+    function (session, results) {
+//session.send("calld?");
+      //  var result = whois.identify("Madhur");
+//session.send("calld2?");
+        papers.get_papers(results.response);
+//session.send("got result?");
+        // if(result.length == 0)
+        // {
+        //     session.send("No matches found. Please try again.");
+        // }
+        // else if(result.length > 3)
+        // {
+        //     session.send("Sorry, your query was too general. Please try a more specific query");
+        // }
+        // else
+        // {
+        //     var ans = "";
+        //     for(var i=0;i<result.length;i++)
+        //     {
+        //         ans += whois.story(result[i]) + "\n";
+        //     }
+        //     session.send(ans);
+        // }
+        session.send("downloaddd")
 
         session.endDialog();
     }
