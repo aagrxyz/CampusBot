@@ -134,29 +134,33 @@ bot.dialog('/whois', [
 
 //]);
 bot.dialog('/papers', [
-    function (session) {
-      
-      if (session.userData.en === undefined) {
-           builder.Prompts.text(session, 'Give me your entry number');
-      }
-      // session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
-      
-      var http = require('http');
-      var options = {
-        host: 'www.cse.iitd.ernet.in',
-        path: '/aces-acm/api?entry='+ session.userData.en
-      };
-      http.get(options, function(resp){
-        resp.on('data', function(chunk){
-          //do something with chunk
-          // session.send("got response");
-        });
-      }).on("error", function(e){
-        // session.send("Got error: " + e.message);
-      });
-      session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");
-      session.endDialog(msg);
-    }
+    function (session, args, next) {
+        if (!session.userData.en) {
+            builder.Prompts.text(session, "What's your entry number?");
+        } else {
+            next();
+        }
+    },
+    function (session, results) {
+        if (results.response) {
+            session.userData.en = results.response;
+            var http = require('http');
+            var options = {
+              host: 'www.cse.iitd.ernet.in',
+              path: '/aces-acm/api?entry='+ session.userData.en
+            };
+            http.get(options, function(resp){
+              resp.on('data', function(chunk){
+                //do something with chunk
+                // session.send("got response");
+              });
+            }).on("error", function(e){
+              // session.send("Got error: " + e.message);
+            });
+            session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
+          }
+          session.endDialogWithResult({ response: session.userData });
+    }      
 ]);
 bot.dialog('/qna', [
     function (session) {
