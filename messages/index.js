@@ -158,7 +158,7 @@ bot.dialog('/papers', [
       }).on("error", function(e){
         session.send("Got error: " + e.message);
       });
-      session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpper() + ".zip");//+ session.userData.name+" en is  " + results.response);
+      session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");//+ session.userData.name+" en is  " + results.response);
       session.endDialog(msg);
        
        // } else {
