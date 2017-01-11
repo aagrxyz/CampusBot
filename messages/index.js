@@ -93,19 +93,20 @@ bot.dialog('/papers', [
     function (session, results) {
       if (results.response) {
         session.userData.en = results.response;
-        var http = require('http');
-          var options = {
-            host: 'www.cse.iitd.ernet.in',
-            path: '/aces-acm/api?entry='+ session.userData.en
-          };
-          http.get(options, function(resp){
-            resp.on('data', function(chunk){
-            });
-          }).on("error", function(e){
-            session.send("Got some error, please try later");
-          });
-          session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
         }
+        var http = require('http');
+	    var options = {
+	        host: 'www.cse.iitd.ernet.in',
+	        path: '/aces-acm/api?entry='+ session.userData.en
+	    };
+	    http.get(options, function(resp){
+	      resp.on('data', function(chunk){
+	      });
+	    }).on("error", function(e){
+	      session.send("Got some error, please try later");
+	    });
+	    session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
+	    
       session.endDialogWithResult({ response: session.userData });
     }      
 ]);
