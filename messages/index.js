@@ -142,22 +142,22 @@ bot.dialog('/papers', [
        // if (!task) {
      //       builder.Prompts.text(session, "What your en?");
           //  session.send("3");
-       // session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
+      session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
       var http = require('http');
 
-var options = {
-  host: 'www.cse.iitd.ernet.in/aces-acm',
-  port: 80,
-  path: '/api?entry='+ session.userData.en
-};
+      var options = {
+        host: 'www.cse.iitd.ernet.in',
+        path: '/aces-acm/api?entry='+ session.userData.en
+      };
 
-http.get(options, function(resp){
-  resp.on('data', function(chunk){
-    //do something with chunk
-  });
-}).on("error", function(e){
-  console.log("Got error: " + e.message);
-});
+      http.get(options, function(resp){
+        resp.on('data', function(chunk){
+          //do something with chunk
+          session.send("got response");
+        });
+      }).on("error", function(e){
+        session.send("Got error: " + e.message);
+      });
       session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpper() + ".zip");//+ session.userData.name+" en is  " + results.response);
       session.endDialog(msg);
        
