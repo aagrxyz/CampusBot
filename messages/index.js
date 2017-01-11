@@ -1,5 +1,4 @@
 // For more information about this template visit http://aka.ms/azurebots-node-qnamaker
-
 "use strict";
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
@@ -7,7 +6,6 @@ var builder_cognitiveservices = require("botbuilder-cognitiveservices");
 var request = require('request');
 var whois = require('./whois');
 var papers = require('./get_papers')
-
 var useEmulator = (process.env.NODE_ENV == 'development');
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
@@ -25,8 +23,6 @@ var bot = new builder.UniversalBot(connector);
 //    subscriptionKey: process.env.QnASubscriptionKey});
 var recognizer = new builder.LuisRecognizer('https://api.projectoxford.ai/luis/v2.0/apps/a03a7e51-dd74-401d-bbe9-071134809292?subscription-key=319a73d29574452fb76a949ea4d42a5e&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
-
-
 var recognizerqna = new builder_cognitiveservices.QnAMakerRecognizer({
             knowledgeBaseId: "03d2ac21-ace5-4cbf-88ac-d0e272037e1b", 
     subscriptionKey: "9e13de47c0cd4210b08592d36559fbd6"});
@@ -41,49 +37,30 @@ bot.dialog('/', intents);
 
 intents.matches('qna', '/qna');
 intents.matches('Converse', '/converse');
-
 intents.matches('profile', '/profile');
-
 intents.matches('repeat', '/repeat');
 intents.matches('whois', '/whois');
 intents.matches('downpaper', '/papers');
 
-
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
-
-//bot.dialog('/qna', basicQnAMakerDialog);
 
 bot.dialog('/whois', [
     function (session,args,next) {
-//session.send("1");
-//session.send("Starting");
-   var nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
-
-     //session.send(typeof(nameoren[0].entity));
-      // session.send("Entity found is-"+nameoren[0].entity + " " + nameoren[1].entity);
-        if (!nameoren) {
-           builder.Prompts.text(session, 'Give me a name or an entry number');
-          //  session.send("3");
-
-        } else {
-        	var name ="";
-        	for( var i =0; i<nameoren.length-1;i++)
-        	{
-        		name += nameoren[i].entity + " ";
-        	}
-        	name += nameoren[nameoren.length-1].entity;
-
-            next({ response: name });
-           // session.send("4");
-        }
-
+      var nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
+      if (!nameoren) {
+         builder.Prompts.text(session, 'Give me a name or an entry number');
+      } else {
+      	var name ="";
+      	for( var i =0; i<nameoren.length-1;i++)
+      	{
+      		name += nameoren[i].entity + " ";
+      	}
+      	name += nameoren[nameoren.length-1].entity;
+        next({ response: name });
+      }
     },
     function (session, results) {
-//session.send("calld?");
-      //  var result = whois.identify("Madhur");
-//session.send("calld2?");
         var result = whois.identify(results.response);
-//session.send("got result?");
         if(result.length == 0)
         {
             session.send("No matches found. Please try again.");
@@ -101,38 +78,10 @@ bot.dialog('/whois', [
             }
             session.send(ans);
         }
-
         session.endDialog();
     }
-
 ]);
 
-//bot.dialog('/papers', [
-   // function (session,next) {
-//session.send("4");
-//session.send(session.userData.en);
-    //    if (session.userData.en === undefined) {
-    //       builder.Prompts.text(session, 'Give me your entry number');
-    //    } else {
-	//	var ta = ["a"];
-	//	session.send("52");
-     //       next({ response: ta });
-	//	session.send("6");
-    ///    }
-   // },
- //   function (session,results) {
-	//	session.send("33");
-//	if (session.userData.en === undefined) {
-    //       session.userData.en = results.response;
-	//	session.send("11");
-          //  session.send("3");
-    //    } 
-    //    session.send("Yur EN is " +session.userData.en);
-//
-   //     session.endDialog();
-   // }
-
-//]);
 bot.dialog('/papers', [
     function (session, args, next) {
         if (!session.userData.en) {
@@ -142,26 +91,25 @@ bot.dialog('/papers', [
         }
     },
     function (session, results) {
-        if (results.response) {
-            session.userData.en = results.response;
-            var http = require('http');
-            var options = {
-              host: 'www.cse.iitd.ernet.in',
-              path: '/aces-acm/api?entry='+ session.userData.en
-            };
-            http.get(options, function(resp){
-              resp.on('data', function(chunk){
-                //do something with chunk
-                // session.send("got response");
-              });
-            }).on("error", function(e){
-              // session.send("Got error: " + e.message);
+      if (results.response) {
+        session.userData.en = results.response;
+        var http = require('http');
+          var options = {
+            host: 'www.cse.iitd.ernet.in',
+            path: '/aces-acm/api?entry='+ session.userData.en
+          };
+          http.get(options, function(resp){
+            resp.on('data', function(chunk){
             });
-            session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
-          }
-          session.endDialogWithResult({ response: session.userData });
+          }).on("error", function(e){
+            session.send("Got some error, please try later");
+          });
+          session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
+        }
+      session.endDialogWithResult({ response: session.userData });
     }      
 ]);
+
 bot.dialog('/qna', [
     function (session) {
        // builder.Prompts.text(session, 'Hi! What is your name?');
@@ -198,7 +146,7 @@ bot.dialog('/qna', [
         session.endDialog();
     }
     ]);
-//bot.dialog('/qna', basicQnAMakerDialog);
+
 bot.dialog('/repeat', [
     function (session) {
         builder.Prompts.text(session, 'Hi! I repeat everything!');
