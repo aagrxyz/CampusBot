@@ -184,7 +184,7 @@ bot.dialog('/converse', [
 ]);
 bot.dialog('/profile', [
     function (session, args, next) {
-       // session.dialogData.profile = args || {};
+       session.dialogData.profile = args || {};
         if (!session.userData.name) {
             builder.Prompts.text(session, "What's your name?");
         } else {
