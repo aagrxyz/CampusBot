@@ -135,40 +135,27 @@ bot.dialog('/whois', [
 //]);
 bot.dialog('/papers', [
     function (session) {
-        // session.send(session.userData.name);
-       // session.send("1");
-       // var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
-       // session.send("2");
-       // if (!task) {
-     //       builder.Prompts.text(session, "What your en?");
-          //  session.send("3");
-      session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
+      
+      if (session.userData.en === undefined) {
+           builder.Prompts.text(session, 'Give me your entry number');
+      }
+      // session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
+      
       var http = require('http');
-
       var options = {
         host: 'www.cse.iitd.ernet.in',
         path: '/aces-acm/api?entry='+ session.userData.en
       };
-
       http.get(options, function(resp){
         resp.on('data', function(chunk){
           //do something with chunk
-          session.send("got response");
+          // session.send("got response");
         });
       }).on("error", function(e){
-        session.send("Got error: " + e.message);
+        // session.send("Got error: " + e.message);
       });
-      session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");//+ session.userData.name+" en is  " + results.response);
+      session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");
       session.endDialog(msg);
-       
-       // } else {
-       //     next({ response: task.entity });
-           // session.send("4");
-      //  }
-       // builder.Prompts.text(session, 'Hi! I repeat everything!');
-       //session.send("What's ur query?");
-        //session.beginDialogue(basicQnAMakerDialog);
-
     }
 ]);
 bot.dialog('/qna', [
