@@ -5,7 +5,8 @@ var botbuilder_azure = require("botbuilder-azure");
 var builder_cognitiveservices = require("botbuilder-cognitiveservices");
 var request = require('request');
 var whois = require('./whois');
-var papers = require('./get_papers')
+var papers = require('./get_papers');
+var events = require('./events');
 var useEmulator = (process.env.NODE_ENV == 'development');
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
@@ -41,8 +42,18 @@ intents.matches('profile', '/profile');
 intents.matches('repeat', '/repeat');
 intents.matches('whois', '/whois');
 intents.matches('downpaper', '/papers');
+intents.matches('events', '/events');
 
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
+
+//bot.dialog('/qna', basicQnAMakerDialog);
+
+bot.dialog('/events',[
+    function(session,args)
+    {
+        events.get_event(function(result){session.send(events.story(result)); session.endDialog();});
+    }
+]);
 
 bot.dialog('/whois', [
     function (session,args,next) {
