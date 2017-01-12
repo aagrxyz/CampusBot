@@ -1,0 +1,140 @@
+{
+	"A":{
+		"MONDAY": {
+			"start": "08:00",
+			"end": "09:20"
+		},
+		"THURSDAY": {
+			"start": "08:00",
+			"end": "09:20"
+		}
+	},
+	"B":{
+		"MONDAY": {
+			"start": "09:30",
+			"end": "10:50"
+		},
+		"THURSDAY": {
+			"start": "09:30",
+			"end": "10:50"
+		}
+	},
+	"C":{
+		"TUESDAY": {
+			"start": "08:00",
+			"end": "08:50"
+		},
+		"WEDNESDAY": {
+			"start": "08:00",
+			"end": "08:50"
+		},
+		"FRIDAY": {
+			"start": "08:00",
+			"end": "08:50"
+		}
+	},
+	"D":{
+		"TUESDAY": {
+			"start": "09:00",
+			"end": "09:50"
+		},
+		"WEDNESDAY": {
+			"start": "09:00",
+			"end": "09:50"
+		},
+		"FRIDAY": {
+			"start": "09:00",
+			"end": "09:50"
+		}
+	},
+	"E":{
+		"TUESDAY": {
+			"start": "10:00",
+			"end": "10:50"
+		},
+		"WEDNESDAY": {
+			"start": "10:00",
+			"end": "10:50"
+		},
+		"FRIDAY": {
+			"start": "10:00",
+			"end": "10:50"
+		}
+	},
+	"F":{
+		"TUESDAY": {
+			"start": "11:00",
+			"end": "11:50"
+		},
+		"THURSDAY": {
+			"start": "11:00",
+			"end": "11:50"
+		},
+		"FRIDAY": {
+			"start": "11:00",
+			"end": "11:50"
+		}
+	},
+	"H":{
+		"MONDAY": {
+			"start": "11:00",
+			"end": "11:50"
+		},
+		"WEDNESDAY": {
+			"start": "11:00",
+			"end": "11:50"
+		},
+		"THURSDAY": {
+			"start": "12:00",
+			"end": "12:50"
+		}
+	},
+	"J":{
+		"MONDAY": {
+			"start": "12:00",
+			"end": "12:50"
+		},
+		"TUESDAY": {
+			"start": "12:00",
+			"end": "12:50"
+		},
+		"FRIDAY": {
+			"start": "12:00",
+			"end": "12:50"
+		}
+	},
+	"K":{
+		"TUESDAY": {
+			"start": "17:00",
+			"end": "17:50"
+		},
+		"WEDNESDAY": {
+			"start": "12:00",
+			"end": "12:50"
+		},
+		"FRIDAY": {
+			"start": "17:00",
+			"end": "17:50"
+		}
+	},
+	"L":{
+		"TUESDAY": {
+			"start": "18:00",
+			"end": "18:50"
+		},
+		"FRIDAY": {
+			"start": "18:00",
+			"end": "18:50"
+		}
+	},
+	"M":{
+		"MONDAY": {
+			"start": "17:00",
+			"end": "18:20"
+		},
+		"THURSDAY": {
+			"start": "17:00",
+			"end": "18:20"
+		}
+	}
+}

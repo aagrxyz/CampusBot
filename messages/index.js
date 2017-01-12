@@ -7,6 +7,7 @@ var request = require('request');
 var whois = require('./whois');
 var papers = require('./get_papers');
 var events = require('./events');
+var schedule = require('./schedule');
 var useEmulator = (process.env.NODE_ENV == 'development');
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
@@ -44,7 +45,7 @@ intents.matches('whois', '/whois');
 intents.matches('downpaper', '/papers');
 intents.matches('events', '/events');
 intents.matches('complaint', '/complaint');
-
+intents.matches('schedule', '/schedule');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 //bot.dialog('/qna', basicQnAMakerDialog);
@@ -62,6 +63,40 @@ bot.dialog('/events',[
         });
     }
 ]);
+
+bot.dialog('/schedule',[
+    function(session,args,next) {
+        if (!session.userData.en) {
+            builder.Prompts.text(session, "What's your entry number?");
+        } else {
+            next();
+        }
+    },
+    function(session,results)
+    {
+        if (results.response) {
+            session.userData.en = results.response;
+        }
+        var courses = schedule.courses(session.userData.en);
+        if(courses !== undefined)
+        {
+            var week = schedule.week_schedule(courses.courses);
+            var sch = schedule.pretty_week(week);
+            for(var i=0;i<sch.length;i++)
+            {
+                session.send(sch[i]);
+            }
+            session.endDialog();
+        }
+        else
+        {
+            session.userData.en = undefined;
+            session.send("Invalid entry number provided!");
+            session.endDialog();
+        }
+    }
+]);
+
 
 bot.dialog('/whois', [
     function (session,args,next) {
