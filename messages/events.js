@@ -1,7 +1,29 @@
 var FB = require("fb");
 FB.setAccessToken(process.env.ACCESS_TOKEN);
 // var page_ids = ["music.iitd","rendezvous.iitd","acesacm"];
-var page_ids = ["music.iitd","iitd.delhi","rendezvous.iitd","IITD.tryst","tech.iitd","acesacm","iitdebate","cultureIITD","boardforstudentwelfare","bspiitd","debatingclubiitd","litclub.iitd","ecoclubiitd","ICPC.IITD","iitd.bsa","vortex.iitd","speranza.iitd","BoardforHostelManagementIITDelhi","saciitdelhi","iitd.sportech","Literati.IITD"];
+var page_ids = [
+"music.iitd",           //Music Club
+"iitd.delhi",           //IIT Delhi
+"rendezvous.iitd",      //Rendezvous
+"IITD.tryst",           //Tryst
+"tech.iitd",            //Dev Club
+"acesacm",              //Aces Acm
+"iitdebate",            //Debate
+"cultureIITD",          //BRCA
+"boardforstudentwelfare",//BSW
+"bspiitd",              //BSP
+"debatingclubiitd",     //Debating Club
+"litclub.iitd",         //Lit Club
+"ecoclubiitd",          //Economics Club
+"ICPC.IITD",            //ICPC
+"iitd.bsa",             //BSA
+"vortex.iitd",          //Vortex
+"speranza.iitd",        //Speranza
+"BoardforHostelManagementIITDelhi", //BHM
+"saciitdelhi",          //SAC
+"iitd.sportech",        //Sportech
+"Literati.IITD"         //Literati
+];
 var requests = [];
 
 for (var id in page_ids)

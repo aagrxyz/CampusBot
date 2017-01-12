@@ -1,5 +1,4 @@
-// var jsonFile = "database/name_database.json";
-var jsonFile = "D:\\home\\site\\wwwroot\\messages\\database\\name_database.json";
+var jsonFile = (process.env.NODE_ENV=="development")?"./database/name_database.json":"D:\\home\\site\\wwwroot\\messages\\database\\name_database.json";
 var fs = require("fs-extra");
 var database_file = fs.readFileSync(jsonFile);
 var database = JSON.parse(database_file);
