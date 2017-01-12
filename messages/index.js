@@ -254,7 +254,7 @@ var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialo
                    // 'Content-Type': 'application/json',
                   //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
                 },
-                body: postBodyc
+                body: JSON.stringify(postBodyc)
             },
                 function (error, response, body) {
                    // var result;
@@ -266,8 +266,6 @@ var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialo
                 }
             );
 session.endDialog();
-
-
     }
 
 ]);

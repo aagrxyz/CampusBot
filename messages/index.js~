@@ -197,21 +197,22 @@ bot.dialog('/converse', [
 ]);
 bot.dialog('/profile', [
     function (session, args, next) {
-        if (!session.userData.name) {
+     //   if (!session.userData.name) {
             builder.Prompts.text(session, "What's your name?");
-        } else {
-            next();
-        }
+       // } 
+//else {
+        //    next();
+      //  }
     },
     function (session, results, next) {
         if (results.response) {
             session.userData.name = results.response;
         }
-        if (!session.userData.en) {
+        //if (!session.userData.en) {
             builder.Prompts.text(session, "What your entry number?");
-        } else {
-            next();
-        }
+       // } else {
+        //    next();
+       // }
     },
     function (session, results) {
         if (results.response) {
@@ -253,7 +254,7 @@ var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialo
                    // 'Content-Type': 'application/json',
                   //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
                 },
-                body: postBodyc
+                body: JSON.stringify(postBodyc
             },
                 function (error, response, body) {
                    // var result;
@@ -265,8 +266,6 @@ var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialo
                 }
             );
 session.endDialog();
-
-
     }
 
 ]);
