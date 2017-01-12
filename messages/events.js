@@ -22,7 +22,24 @@ var page_ids = [
 "BoardforHostelManagementIITDelhi", //BHM
 "saciitdelhi",          //SAC
 "iitd.sportech",        //Sportech
-"Literati.IITD"         //Literati
+"Literati.IITD",         //Literati
+"enactusiitdelhi",       //enactus
+"edciitdelhi",          //EDC
+"eesiitd",              //EES
+"igemiitdelhi",         //IGEM
+"photographyandfilmclubiitdelhi",   //PFC
+"maths.society.iitd",      //Math Society
+"kaizeniitd4society",      //Kaizen
+"PhysicsAndAstronomyIITD",  //Astronomy
+"hindisamiti.iitdelhi",     //Hindi Samiti
+"danceanddramaticsclubiitd", //Dance And Drama
+"Athletics-IIT-Delhi-1552703724944013", //Athletics
+"smp.iitd",             //smp
+"DanceClub.IITDelhi",   //Dance
+"wellnessclubiitd",     //wellness club
+"iitd.qc",              //Quizzing
+"SPIC.MACAY.IITD",      //Spic Macay
+"AAIPIITD"            //Alumni Association
 ];
 var requests = [];
 
