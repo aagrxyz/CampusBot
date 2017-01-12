@@ -93,7 +93,7 @@ function make_story(events)
         var event = events[i];
         var start = new Date(event.start_time);
         var end = new Date(event.end_time);
-        ans.push(event.name+"\n\n"+start.toDateString()+": "+start.toLocaleTimeString('en-US',{timeZone: 'Asia/Kolkata'})+" - "+end.toLocaleTimeString('en-US',{timeZone: 'Asia/Kolkata'})+"\n\n"+event.place.name+"\n\n"+"Link- facebook.com/events/"+event.id);
+        ans.push(event.name+"\n\n"+start.toLocaleDateString('en-US',{timeZone: 'Asia/Kolkata'})+": "+start.toLocaleTimeString('en-US',{timeZone: 'Asia/Kolkata'})+" - "+end.toLocaleTimeString('en-US',{timeZone: 'Asia/Kolkata'})+"\n\n"+event.place.name+"\n\n"+"Link- facebook.com/events/"+event.id);
     }
     return ans;
 }
