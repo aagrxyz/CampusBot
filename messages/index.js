@@ -247,6 +247,7 @@ bot.dialog('/complaint', [
 	}
         session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are "+session.userData.name+" with en "+session.userData.en);
 var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
+var postBody = '{"Subject":"aaaa"}'
             request({
                 url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
                 method: 'POST',
@@ -254,7 +255,7 @@ var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialo
                    // 'Content-Type': 'application/json',
                   //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
                 },
-                body: JSON.stringify(postBodyc)
+                body: postBody//JSON.stringify(postBodyc)
             },
                 function (error, response, body) {
                    // var result;
