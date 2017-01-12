@@ -93,7 +93,7 @@ function make_story(events)
         var event = events[i];
         var start = new Date(event.start_time);
         var end = new Date(event.end_time);
-        ans.push(event.name+"\r\n"+start.toDateString()+": "+start.toLocaleTimeString()+" - "+end.toLocaleTimeString()+"\r\n"+event.place.name+"\r\n"+"Link- facebook.com/events/"+event.id);
+        ans.push(event.name+"\n\n"+start.toDateString()+": "+start.toLocaleTimeString()+" - "+end.toLocaleTimeString()+"\n\n"+event.place.name+"\n\n"+"Link- facebook.com/events/"+event.id);
     }
     return ans;
 }
