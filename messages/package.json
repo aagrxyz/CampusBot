@@ -8,8 +8,10 @@
     "botbuilder-azure": "0.0.1",
     "botbuilder-cognitiveservices": "^1.0.1",
     "easy-zip": "0.0.4",
+    "fb": "^1.1.1",
     "fs": "0.0.1-security",
     "fs-extra": "^1.0.0",
+    "http": "0.0.0",
     "path": "^0.12.7",
     "request": "^2.78.0"
   },
