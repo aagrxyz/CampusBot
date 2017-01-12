@@ -239,7 +239,7 @@ bot.dialog('/complaint', [
             session.dialogData.desc = results.response;
 	}
         builder.Prompts.text(session, "Who is/are responsible for the matter mentioned in the complaint (leave blank if not known).");
-    }
+    },
     function (session, results) {
        if (results.response) {
             session.dialogData.resp = results.response;

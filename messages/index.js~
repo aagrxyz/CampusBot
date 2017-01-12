@@ -84,18 +84,21 @@ bot.dialog('/whois', [
         {
             session.send("No matches found. Please try again.");
         }
-        else if(result.length > 3)
-        {
-            session.send("Sorry, your query was too general. Please try a more specific query");
-        }
         else
         {
             var ans = "";
-            for(var i=0;i<result.length;i++)
+            if(result.length > 4)
             {
-                ans += whois.story(result[i]) + "\n\n";
+                session.send("Your query was too general. Here are top 4 results :");
             }
-            session.send(ans);
+            else if(result.length > 1)
+            {
+                session.send("Matches found :");
+            }
+            for(var i=0;i<result.length && i < 4;i++)
+            {
+                session.send(whois.story(result[i]));
+            }
         }
         session.endDialog();
     }
@@ -236,10 +239,17 @@ bot.dialog('/complaint', [
             session.dialogData.desc = results.response;
 	}
         builder.Prompts.text(session, "Who is/are responsible for the matter mentioned in the complaint (leave blank if not known).");
-
-
-        
     }
+    function (session, results) {
+       if (results.response) {
+            session.dialogData.resp = results.response;
+	}
+        session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are"+session.userData.name+" with en "+session.userData.en);
+session.endDialog();
+
+
+    }
+
 ]);
 //bot.dialog('/', basicQnAMakerDialog);
 
