@@ -225,7 +225,7 @@ bot.dialog('/profile', [
 bot.dialog('/complaint', [
     function (session, args, next) {
 
-        builder.Prompts.text(session, "Enter the subject of yur complaint");
+        builder.Prompts.text(session, "Enter the subject of your complaint");
         
     },
     function (session, results, next) {
@@ -244,7 +244,26 @@ bot.dialog('/complaint', [
        if (results.response) {
             session.dialogData.resp = results.response;
 	}
-        session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are"+session.userData.name+" with en "+session.userData.en);
+        session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are "+session.userData.name+" with en "+session.userData.en);
+var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
+            request({
+                url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
+                method: 'POST',
+                headers: {
+                   // 'Content-Type': 'application/json',
+                  //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
+                },
+                body: postBodyc
+            },
+                function (error, response, body) {
+                   // var result;
+                       // console.log(body);
+                          //  result = JSON.parse(body);
+                          //  result.score = result.score / 100;
+                         //   result.answer = htmlentities.decode(result.answer);
+                        //    session.send(result.answer);
+                }
+            );
 session.endDialog();
 
 
