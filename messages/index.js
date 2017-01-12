@@ -84,18 +84,21 @@ bot.dialog('/whois', [
         {
             session.send("No matches found. Please try again.");
         }
-        else if(result.length > 3)
-        {
-            session.send("Sorry, your query was too general. Please try a more specific query");
-        }
         else
         {
             var ans = "";
-            for(var i=0;i<result.length;i++)
+            if(result.length > 4)
             {
-                ans += whois.story(result[i]) + "\n\n";
+                session.send("Your query was too general. Here are top 4 results :");
             }
-            session.send(ans);
+            else if(result.length > 1)
+            {
+                session.send("Matches found :");
+            }
+            for(var i=0;i<result.length && i < 4;i++)
+            {
+                session.send(whois.story(result[i]));
+            }
         }
         session.endDialog();
     }
