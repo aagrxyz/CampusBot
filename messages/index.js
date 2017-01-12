@@ -197,21 +197,22 @@ bot.dialog('/converse', [
 ]);
 bot.dialog('/profile', [
     function (session, args, next) {
-        if (!session.userData.name) {
+     //   if (!session.userData.name) {
             builder.Prompts.text(session, "What's your name?");
-        } else {
-            next();
-        }
+       // } 
+//else {
+        //    next();
+      //  }
     },
     function (session, results, next) {
         if (results.response) {
             session.userData.name = results.response;
         }
-        if (!session.userData.en) {
+        //if (!session.userData.en) {
             builder.Prompts.text(session, "What your entry number?");
-        } else {
-            next();
-        }
+       // } else {
+        //    next();
+       // }
     },
     function (session, results) {
         if (results.response) {
