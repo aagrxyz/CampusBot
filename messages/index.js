@@ -246,11 +246,11 @@ bot.dialog('/complaint', [
             session.dialogData.resp = results.response;
 	}
         session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are "+session.userData.name+" with en "+session.userData.en);
-var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
+var postBodyc = {"action": "postcomplaint","Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
 //var postBody = '{"Subject":"aaaa"}'
             request({
              //   url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
-             url: "http://requestb.in/rt7yi7rt",
+             url: "www.cse.iitd.ernet.in/aces-acm/api",
    method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
