@@ -249,8 +249,9 @@ bot.dialog('/complaint', [
 var postBodyc = {"Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
 //var postBody = '{"Subject":"aaaa"}'
             request({
-                url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
-                method: 'POST',
+             //   url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
+             url: "http://requestb.in/rt7yi7rt",
+   method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                   //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
