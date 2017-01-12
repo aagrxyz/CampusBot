@@ -83,10 +83,6 @@ bot.dialog('/whois', [
         {
             session.send("No matches found. Please try again.");
         }
-        else if(result.length > 4)
-        {
-            session.send("Sorry, your query was too general. Please try a more specific query");
-        }
         else
         {
             var ans = "";

@@ -48,7 +48,7 @@ function get_data(name) {
 }
 
 function make_story(data) {
-	return data.name+"\n\n Entry No. "+data.entry+"\n\nContact at - "+data.email+"\n\n";
+	return data.name+"\n\nEntry No. "+data.entry+"\n\nContact at - "+data.email+"\n\n";
 }
 
 module.exports = {
