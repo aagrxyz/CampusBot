@@ -246,27 +246,50 @@ bot.dialog('/complaint', [
             session.dialogData.resp = results.response;
 	}
         session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are "+session.userData.name+" with en "+session.userData.en);
-var postBodyc = {"action": "postcomplaint","Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
-//var postBody = '{"Subject":"aaaa"}'
-            request({
-             //   url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
-             url: "www.cse.iitd.ernet.in/aces-acm/api",
-   method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                  //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
-                },
-                body: JSON.stringify(postBodyc)
-            },
-                function (error, response, body) {
-                   // var result;
-                       // console.log(body);
-                          //  result = JSON.parse(body);
-                          //  result.score = result.score / 100;
-                         //   result.answer = htmlentities.decode(result.answer);
-                        //    session.send(result.answer);
-                }
-            );
+        var postBodyc = {"action": "postcomplaint","Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
+// //var postBody = '{"Subject":"aaaa"}'
+//             request({
+//              //   url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
+//              url: "www.cse.iitd.ernet.in/aces-acm/api",
+//    method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                   //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
+//                 },
+//                 body: postBodyc
+//             },
+//                 function (error, response, body) {
+//                    // var result;
+//                        // console.log(body);
+//                           //  result = JSON.parse(body);
+//                           //  result.score = result.score / 100;
+//                          //   result.answer = htmlentities.decode(result.answer);
+//                         //    session.send(result.answer);
+//                 }
+//             );
+
+var request = require("request");
+
+var options = { method: 'POST',
+  url: 'http://www.cse.iitd.ernet.in/aces-acm/api',
+  headers: 
+   { 'postman-token': '504d20da-90fb-ec0b-fa29-7c90d5652c36',
+     'cache-control': 'no-cache',
+     'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
+  formData: 
+   { action: 'postcomplaint',
+     Subject: session.dialogData.sub,
+     Description: session.dialogData.desc,
+     'People In-Charge': session.dialogData.resp,
+     Name: session.userData.name,
+     'Entry Number': session.userData.en } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+
 session.endDialog();
     }
 
