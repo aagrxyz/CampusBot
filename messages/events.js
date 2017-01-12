@@ -1,14 +1,12 @@
 var FB = require("fb");
-FB.setAccessToken('EAACEdEose0cBACIPWxZBX7XwpiVkJJfLIvHK0KrbYpOcCy8Wy5Oju2ZCKYOD8Ct1sTeSTBXZASRthItuRwX5FSBGTMlZBqCxvlNOR1iIYZAgZAZCamHClDBvKgFmNTp6ZAHxByLCNgUkv8QzdHiLK3evxGKrZCMWbJaJDwZCIsutrInygOdNGl4TWCLqOAnawr1U0ZD');
+FB.setAccessToken(process.env.ACCESS_TOKEN);
 // var page_ids = ["music.iitd","rendezvous.iitd","acesacm"];
 var page_ids = ["music.iitd","iitd.delhi","rendezvous.iitd","IITD.tryst","tech.iitd","acesacm","iitdebate","cultureIITD","boardforstudentwelfare","bspiitd","debatingclubiitd","litclub.iitd","ecoclubiitd","ICPC.IITD","iitd.bsa","vortex.iitd","speranza.iitd","BoardforHostelManagementIITDelhi","saciitdelhi","iitd.sportech","Literati.IITD"];
-
 var requests = [];
-
 
 for (var id in page_ids)
 {
-    requests.push({method: "get", relative_url: page_ids[id]+"?fields=events.limit(3)"});
+    requests.push({method: "get", relative_url: page_ids[id]+"?fields=events.limit(4)"});
 }
 
 function fetch_events(callback)
@@ -51,12 +49,12 @@ function fetch_events(callback)
 function make_story(events)
 {
     var ans = "";
-    for(var i=0;i<events.length && i< 5;i++)
+    for(var i=0;i<events.length && i< 6;i++)
     {
         var event = events[i];
         var start = new Date(event.start_time);
         var end = new Date(event.end_time);
-        ans += (event.name+"\n"+start.toDateString()+": "+start.toLocaleTimeString()+" - "+end.toLocaleTimeString()+"\n"+event.location+"\n\n");
+        ans += (event.name+"\n"+start.toDateString()+": "+start.toLocaleTimeString()+" - "+end.toLocaleTimeString()+"\n"+event.place.name+"\n"+"Link- facebook.com/events/"+event.id+"\n\n");
     }
     return ans;
 }

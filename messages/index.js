@@ -72,7 +72,7 @@ bot.dialog('/whois', [
     },
     function (session, results) {
         var result = whois.identify(results.response);
-        if(result.length == 0)
+        if(result.length === 0)
         {
             session.send("No matches found. Please try again.");
         }
