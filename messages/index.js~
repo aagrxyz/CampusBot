@@ -43,6 +43,7 @@ intents.matches('repeat', '/repeat');
 intents.matches('whois', '/whois');
 intents.matches('downpaper', '/papers');
 intents.matches('events', '/events');
+intents.matches('complaint', '/complaint');
 
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
@@ -51,7 +52,14 @@ intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 bot.dialog('/events',[
     function(session,args)
     {
-        events.get_event(function(result){session.send(events.story(result)); session.endDialog();});
+        events.get_events(function(result){
+            var story = events.story(result);
+            for(var i=0;i<story.length;i++)
+            {
+                session.send(story[i]);
+            }
+            session.endDialog();
+        });
     }
 ]);
 
@@ -92,20 +100,6 @@ bot.dialog('/whois', [
         session.endDialog();
     }
 ]);
-<<<<<<< HEAD
-bot.dialog('/papers', [
-    function (session) {
-
-       // session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
-       session.send("Yes paper ");//+ session.userData.name+" en is  " + results.response);
-        var msg = new builder.Message(session)
-            .attachments([{
-                contentType: "image/jpeg",
-                contentUrl: "http://www.theoldrobots.com/images62/Bender-18.JPG"
-            }]);
-        session.endDialog(msg);
-    }
-=======
 
 bot.dialog('/papers', [
     function (session, args, next) {
@@ -134,7 +128,6 @@ bot.dialog('/papers', [
 	    
       session.endDialogWithResult({ response: session.userData });
     }      
->>>>>>> 2b83706cf4e9b47f0b8f0b689789b4591dc021d2
 ]);
 
 bot.dialog('/qna', [
@@ -201,7 +194,6 @@ bot.dialog('/converse', [
 ]);
 bot.dialog('/profile', [
     function (session, args, next) {
-       session.dialogData.profile = args || {};
         if (!session.userData.name) {
             builder.Prompts.text(session, "What's your name?");
         } else {
@@ -212,7 +204,7 @@ bot.dialog('/profile', [
         if (results.response) {
             session.userData.name = results.response;
         }
-        if (!session.dialogData.profile.company) {
+        if (!session.userData.en) {
             builder.Prompts.text(session, "What your entry number?");
         } else {
             next();
@@ -221,10 +213,32 @@ bot.dialog('/profile', [
     function (session, results) {
         if (results.response) {
             session.userData.en = results.response;
-            session.send("Thanks "+session.userData.name);
+            session.send("Thanks "+session.userData.name+" your profile has been setup");
 
         }
         session.endDialogWithResult({ response: session.userData });
+    }
+]);
+bot.dialog('/complaint', [
+    function (session, args, next) {
+
+        builder.Prompts.text(session, "Enter the subject of yur complaint");
+        
+    },
+    function (session, results, next) {
+        if (results.response) {
+            session.dialogData.sub = results.response;
+        }
+        builder.Prompts.text(session, "Describe the complaint in detail");
+    },
+    function (session, results) {
+        if (results.response) {
+            session.dialogData.desc = results.response;
+	}
+        builder.Prompts.text(session, "Who is/are responsible for the matter mentioned in the complaint (leave blank if not known).");
+
+
+        
     }
 ]);
 //bot.dialog('/', basicQnAMakerDialog);

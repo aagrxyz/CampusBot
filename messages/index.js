@@ -43,6 +43,7 @@ intents.matches('repeat', '/repeat');
 intents.matches('whois', '/whois');
 intents.matches('downpaper', '/papers');
 intents.matches('events', '/events');
+intents.matches('complaint', '/complaint');
 
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
@@ -193,7 +194,6 @@ bot.dialog('/converse', [
 ]);
 bot.dialog('/profile', [
     function (session, args, next) {
-       session.dialogData.profile = args || {};
         if (!session.userData.name) {
             builder.Prompts.text(session, "What's your name?");
         } else {
@@ -204,7 +204,7 @@ bot.dialog('/profile', [
         if (results.response) {
             session.userData.name = results.response;
         }
-        if (!session.dialogData.profile.company) {
+        if (!session.userData.en) {
             builder.Prompts.text(session, "What your entry number?");
         } else {
             next();
@@ -213,11 +213,40 @@ bot.dialog('/profile', [
     function (session, results) {
         if (results.response) {
             session.userData.en = results.response;
-            session.send("Thanks "+session.userData.name);
+            session.send("Thanks "+session.userData.name+" your profile has been setup");
 
         }
         session.endDialogWithResult({ response: session.userData });
     }
+]);
+bot.dialog('/complaint', [
+    function (session, args, next) {
+
+        builder.Prompts.text(session, "Enter the subject of yur complaint");
+        
+    },
+    function (session, results, next) {
+        if (results.response) {
+            session.dialogData.sub = results.response;
+        }
+        builder.Prompts.text(session, "Describe the complaint in detail");
+    },
+    function (session, results) {
+        if (results.response) {
+            session.dialogData.desc = results.response;
+	}
+        builder.Prompts.text(session, "Who is/are responsible for the matter mentioned in the complaint (leave blank if not known).");
+    }
+    function (session, results) {
+       if (results.response) {
+            session.dialogData.resp = results.response;
+	}
+        session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are"+session.userData.name+" with en "+session.userData.en);
+session.endDialog();
+
+
+    }
+
 ]);
 //bot.dialog('/', basicQnAMakerDialog);
 
