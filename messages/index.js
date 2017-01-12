@@ -106,42 +106,9 @@ bot.dialog('/whois', [
     }
 
 ]);
-
-//bot.dialog('/papers', [
-   // function (session,next) {
-//session.send("4");
-//session.send(session.userData.en);
-    //    if (session.userData.en === undefined) {
-    //       builder.Prompts.text(session, 'Give me your entry number');
-    //    } else {
-	//	var ta = ["a"];
-	//	session.send("52");
-     //       next({ response: ta });
-	//	session.send("6");
-    ///    }
-   // },
- //   function (session,results) {
-	//	session.send("33");
-//	if (session.userData.en === undefined) {
-    //       session.userData.en = results.response;
-	//	session.send("11");
-          //  session.send("3");
-    //    } 
-    //    session.send("Yur EN is " +session.userData.en);
-//
-   //     session.endDialog();
-   // }
-
-//]);
 bot.dialog('/papers', [
     function (session) {
-        // session.send(session.userData.name);
-       // session.send("1");
-       // var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
-       // session.send("2");
-       // if (!task) {
-     //       builder.Prompts.text(session, "What your en?");
-          //  session.send("3");
+
        // session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
        session.send("Yes paper ");//+ session.userData.name+" en is  " + results.response);
         var msg = new builder.Message(session)
@@ -150,15 +117,6 @@ bot.dialog('/papers', [
                 contentUrl: "http://www.theoldrobots.com/images62/Bender-18.JPG"
             }]);
         session.endDialog(msg);
-       
-       // } else {
-       //     next({ response: task.entity });
-           // session.send("4");
-      //  }
-       // builder.Prompts.text(session, 'Hi! I repeat everything!');
-       //session.send("What's ur query?");
-        //session.beginDialogue(basicQnAMakerDialog);
-
     }
 ]);
 bot.dialog('/qna', [
@@ -211,21 +169,12 @@ bot.dialog('/repeat', [
 ]);
 bot.dialog('/converse', [
     function (session,args) {
-        // session.send(session.userData.name);
-       // session.send("1");
         var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
-       // session.send("2");
         if (!task) {
             builder.Prompts.text(session, "What would you like to talk about?");
-          //  session.send("3");
-
         } else {
             next({ response: task.entity });
-           // session.send("4");
         }
-       // builder.Prompts.text(session, 'Hi! I repeat everything!');
-       //session.send("What's ur query?");
-        //session.beginDialogue(basicQnAMakerDialog);
     },
     function (session, results) {
         session.send("Yes"+ session.userData.name+" I do like talking about " + results.response);

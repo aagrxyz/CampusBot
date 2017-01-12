@@ -142,18 +142,7 @@ bot.dialog('/papers', [
        // if (!task) {
      //       builder.Prompts.text(session, "What your en?");
           //  session.send("3");
-        session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
-       // } else {
-       //     next({ response: task.entity });
-           // session.send("4");
-      //  }
-       // builder.Prompts.text(session, 'Hi! I repeat everything!');
-       //session.send("What's ur query?");
-        //session.beginDialogue(basicQnAMakerDialog);
-<<<<<<< HEAD
-=======
-    },
-    function (session, results) {
+       // session.send("Yes paper "+ session.userData.name+" en is  " + session.userData.en);
        session.send("Yes paper ");//+ session.userData.name+" en is  " + results.response);
         var msg = new builder.Message(session)
             .attachments([{
@@ -161,8 +150,15 @@ bot.dialog('/papers', [
                 contentUrl: "http://www.theoldrobots.com/images62/Bender-18.JPG"
             }]);
         session.endDialog(msg);
-       // session.endDialog();
->>>>>>> 41982b5466f7c082e09fac3b82f13834445ae23b
+       
+       // } else {
+       //     next({ response: task.entity });
+           // session.send("4");
+      //  }
+       // builder.Prompts.text(session, 'Hi! I repeat everything!');
+       //session.send("What's ur query?");
+        //session.beginDialogue(basicQnAMakerDialog);
+
     }
 ]);
 bot.dialog('/qna', [
