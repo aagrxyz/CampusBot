@@ -67,7 +67,7 @@ bot.dialog('/whois', [
     function (session,args,next) {
       var nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
       if (!nameoren) {
-         builder.Prompts.text(session, 'Give me a name or an entry number');
+         builder.Prompts.text(session, 'Give me a Name or an Entry number');
       } else {
       	var name ="";
       	for( var i =0; i<nameoren.length-1;i++)
@@ -133,6 +133,78 @@ bot.dialog('/papers', [
     }      
 ]);
 
+bot.dialog('/repeat', [
+    function (session) {
+        builder.Prompts.text(session, 'Hi! I repeat everything!');
+    },
+    function (session, results) {
+        session.send(results.response);
+        session.endDialog();
+    }
+]);
+
+bot.dialog('/profile', [
+    function (session, args, next) {
+            builder.Prompts.text(session, "What's your name?");
+    },
+    function (session, results, next) {
+        if (results.response) {
+            session.userData.name = results.response;
+        }
+        builder.Prompts.text(session, "What your entry number?");
+    },
+    function (session, results) {
+        if (results.response) {
+            session.userData.en = results.response;
+            session.send("Thanks, "+session.userData.name+", Your profile has been saved");
+        }
+        session.endDialogWithResult({ response: session.userData });
+    }
+]);
+
+bot.dialog('/complaint', [
+    function (session, args, next) {
+        builder.Prompts.text(session, "Enter the subject of your complaint");        
+    },
+    function (session, results, next) {
+        if (results.response) {
+            session.dialogData.sub = results.response;
+        }
+        builder.Prompts.text(session, "Describe the complaint in detail");
+    },
+    function (session, results) {
+        if (results.response) {
+            session.dialogData.desc = results.response;
+        }
+        builder.Prompts.text(session, "Who is/are responsible for the matter mentioned in the complaint?");
+    },
+    function (session, results) {
+       if (results.response) {
+            session.dialogData.resp = results.response;
+        }
+        session.send("Your complaint is about "+session.dialogData.sub+". The detailed description is "+session.dialogData.desc+" and people responsible are "+session.dialogData.resp);
+        var request = require("request");
+        var options = { method: 'POST',
+          url: 'http://www.cse.iitd.ernet.in/aces-acm/api',
+          headers: 
+           { 'postman-token': '504d20da-90fb-ec0b-fa29-7c90d5652c36',
+             'cache-control': 'no-cache',
+             'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
+          formData: 
+           { action: 'postcomplaint',
+             Subject: session.dialogData.sub,
+             Description: session.dialogData.desc,
+             'People In-Charge': session.dialogData.resp,
+             Name: session.userData.name,
+             'Entry Number': session.userData.en } };
+        request(options, function (error, response, body) {
+          if (error) throw new Error(error);
+          console.log(body);
+        });
+        session.endDialog();
+     }
+]);
+
 bot.dialog('/qna', [
     function (session) {
        // builder.Prompts.text(session, 'Hi! What is your name?');
@@ -170,17 +242,7 @@ bot.dialog('/qna', [
     }
     ]);
 
-bot.dialog('/repeat', [
-    function (session) {
-        builder.Prompts.text(session, 'Hi! I repeat everything!');
-       //session.send("What's ur query?");
-        //session.beginDialogue(basicQnAMakerDialog);
-    },
-    function (session, results) {
-        session.send(results.response);
-        session.endDialog();
-    }
-]);
+
 bot.dialog('/converse', [
     function (session,args) {
         var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
@@ -195,106 +257,6 @@ bot.dialog('/converse', [
         session.endDialog();
     }
 ]);
-bot.dialog('/profile', [
-    function (session, args, next) {
-     //   if (!session.userData.name) {
-            builder.Prompts.text(session, "What's your name?");
-       // } 
-//else {
-        //    next();
-      //  }
-    },
-    function (session, results, next) {
-        if (results.response) {
-            session.userData.name = results.response;
-        }
-        //if (!session.userData.en) {
-            builder.Prompts.text(session, "What your entry number?");
-       // } else {
-        //    next();
-       // }
-    },
-    function (session, results) {
-        if (results.response) {
-            session.userData.en = results.response;
-            session.send("Thanks "+session.userData.name+" your profile has been setup");
-
-        }
-        session.endDialogWithResult({ response: session.userData });
-    }
-]);
-bot.dialog('/complaint', [
-    function (session, args, next) {
-
-        builder.Prompts.text(session, "Enter the subject of your complaint");
-        
-    },
-    function (session, results, next) {
-        if (results.response) {
-            session.dialogData.sub = results.response;
-        }
-        builder.Prompts.text(session, "Describe the complaint in detail");
-    },
-    function (session, results) {
-        if (results.response) {
-            session.dialogData.desc = results.response;
-	}
-        builder.Prompts.text(session, "Who is/are responsible for the matter mentioned in the complaint (leave blank if not known).");
-    },
-    function (session, results) {
-       if (results.response) {
-            session.dialogData.resp = results.response;
-	}
-        session.send("Your complaint is about "+session.dialogData.sub+". The detailed desc is "+session.dialogData.desc+" and peep responsible re "+session.dialogData.resp+". You are "+session.userData.name+" with en "+session.userData.en);
-        var postBodyc = {"action": "postcomplaint","Subject": session.dialogData.sub, "Description": session.dialogData.desc,"People In-Charge":session.dialogData.resp,"Name":session.userData.name,"Entry Number":session.userData.en};
-// //var postBody = '{"Subject":"aaaa"}'
-//             request({
-//              //   url: "https://script.google.com/macros/s/AKfycbwRm3yJz7ghlGk3taiuLmw10t9UZvVGI8eQ8vM7Zwl6bURrOw0/exec",
-//              url: "www.cse.iitd.ernet.in/aces-acm/api",
-//    method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                   //  'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
-//                 },
-//                 body: postBodyc
-//             },
-//                 function (error, response, body) {
-//                    // var result;
-//                        // console.log(body);
-//                           //  result = JSON.parse(body);
-//                           //  result.score = result.score / 100;
-//                          //   result.answer = htmlentities.decode(result.answer);
-//                         //    session.send(result.answer);
-//                 }
-//             );
-
-var request = require("request");
-
-var options = { method: 'POST',
-  url: 'http://www.cse.iitd.ernet.in/aces-acm/api',
-  headers: 
-   { 'postman-token': '504d20da-90fb-ec0b-fa29-7c90d5652c36',
-     'cache-control': 'no-cache',
-     'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
-  formData: 
-   { action: 'postcomplaint',
-     Subject: session.dialogData.sub,
-     Description: session.dialogData.desc,
-     'People In-Charge': session.dialogData.resp,
-     Name: session.userData.name,
-     'Entry Number': session.userData.en } };
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
-
-session.endDialog();
-    }
-
-]);
-//bot.dialog('/', basicQnAMakerDialog);
 
 if (useEmulator) {
     // var restify = require('restify');
