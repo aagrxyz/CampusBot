@@ -120,7 +120,6 @@ bot.dialog('/papers', [
 	    
       session.endDialogWithResult({ response: session.userData });
     }      
->>>>>>> 2b83706cf4e9b47f0b8f0b689789b4591dc021d2
 ]);
 
 bot.dialog('/qna', [
