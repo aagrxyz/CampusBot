@@ -164,6 +164,9 @@ bot.dialog('/profile', [
 
 bot.dialog('/complaint', [
     function (session, args, next) {
+        if(!session.userData.name || !session.userData.en){
+            session.beginDialog("/profile");
+        }
         builder.Prompts.text(session, "Enter the subject of your complaint");        
     },
     function (session, results, next) {
@@ -194,9 +197,9 @@ bot.dialog('/complaint', [
            { action: 'postcomplaint',
              Subject: session.dialogData.sub,
              Description: session.dialogData.desc,
-             'People In-Charge': session.dialogData.resp,
+            'People In-Charge': session.dialogData.resp,
              Name: session.userData.name,
-             'Entry Number': session.userData.en } };
+            'Entry Number': session.userData.en } };
         request(options, function (error, response, body) {
           if (error) throw new Error(error);
           console.log(body);
