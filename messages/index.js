@@ -51,7 +51,14 @@ intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 bot.dialog('/events',[
     function(session,args)
     {
-        events.get_events(function(result){session.send(events.story(result)); session.endDialog();});
+        events.get_events(function(result){
+            var story = events.story(result);
+            for(var i=0;i<story.length;i++)
+            {
+                session.send(story[i]);
+            }
+            session.endDialog();
+        });
     }
 ]);
 

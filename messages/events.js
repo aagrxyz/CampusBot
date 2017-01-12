@@ -87,13 +87,13 @@ function fetch_events(callback)
 
 function make_story(events)
 {
-    var ans = "";
+    var ans = [];
     for(var i=0;i<events.length && i< 6;i++)
     {
         var event = events[i];
         var start = new Date(event.start_time);
         var end = new Date(event.end_time);
-        ans += (event.name+"\n"+start.toDateString()+": "+start.toLocaleTimeString()+" - "+end.toLocaleTimeString()+"\n"+event.place.name+"\n"+"Link- facebook.com/events/"+event.id+"\n\n");
+        ans.push(event.name+"\r\n"+start.toDateString()+": "+start.toLocaleTimeString()+" - "+end.toLocaleTimeString()+"\r\n"+event.place.name+"\r\n"+"Link- facebook.com/events/"+event.id);
     }
     return ans;
 }
