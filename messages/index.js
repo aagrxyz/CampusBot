@@ -290,7 +290,19 @@ bot.dialog('/schedule',[
     },
     function(session,results)
     {
-        date_rec = session.dialogData.arrr.entities[0].resolution.date;
+        var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+        var day = undefined;
+        try
+        {
+            day = days[new Date(session.dialogData.arrr.entities[0].resolution.date).getDay()];
+        }
+        catch(e)
+        {
+            day = undefined;
+        }
+        // console.log(day);
+        session.dialogData.arrr = undefined;
+
         if (results.response) {
             session.userData.en = results.response;
         }
@@ -298,10 +310,26 @@ bot.dialog('/schedule',[
         if(courses !== undefined)
         {
             var week = schedule.week_schedule(courses.courses);
-            var sch = schedule.pretty_week(week);
-            for(var i=0;i<sch.length;i++)
+            if(day === undefined)
             {
-                session.send(sch[i]);
+                var sch = schedule.pretty_week(week);
+                for(var i=0;i<sch.length;i++)
+                {
+                    session.send(sch[i]);
+                }
+            }
+            else
+            {
+                // console.log("We have entity - "+day);
+                if(["SUNDAY","SATURDAY"].includes(day))
+                {
+                    session.send(day+" is holiday!");
+                }
+                else
+                {
+                    var sch = schedule.pretty_day(day,week[day]);
+                    session.send(sch);
+                }
             }
         }
         else
