@@ -47,6 +47,7 @@ intents.matches('downpaper', '/papers');
 intents.matches('events', '/events');
 intents.matches('complaint', '/complaint');
 intents.matches('schedule', '/schedule');
+intents.matches('course','/course');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 //bot.dialog('/qna', basicQnAMakerDialog);
