@@ -89,11 +89,11 @@ bot.dialog('/events',[
 bot.dialog('/schedule',[
     function(session, args,next) {
         session.send("Entered first");
-        if (!session.userData.en) {
-            builder.Prompts.text(session, "What's your entry number?");
-        } else {
-            next();
-        }
+        builder.Prompts.text(session, "What's your entry number?");
+        // if (!session.userData.en) {
+        // } else {
+        //     next();
+        // }
     },
     function(session,results)
     {
