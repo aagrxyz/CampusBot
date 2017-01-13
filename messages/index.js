@@ -385,10 +385,10 @@ bot.dialog('/converse', [
     {
         var check;
         // console.log(results.response);
-        if(typeof results.response !== 'undefined' && results.response){
+        if((typeof results.response !== 'undefined') && results.response){
             check = results.respone;
         }
-        if(check === "END" || check === "\"END\"")
+        if(results.response ==="end" || results.response === "END" || results.response === "\"END\"")
         {
             session.send("Thank you for chatting :)");
             session.endDialog();
