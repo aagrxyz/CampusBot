@@ -283,6 +283,7 @@ bot.dialog('/course',[
 
 bot.dialog('/schedule',[
     function(session,args,next) {
+        session.dialogData.arrr = args;
         if (!session.userData.en) {
             builder.Prompts.text(session, "What's your entry number?");
         } else {
@@ -291,6 +292,28 @@ bot.dialog('/schedule',[
     },
     function(session,results)
     {
+        var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+        var day = undefined;
+        // console.log(session.dialogData.arrr.entities);
+        try
+        {
+            var str = session.dialogData.arrr.entities[0].resolution.date;
+            if(str.substr(0,9)==="XXXX-WXX-")
+            {
+                day = days[parseInt(str[9])];
+            }
+            else
+            {
+                day = days[new Date(str).getDay()];
+            }
+        }
+        catch(e)
+        {
+            day = undefined;
+        }
+        // console.log(day);
+        session.dialogData.arrr = undefined;
+
         if (results.response) {
             session.userData.en = results.response;
         }
@@ -298,10 +321,26 @@ bot.dialog('/schedule',[
         if(courses !== undefined)
         {
             var week = schedule.week_schedule(courses.courses);
-            var sch = schedule.pretty_week(week);
-            for(var i=0;i<sch.length;i++)
+            if(day === undefined)
             {
-                session.send(sch[i]);
+                var sch = schedule.pretty_week(week);
+                for(var i=0;i<sch.length;i++)
+                {
+                    session.send(sch[i]);
+                }
+            }
+            else
+            {
+                // console.log("We have entity - "+day);
+                if(["SUNDAY","SATURDAY"].includes(day))
+                {
+                    session.send(day+" is a holiday!");
+                }
+                else
+                {
+                    var sch = schedule.pretty_day(day,week[day]);
+                    session.send(sch);
+                }
             }
         }
         else
