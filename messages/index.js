@@ -41,7 +41,7 @@ var introMessage = `Welcome to Campus Bot.\n\n\n\n Main functionalities are desc
 Profile : Say 'hi' or 'setup' at any time to setup your profile and display this help message.\n\n\n\n
 FAQ : Say 'faq' or 'question answer' to ask the bot a commonly encountered campus question ( like 'what is disco? or 'what is phone number of dean of student affairs'.\n\n
 Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.\n\n\n\n
-Cnversation : Say "talk about snowy mounains" or "converse" or "chat" to enter converation mode. Say "end" to exit this mode. \n\n\n\n
+Conversation : Say "talk about snowy mounains" or "converse" or "chat" to enter converation mode. Say "end" to exit this mode. \n\n\n\n
 Who is :   Ask the bot 'Who is Name/EN' to find students in the institute with that Name/EN.\n\n\n\n
 Events :   Ask 'events' to find upcoming events in the campus (from facebook).\n\n\n\n
 Course info :  Ask "Course information COL216" or "details of COL331 course to see some details about that course."\n\n\n\n
@@ -268,28 +268,39 @@ bot.dialog('/events',[
     }
 ]);
 
-bot.dialog('/course',[
+bot.dialog('/converse', [
     function(session,args,next)
     {
-        var coursecode = builder.EntityRecognizer.findEntity(args.entities, 'courseent');
-        if (!coursecode) {
-              builder.Prompts.text(session,"Give me the course code");
-        } else {
-            next({ response: coursecode.entity });
+        if(args.in_conv !== "yes")
+        {
+            builder.Prompts.text(session, "Hi!, what would you like to talk about? (type \"end\" to exit)");
+        }
+        else
+        {
+            builder.Prompts.text(session,args.msg);
         }
     },
     function(session,results)
     {
-        var c = course.get_course(results.response);
-        if(c === undefined)
+    	var check;
+    	// console.log(results.response);
+        if(typeof results.response !== 'undefined' && results.response){
+        	check = results.respone;
+        }
+        if(check === "END" || check === "\"END\"")
         {
-            session.send("No such course code found!");
+            session.send("Thank you for chatting :)");
+            session.endDialog();
         }
         else
         {
-            session.send(course.pretty_course(c));
+            Cleverbot.prepare(function(){
+                cleverbot.write(results.response, function (resp) {
+                    session.endDialog();
+                    session.beginDialog('/converse',{in_conv: "yes",msg: resp.message});
+                });
+            });
         }
-        session.endDialog();
     }
 ]);
 
