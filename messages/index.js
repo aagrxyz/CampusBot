@@ -268,39 +268,28 @@ bot.dialog('/events',[
     }
 ]);
 
-bot.dialog('/converse', [
+bot.dialog('/course',[
     function(session,args,next)
     {
-        if(args.in_conv !== "yes")
-        {
-            builder.Prompts.text(session, "Hi!, what would you like to talk about? (type \"end\" to exit)");
-        }
-        else
-        {
-            builder.Prompts.text(session,args.msg);
+        var coursecode = builder.EntityRecognizer.findEntity(args.entities, 'courseent');
+        if (!coursecode) {
+              builder.Prompts.text(session,"Give me the course code");
+        } else {
+            next({ response: coursecode.entity });
         }
     },
     function(session,results)
     {
-    	var check;
-    	// console.log(results.response);
-        if(typeof results.response !== 'undefined' && results.response){
-        	check = results.respone;
-        }
-        if(check === "END" || check === "\"END\"")
+        var c = course.get_course(results.response);
+        if(c === undefined)
         {
-            session.send("Thank you for chatting :)");
-            session.endDialog();
+            session.send("No such course code found!");
         }
         else
         {
-            Cleverbot.prepare(function(){
-                cleverbot.write(results.response, function (resp) {
-                    session.endDialog();
-                    session.beginDialog('/converse',{in_conv: "yes",msg: resp.message});
-                });
-            });
+            session.send(course.pretty_course(c));
         }
+        session.endDialog();
     }
 ]);
 
@@ -394,10 +383,10 @@ bot.dialog('/converse', [
     },
     function(session,results)
     {
-    	var check;
-    	// console.log(results.response);
+        var check;
+        // console.log(results.response);
         if(typeof results.response !== 'undefined' && results.response){
-        	check = results.respone;
+            check = results.respone;
         }
         if(check === "END" || check === "\"END\"")
         {
