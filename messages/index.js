@@ -383,7 +383,11 @@ bot.dialog('/converse', [
     },
     function(session,results)
     {
-        var check = results.respone.toUpperCase().trim();
+    	var check;
+    	// console.log(results.response);
+        if(typeof results.response !== 'undefined' && results.response){
+        	check = results.respone;
+        }
         if(check === "END" || check === "\"END\"")
         {
             session.send("Thank you for chatting :)");
