@@ -257,7 +257,7 @@ bot.dialog('/events',[
 bot.dialog('/course',[
     function(session,args,next)
     {
-        var coursecode = builder.EntityRecognizer.findAllEntities(args.entities, 'courseent');
+        var coursecode = builder.EntityRecognizer.findEntity(args.entities, 'courseent');
         if (!coursecode) {
               builder.Prompts.text(session,"Give me the course code");
       } else {
@@ -267,12 +267,14 @@ bot.dialog('/course',[
         //    name += coursecode[i].entity + " ";
        // }
        // name += coursecode[coursecode.length-1].entity;
+       session.send(coursecode.entity);
         next({ response: coursecode.entity });
 
       }
     },
     function(session,results)
     {
+        session.send("sss");
         var c = course.get_course(results.response);
         if(c === undefined)
         {
