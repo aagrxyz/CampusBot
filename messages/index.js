@@ -10,6 +10,8 @@ var events = require('./events');
 var schedule = require('./schedule');
 var course = require('./course');
 var useEmulator = (process.env.NODE_ENV == 'development');
+var Cleverbot = require('cleverbot-node');
+ var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
 var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
