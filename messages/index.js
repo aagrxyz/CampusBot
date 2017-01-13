@@ -257,7 +257,19 @@ bot.dialog('/events',[
 bot.dialog('/course',[
     function(session,args,next)
     {
-        builder.Prompts.text("Give me the course code");
+        var coursecode = builder.EntityRecognizer.findAllEntities(args.entities, 'courseent');
+        if (!coursecode) {
+              builder.Prompts.text(session,"Give me the course code");
+      } else {
+        //var name ="";
+       // for( var i =0; i<coursecode.length-1;i++)
+       // {
+        //    name += coursecode[i].entity + " ";
+       // }
+       // name += coursecode[coursecode.length-1].entity;
+        next({ response: coursecode.entity });
+
+      }
     },
     function(session,results)
     {
