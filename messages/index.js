@@ -354,7 +354,7 @@ bot.dialog('/schedule',[
 
 bot.dialog('/converse', [
     function (session,args) {
-        var task = builder.EntityRecognizer.findEntity(args.entities, 'convtopic');
+        var task = builder.EntityRecognizer.findAllEntities(args.entities, 'convtopic');
         if (!task) {
             builder.Prompts.text(session, "What would you like to talk about?");
         } else {
@@ -363,7 +363,7 @@ bot.dialog('/converse', [
              {
                   topics += task[i].entity + " ";
               }
-             topics += task[task.length-1].entity;
+        //     topics += task[task.length-1].entity;
              next({ response: topics });
              //  next({ response: task.entity });
         }
