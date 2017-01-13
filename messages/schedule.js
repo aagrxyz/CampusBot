@@ -4,21 +4,25 @@
 
 // csv.fromPath("./database/course_database.csv")
 // .on("data", function(data){
-//     var courses = data[1].split('/');
+//     data = data.map(function(a){return a.toUpperCase().trim();});
+//     var courses = data[1].split('/').map(function(a){return a.toUpperCase().trim();});
 //     for(var i=0;i<courses.length;i++)
 //     {
-//         course_database[courses[i].toUpperCase().trim()] = {"location": data[2].toUpperCase().trim(),"slot": data[0].toUpperCase().trim()};
+//         if(!(courses[i]in course_database))
+//         {
+//             course_database[courses[i].trim()] = {};
+//         }
+//         course_database[courses[i].trim()][data[0].trim()] = data[2].trim();
 //     }
 // }).on("end", function(){
 //     console.log("done");
+//     var str = JSON.stringify(course_database,null,4);
+//     fs.writeFile('course_database.json', str, function (err) {
+//       if (err) throw err;
+//       console.log('It\'s saved!');
+//     });
 // });
 
-// var str = JSON.stringify(course_database);
-
-// fs.writeFile('course_database.json', str, function (err) {
-//   if (err) throw err;
-//   console.log('It\'s saved!');
-// });
 // module.exports = course_database;
 
 var fs = require("fs-extra");
@@ -30,12 +34,15 @@ var course_database = JSON.parse(fs.readFileSync(course_db));
 var slot_database = JSON.parse(fs.readFileSync(slot_db));
 var course_list = JSON.parse(fs.readFileSync(course_list_db));
 
+
+/* pass an object containing fields course and slot */
 function get_class_schedule(course)
 {
-    course = course.toUpperCase();
-    if(course in course_database)
+    var slot = course.slot.toUpperCase().trim();
+    course = course.course.toUpperCase().trim();
+    if(course in course_database && slot in course_database[course])
     {
-        return {"location": course_database[course].location, "timing": slot_database[course_database[course].slot]};
+        return {"location": course_database[course][slot], "timing": slot_database[slot]};
     }
     else
     {
@@ -52,7 +59,7 @@ function get_day_schedule(day,courses)
         var sch = get_class_schedule(courses[i]);
         if(sch !== undefined && day in sch.timing)
         {
-            schedule.push({"name":courses[i].toUpperCase(),"location":sch.location,"timing":sch.timing[day]});
+            schedule.push({"course":courses[i].course.toUpperCase().trim(),"slot":courses[i].slot.toUpperCase().trim(),"location":sch.location,"timing":sch.timing[day]});
         }
     }
     schedule.sort(function(a,b)
@@ -96,7 +103,7 @@ function pretty_day_schedule(day,schedule)
         pretty = day+":\n\n";
         for(var i=0;i<schedule.length;i++)
         {
-            pretty+= schedule[i].name+" : "+schedule[i].location+" => "+schedule[i].timing.start+"-"+schedule[i].timing.end+"\n\n";
+            pretty+= schedule[i].course+"("+schedule[i].slot+") : "+schedule[i].location+" => "+schedule[i].timing.start+"-"+schedule[i].timing.end+"\n\n";
         }
         return pretty;
     }

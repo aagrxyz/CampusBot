@@ -8,6 +8,7 @@ var whois = require('./whois');
 var papers = require('./get_papers');
 var events = require('./events');
 var schedule = require('./schedule');
+var course = require('./course');
 var useEmulator = (process.env.NODE_ENV == 'development');
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
@@ -49,6 +50,26 @@ intents.matches('schedule', '/schedule');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 //bot.dialog('/qna', basicQnAMakerDialog);
+
+bot.dialog('/course',[
+    function(session,args,next)
+    {
+        builder.Prompts.text("Give me the course code");
+    },
+    function(session,results)
+    {
+        var c = course.get_course(results.response);
+        if(c === undefined)
+        {
+            session.send("No such course code found!");
+        }
+        else
+        {
+            session.send(course.pretty_course(c));
+        }
+        session.endDialog();
+    }
+]);
 
 bot.dialog('/events',[
     function(session,args)

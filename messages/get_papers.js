@@ -18,7 +18,8 @@ module.exports = {
     var json_location ="database/data_base.json";
     var content = fs.readFileSync(json_location);
     var data_base =  JSON.parse(content);
-    var courses = data_base[entry]["courses"];
+    var courses = [];
+    data_base[entry]["courses"].map(function(a){courses.push(a.course);});
 
     if (!fs.existsSync(output_dir))
     {

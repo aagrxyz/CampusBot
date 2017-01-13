@@ -1,1702 +1,1282 @@
 {
-    "AML300":{
-        "location":"LH 308",
-        "slot":"A"
-    },
-    "AML310":{
-        "location":"LH 308",
-        "slot":"A"
-    },
-    "APL380":{
-        "location":"LH 308",
-        "slot":"A"
-    },
-    "AML831":{
-        "location":"LH 604",
-        "slot":"A"
-    },
-    "AML832":{
-        "location":"LH 606",
-        "slot":"A"
-    },
-    "AML835":{
-        "location":"LH 518",
-        "slot":"A"
-    },
-    "APL105":{
-        "location":"LH 108",
-        "slot":"A"
-    },
-    "APL715":{
-        "location":"LH 520",
-        "slot":"A"
-    },
-    "APL767":{
-        "location":"LH 623",
-        "slot":"A"
-    },
-    "CLL121":{
-        "location":"LH 310",
-        "slot":"A"
-    },
-    "CLL731":{
-        "location":"LH 316",
-        "slot":"A"
-    },
-    "CML522":{
-        "location":"LH 517",
-        "slot":"A"
-    },
-    "COL362":{
-        "location":"LH 318",
-        "slot":"A"
-    },
-    "COL632":{
-        "location":"LH 318",
-        "slot":"A"
-    },
-    "CRL712":{
-        "location":"LH 603",
-        "slot":"A"
-    },
-    "CRL732":{
-        "location":"LH 605",
-        "slot":"A"
-    },
-    "CVL715":{
-        "location":"VI 404",
-        "slot":"A"
-    },
-    "CVL728":{
-        "location":"IV 323",
-        "slot":"A"
-    },
-    "CVL833":{
-        "location":"LH 612",
-        "slot":"A"
-    },
-    "CVL847":{
-        "location":"LH 613",
-        "slot":"A"
-    },
-    "CVL871":{
-        "location":"LH 615",
-        "slot":"A"
-    },
-    "ELL717":{
-        "location":"IIA 106",
-        "slot":"A"
-    },
-    "ELL731":{
-        "location":"IIA 101",
-        "slot":"A"
-    },
-    "ELL783":{
-        "location":"VI 301",
-        "slot":"A"
-    },
-    "ESL730":{
-        "location":"VI 402",
-        "slot":"A"
-    },
-    "HUL211":{
-        "location":"LH 310",
-        "slot":"H"
-    },
-    "HUL212":{
-        "location":"LH 410",
-        "slot":"A"
-    },
-    "HUL236":{
-        "location":"LH 111",
-        "slot":"A"
-    },
-    "HUL256":{
-        "location":"LH 416",
-        "slot":"A"
-    },
-    "HUL258":{
-        "location":"LH 418",
-        "slot":"A"
-    },
-    "HUL261":{
-        "location":"LH 510",
-        "slot":"A"
-    },
-    "HUL265":{
-        "location":"LH 512",
-        "slot":"A"
-    },
-    "HUL320":{
-        "location":"LH 519",
-        "slot":"A"
-    },
-    "HUL350":{
-        "location":"LH 521",
-        "slot":"A"
-    },
-    "HUL364":{
-        "location":"II 336",
-        "slot":"A"
-    },
-    "HUL371":{
-        "location":"LH 602",
-        "slot":"A"
-    },
-    "MCL331":{
-        "location":"LH 526",
-        "slot":"A"
-    },
-    "MCL733":{
-        "location":"LH 619",
-        "slot":"A"
-    },
-    "MSL303":{
-        "location":"LH 527",
-        "slot":"A"
-    },
-    "MTL509":{
-        "location":"MZ 163",
-        "slot":"A"
-    },
-    "PYL100":{
-        "location":"LH 121",
-        "slot":"A"
-    },
-    "PYL112":{
-        "location":"LH 325",
-        "slot":"A"
-    },
-    "TXL725":{
-        "location":"LH 621",
-        "slot":"A"
-    },
-    "APL100":{
-        "location":"LH 114",
-        "slot":"AM"
-    },
-    "AML795":{
-        "location":"LH 620",
-        "slot":"B"
-    },
-    "APL763":{
-        "location":"LH 622",
-        "slot":"B"
-    },
-    "APL871":{
-        "location":"LH 521",
-        "slot":"B"
-    },
-    "ASL754":{
-        "location":"LH 602",
-        "slot":"B"
-    },
-    "BBL341":{
-        "location":"LH 517",
-        "slot":"B"
-    },
-    "BBL443":{
-        "location":"LH 606",
-        "slot":"B"
-    },
-    "BBL736":{
-        "location":"LH 611",
-        "slot":"B"
-    },
-    "CLL251":{
-        "location":"LH 108",
-        "slot":"B"
-    },
-    "CLL352":{
-        "location":"LH 308",
-        "slot":"B"
-    },
-    "CLL475":{
-        "location":"LH 519",
-        "slot":"B"
-    },
-    "CLL722":{
-        "location":"LH 613",
-        "slot":"B"
-    },
-    "CLL735":{
-        "location":"LH 520",
-        "slot":"B"
-    },
-    "CLL767":{
-        "location":"LH 615",
-        "slot":"B"
-    },
-    "CML525":{
-        "location":"LH 619",
-        "slot":"B"
-    },
-    "CML801":{
-        "location":"LH 621",
-        "slot":"B"
-    },
-    "COL216":{
-        "location":"LH 310",
-        "slot":"B"
-    },
-    "COL718":{
-        "location":"IIA 305",
-        "slot":"B"
-    },
-    "CRL724":{
-        "location":"LH 605",
-        "slot":"B"
-    },
-    "CVL212":{
-        "location":"LH 316",
-        "slot":"B"
-    },
-    "CVL261":{
-        "location":"LH 318",
-        "slot":"B"
-    },
-    "CVL703":{
-        "location":"LH 623",
-        "slot":"B"
-    },
-    "CVL724":{
-        "location":"VI LT 1",
-        "slot":"B"
-    },
-    "CVL761":{
-        "location":"VI 402",
-        "slot":"B"
-    },
-    "CVL775":{
-        "location":"VI 404",
-        "slot":"B"
-    },
-    "EEL768":{
-        "location":"IIA 106",
-        "slot":"B"
-    },
-    "ELL719":{
-        "location":"IIA 106",
-        "slot":"B"
-    },
-    "ELL201":{
-        "location":"LH 121",
-        "slot":"B"
-    },
-    "ELL332":{
-        "location":"LH 408",
-        "slot":"B"
-    },
-    "ELL752":{
-        "location":"IIA 201",
-        "slot":"B"
-    },
-    "ESL330":{
-        "location":"LH 410",
-        "slot":"B"
-    },
-    "ESL350":{
-        "location":"LH 416",
-        "slot":"B"
-    },
-    "ESL360":{
-        "location":"LH 418",
-        "slot":"B"
-    },
-    "ESL710":{
-        "location":"VI 301",
-        "slot":"B"
-    },
-    "HUL707":{
-        "location":"II 336",
-        "slot":"B"
-    },
-    "HUL737":{
-        "location":"II 337",
-        "slot":"B"
-    },
-    "HUL756":{
-        "location":"III 342",
-        "slot":"B"
-    },
-    "HUL766":{
-        "location":"III 336",
-        "slot":"B"
-    },
-    "ITL714":{
-        "location":"LH 612",
-        "slot":"B"
-    },
-    "MAL390":{
-        "location":"LH 510",
-        "slot":"B"
-    },
-    "MTL390":{
-        "location":"LH 510",
-        "slot":"B"
-    },
-    "MCL212":{
-        "location":"LH 512",
-        "slot":"B"
-    },
-    "MCL241":{
-        "location":"LH 526",
-        "slot":"B"
-    },
-    "MCL730":{
-        "location":"III 339",
-        "slot":"B"
-    },
-    "MCL738":{
-        "location":"IV 339",
-        "slot":"B"
-    },
-    "MCL782":{
-        "location":"IV 323",
-        "slot":"B"
-    },
-    "MTL507":{
-        "location":"MZ 163",
-        "slot":"B"
-    },
-    "PTL702":{
-        "location":"LH 614",
-        "slot":"B"
-    },
-    "PYL321":{
-        "location":"LH 527",
-        "slot":"B"
-    },
-    "PYL552":{
-        "location":"V 417",
-        "slot":"B"
-    },
-    "PYL800":{
-        "location":"V 418",
-        "slot":"B"
-    },
-    "RDL740":{
-        "location":"WS 101",
-        "slot":"B"
-    },
-    "SBL705":{
-        "location":"V 344",
-        "slot":"B"
-    },
-    "SIL765":{
-        "location":"IIA 101",
-        "slot":"B"
-    },
-    "TXL231":{
-        "location":"TX 120",
-        "slot":"B"
-    },
-    "TXL743":{
-        "location":"LH 604",
-        "slot":"B"
-    },
-    "TXL766":{
-        "location":"LH603",
-        "slot":"B"
-    },
-    "MCP101":{
-        "location":"LH325",
-        "slot":"B1"
-    },
-    "MCP100":{
-        "location":"II 378",
-        "slot":"PAL"
-    },
-    "COL100":{
-        "location":"LH114",
-        "slot":"BM"
-    },
-    "AML793":{
-        "location":"LH 604",
-        "slot":"C"
-    },
-    "APL796":{
-        "location":"LH 521",
-        "slot":"C"
-    },
-    "BML800":{
-        "location":"LH 606",
-        "slot":"C"
-    },
-    "CML100":{
-        "location":"LH 111",
-        "slot":"EP"
-    },
-    "CML526":{
-        "location":"LH 619",
-        "slot":"C"
-    },
-    "CML729":{
-        "location":"LH 621",
-        "slot":"C"
-    },
-    "COL380":{
-        "location":"LH 308",
-        "slot":"C"
-    },
-    "COL756":{
-        "location":"IIA 305",
-        "slot":"C"
-    },
-    "COL812":{
-        "location":"LH 518",
-        "slot":"C"
-    },
-    "CRL722":{
-        "location":"LH 517",
-        "slot":"C"
-    },
-    "CVL100":{
-        "location":"LH 325",
-        "slot":"C"
-    },
-    "CVL244":{
-        "location":"LH 310",
-        "slot":"C"
-    },
-    "CVL762":{
-        "location":"LH 611",
-        "slot":"C"
-    },
-    "CVL875":{
-        "location":"LH 605",
-        "slot":"C"
-    },
-    "ELL718":{
-        "location":"LH 620",
-        "slot":"C"
-    },
-    "ELL730":{
-        "location":"IIA 201",
-        "slot":"C"
-    },
-    "ELL784":{
-        "location":"IIA 106",
-        "slot":"C"
-    },
-    "MCL705":{
-        "location":"III 339",
-        "slot":"C"
-    },
-    "MCL741":{
-        "location":"IV 339",
-        "slot":"C"
-    },
-    "MSL720":{
-        "location":"LH 408",
-        "slot":"C"
-    },
-    "MTL795":{
-        "location":"MZ 163",
-        "slot":"C"
-    },
-    "PYL302":{
-        "location":"LH 316",
-        "slot":"C"
-    },
-    "PYL558":{
-        "location":"LH 410",
-        "slot":"C"
-    },
-    "PYL727":{
-        "location":"V 417",
-        "slot":"C"
-    },
-    "PYL754":{
-        "location":"V 418",
-        "slot":"C"
-    },
-    "SBL100":{
-        "location":"LH 121",
-        "slot":"C"
-    },
-    "TXL371":{
-        "location":"LH 318",
-        "slot":"C"
-    },
-    "ASL736":{
-        "location":"LH 615",
-        "slot":"D"
-    },
-    "BBL433":{
-        "location":"LH 611",
-        "slot":"D"
-    },
-    "BBL740":{
-        "location":"LH 619",
-        "slot":"D"
-    },
-    "BBL742":{
-        "location":"LH 517",
-        "slot":"D"
-    },
-    "CLL122":{
-        "location":"LH 121",
-        "slot":"D"
-    },
-    "CLL271":{
-        "location":"LH 310",
-        "slot":"D"
-    },
-    "CLL733":{
-        "location":"VI 301",
-        "slot":"D"
-    },
-    "CML523":{
-        "location":"LH 621",
-        "slot":"D"
-    },
-    "CML665":{
-        "location":"LH 519",
-        "slot":"D"
-    },
-    "COL757":{
-        "location":"LH 518",
-        "slot":"D"
-    },
-    "COL758":{
-        "location":"IIA 106",
-        "slot":"D"
-    },
-    "CRL704":{
-        "location":"LH 603",
-        "slot":"D"
-    },
-    "CVL242":{
-        "location":"LH 316",
-        "slot":"D"
-    },
-    "CVL342":{
-        "location":"LH 318",
-        "slot":"D"
-    },
-    "CVL713":{
-        "location":"LH 623",
-        "slot":"D"
-    },
-    "CVL734":{
-        "location":"LH 521",
-        "slot":"D"
-    },
-    "CVL769":{
-        "location":"IV 339",
-        "slot":"D"
-    },
-    "CVL776":{
-        "location":"VI 404",
-        "slot":"D"
-    },
-    "CVL825":{
-        "location":"LH 605",
-        "slot":"D"
-    },
-    "CVL861":{
-        "location":"LH 602",
-        "slot":"D"
-    },
-    "ELL205":{
-        "location":"LH 408",
-        "slot":"D"
-    },
-    "ELL301":{
-        "location":"LH 604",
-        "slot":"D"
-    },
-    "ELL802":{
-        "location":"IIA 201",
-        "slot":"D"
-    },
-    "ESL734":{
-        "location":"LH 520",
-        "slot":"D"
-    },
-    "MCL142":{
-        "location":"LH 410",
-        "slot":"D"
-    },
-    "MCL361":{
-        "location":"LH 416",
-        "slot":"D"
-    },
-    "MCL421":{
-        "location":"LH 418",
-        "slot":"D"
-    },
-    "MCL736":{
-        "location":"LH 418",
-        "slot":"D"
-    },
-    "MCL825":{
-        "location":"LH 606",
-        "slot":"D"
-    },
-    "MTL100":{
-        "location":"LH 114",
-        "slot":"DM"
-    },
-    "MTL103":{
-        "location":"LH 308",
-        "slot":"D"
-    },
-    "MTL106":{
-        "location":"LH 111",
-        "slot":"D"
-    },
-    "MTL108":{
-        "location":"LH 510",
-        "slot":"D"
-    },
-    "MTL510":{
-        "location":"MZ 163",
-        "slot":"D"
-    },
-    "PYL116":{
-        "location":"LH 512",
-        "slot":"D"
-    },
-    "PYL563":{
-        "location":"V 417",
-        "slot":"D"
-    },
-    "PYL704":{
-        "location":"III 336",
-        "slot":"D"
-    },
-    "PYL752":{
-        "location":"LH 613",
-        "slot":"D"
-    },
-    "SBL703":{
-        "location":"V 344",
-        "slot":"D"
-    },
-    "TXL211":{
-        "location":"LH 526",
-        "slot":"D"
-    },
-    "TXL361":{
-        "location":"LH 527",
-        "slot":"D"
-    },
-    "TXL715":{
-        "location":"TX 120",
-        "slot":"D"
-    },
-    "TXL775":{
-        "location":"VI 402",
-        "slot":"D"
-    },
-    "MTL101":{
-        "location":"LH 111",
-        "slot":"DP"
-    },
-    "AML702":{
-        "location":"LH 604",
-        "slot":"E"
-    },
-    "APL102":{
-        "location":"LH 108",
-        "slot":"E"
-    },
-    "ASL733":{
-        "location":"II 336",
-        "slot":"E"
-    },
-    "ASL737":{
-        "location":"LH 518",
-        "slot":"E"
-    },
-    "ASL757":{
-        "location":"LH 602",
-        "slot":"E"
-    },
-    "BBL747":{
-        "location":"LH 606",
-        "slot":"E"
-    },
-    "CHL727":{
-        "location":"VI 301",
-        "slot":"E"
-    },
-    "CLL727":{
-        "location":"VI 301",
-        "slot":"E"
-    },
-    "CLL371":{
-        "location":"LH 308",
-        "slot":"E"
-    },
-    "CLL772":{
-        "location":"LH 520",
-        "slot":"E"
-    },
-    "CLL782":{
-        "location":"LH 603",
-        "slot":"E"
-    },
-    "CLL786":{
-        "location":"LH 613",
-        "slot":"E"
-    },
-    "CML524":{
-        "location":"LH 619",
-        "slot":"E"
-    },
-    "CML737":{
-        "location":"LH 621",
-        "slot":"E"
-    },
-    "COL331":{
-        "location":"LH 121",
-        "slot":"E"
-    },
-    "COL633":{
-        "location":"LH 121",
-        "slot":"E"
-    },
-    "CRL702":{
-        "location":"LH 521",
-        "slot":"E"
-    },
-    "CVL281":{
-        "location":"LH 316",
-        "slot":"E"
-    },
-    "CVL381":{
-        "location":"VI LT 1",
-        "slot":"E"
-    },
-    "CVL706":{
-        "location":"LH 605",
-        "slot":"E"
-    },
-    "CVL712":{
-        "location":"LH 612",
-        "slot":"E"
-    },
-    "CVL721":{
-        "location":"LH 512",
-        "slot":"E"
-    },
-    "CVL760":{
-        "location":"III 342",
-        "slot":"E"
-    },
-    "CVL774":{
-        "location":"VI 404",
-        "slot":"E"
-    },
-    "DSL712":{
-        "location":"LH 615",
-        "slot":"E"
-    },
-    "ELL100":{
-        "location":"LH 318",
-        "slot":"E"
-    },
-    "ELL212":{
-        "location":"IIA 101",
-        "slot":"E"
-    },
-    "ELL231":{
-        "location":"LH 517",
-        "slot":"E"
-    },
-    "ELL316":{
-        "location":"LH 410",
-        "slot":"E"
-    },
-    "ELL400":{
-        "location":"LH 519",
-        "slot":"E"
-    },
-    "ELL776":{
-        "location":"LH 614",
-        "slot":"E"
-    },
-    "ELL786":{
-        "location":"IIA 106",
-        "slot":"E"
-    },
-    "ESL720":{
-        "location":"VI 402",
-        "slot":"E"
-    },
-    "MCL201":{
-        "location":"LH 416",
-        "slot":"E"
-    },
-    "MCL311":{
-        "location":"LH 114",
-        "slot":"E"
-    },
-    "MCL745":{
-        "location":"LH 611",
-        "slot":"E"
-    },
-    "MCL754":{
-        "location":"IV 323",
-        "slot":"E"
-    },
-    "MCL786":{
-        "location":"III 339",
-        "slot":"E"
-    },
-    "MCL823":{
-        "location":"LH 620",
-        "slot":"E"
-    },
-    "MTL102":{
-        "location":"LH 325",
-        "slot":"E"
-    },
-    "MTL506":{
-        "location":"MZ 163",
-        "slot":"E"
-    },
-    "PYL114":{
-        "location":"LH 418",
-        "slot":"E"
-    },
-    "PYL560":{
-        "location":"V 417",
-        "slot":"E"
-    },
-    "PYL705":{
-        "location":"V 418",
-        "slot":"E"
-    },
-    "PYL760":{
-        "location":"III 336",
-        "slot":"E"
-    },
-    "PYL792":{
-        "location":"LH 527",
-        "slot":"E"
-    },
-    "SBL704":{
-        "location":"LH 623",
-        "slot":"E"
-    },
-    "TXL221":{
-        "location":"LH 510",
-        "slot":"E"
-    },
-    "TXL740":{
-        "location":"TX 120",
-        "slot":"E"
-    },
-    "TXL783":{
-        "location":"II 337",
-        "slot":"E"
-    },
-    "ASL410":{
-        "location":"LH 308",
-        "slot":"F"
-    },
-    "ASL755":{
-        "location":"LH 602",
-        "slot":"F"
-    },
-    "BBL434":{
-        "location":"LH 606",
-        "slot":"F"
-    },
-    "BBL746":{
-        "location":"LH 611",
-        "slot":"F"
-    },
-    "BBL749":{
-        "location":"LH 619",
-        "slot":"F"
-    },
-    "CLL231":{
-        "location":"LH 108",
-        "slot":"F"
-    },
-    "CLL771":{
-        "location":"LH 613",
-        "slot":"F"
-    },
-    "CLL793":{
-        "location":"LH 615",
-        "slot":"F"
-    },
-    "CML521":{
-        "location":"LH 621",
-        "slot":"F"
-    },
-    "CML738":{
-        "location":"LH 521",
-        "slot":"F"
-    },
-    "COL106":{
-        "location":"LH 111",
-        "slot":"F"
-    },
-    "COL226":{
-        "location":"LH 114",
-        "slot":"F"
-    },
-    "COL774":{
-        "location":"LH 526",
-        "slot":"F"
-    },
-    "CVL222":{
-        "location":"LH 310",
-        "slot":"F"
-    },
-    "CVL313":{
-        "location":"LH 517",
-        "slot":"F"
-    },
-    "CVL705":{
-        "location":"LH 623",
-        "slot":"F"
-    },
-    "CVL714":{
-        "location":"III 342",
-        "slot":"F"
-    },
-    "CVL723":{
-        "location":"VI 402",
-        "slot":"F"
-    },
-    "CVL778":{
-        "location":"LH 605",
-        "slot":"F"
-    },
-    "CVL830":{
-        "location":"LH 612",
-        "slot":"F"
-    },
-    "DSL811":{
-        "location":"LH 518",
-        "slot":"F"
-    },
-    "DSR862":{
-        "location":"LH 520",
-        "slot":"F"
-    },
-    "ELL225":{
-        "location":"LH 316",
-        "slot":"F"
-    },
-    "ELL303":{
-        "location":"LH 318",
-        "slot":"F"
-    },
-    "ELL703":{
-        "location":"IIA 201",
-        "slot":"F"
-    },
-    "ELL715":{
-        "location":"LH 527",
-        "slot":"F"
-    },
-    "ELL723":{
-        "location":"IIA 106",
-        "slot":"F"
-    },
-    "ELL769":{
-        "location":"IIA 101",
-        "slot":"F"
-    },
-    "ELL778":{
-        "location":"LH 603",
-        "slot":"F"
-    },
-    "ELL855":{
-        "location":"LH 620",
-        "slot":"F"
-    },
-    "ESL746":{
-        "location":"LH 622",
-        "slot":"F"
-    },
-    "ESL755":{
-        "location":"II 336",
-        "slot":"F"
-    },
-    "ITL711":{
-        "location":"V 344",
-        "slot":"F"
-    },
-    "MCL131":{
-        "location":"LH 408",
-        "slot":"F"
-    },
-    "MCL133":{
-        "location":"LH 510",
-        "slot":"F"
-    },
-    "MCL321":{
-        "location":"LH 410",
-        "slot":"F"
-    },
-    "MCL345":{
-        "location":"III 339",
-        "slot":"F"
-    },
-    "MCL743":{
-        "location":"IV 339",
-        "slot":"F"
-    },
-    "MCL784":{
-        "location":"IV 323",
-        "slot":"F"
-    },
-    "MCL814":{
-        "location":"LH 325",
-        "slot":"F"
-    },
-    "MCL865":{
-        "location":"LH 604",
-        "slot":"F"
-    },
-    "MTL122":{
-        "location":"LH 416",
-        "slot":"F"
-    },
-    "MTL732":{
-        "location":"WS 101",
-        "slot":"F"
-    },
-    "MTL743":{
-        "location":"MZ 163",
-        "slot":"F"
-    },
-    "MTL766":{
-        "location":"II 337",
-        "slot":"F"
-    },
-    "PTL716":{
-        "location":"IV 254",
-        "slot":"F"
-    },
-    "PYL202":{
-        "location":"LH 418",
-        "slot":"F"
-    },
-    "PYL651":{
-        "location":"V 418",
-        "slot":"F"
-    },
-    "PYL747":{
-        "location":"V 417",
-        "slot":"F"
-    },
-    "RDL722":{
-        "location":"LH 121",
-        "slot":"F"
-    },
-    "SBL201":{
-        "location":"LH 519",
-        "slot":"F"
-    },
-    "TXL241":{
-        "location":"LH 512",
-        "slot":"F"
-    },
-    "TXL742":{
-        "location":"VI 404",
-        "slot":"F"
-    },
-    "TXL782":{
-        "location":"TX 120",
-        "slot":"F"
-    },
-    "AML706":{
-        "location":"LH 518",
-        "slot":"H"
-    },
-    "APL705":{
-        "location":"LH 410",
-        "slot":"H"
-    },
-    "ASL734":{
-        "location":"II 336",
-        "slot":"H"
-    },
-    "ASL738":{
-        "location":"LH 615",
-        "slot":"H"
-    },
-    "BBL432":{
-        "location":"LH 416",
-        "slot":"H"
-    },
-    "BBL745":{
-        "location":"LH 606",
-        "slot":"H"
-    },
-    "CLL766":{
-        "location":"LH 613",
-        "slot":"H"
-    },
-    "CLL779":{
-        "location":"LH 611",
-        "slot":"H"
-    },
-    "CLL785":{
-        "location":"VI 301",
-        "slot":"H"
-    },
-    "CML724":{
-        "location":"LH 619",
-        "slot":"H"
-    },
-    "COL352":{
-        "location":"LH 526",
-        "slot":"H"
-    },
-    "COL740":{
-        "location":"LH 111",
-        "slot":"H"
-    },
-    "COL786":{
-        "location":"IIA 106",
-        "slot":"H"
-    },
-    "COL863":{
-        "location":"LH 520",
-        "slot":"H"
-    },
-    "CVL382":{
-        "location":"LH 517",
-        "slot":"H"
-    },
-    "CVL443":{
-        "location":"LH 519",
-        "slot":"H"
-    },
-    "CVL702":{
-        "location":"LH 623",
-        "slot":"H"
-    },
-    "CVL811":{
-        "location":"LH 605",
-        "slot":"H"
-    },
-    "CVL838":{
-        "location":"LH 612",
-        "slot":"H"
-    },
-    "DSL734":{
-        "location":"LH 621",
-        "slot":"H"
-    },
-    "DSL782":{
-        "location":"LH 603",
-        "slot":"H"
-    },
-    "ELL411":{
-        "location":"LH 308",
-        "slot":"H"
-    },
-    "ELL720":{
-        "location":"LH 527",
-        "slot":"H"
-    },
-    "ELL774":{
-        "location":"VI 402",
-        "slot":"H"
-    },
-    "ELL814":{
-        "location":"IIA 201",
-        "slot":"H"
-    },
-    "ESL732":{
-        "location":"LH 622",
-        "slot":"H"
-    },
-    "ESL871":{
-        "location":"LH 614",
-        "slot":"H"
-    },
-    "HUL231":{
-        "location":"LH 316",
-        "slot":"H"
-    },
-    "HUL242":{
-        "location":"LH 310",
-        "slot":"M"
-    },
-    "HUL380":{
-        "location":"LH 521",
-        "slot":"H"
-    },
-    "ITL709":{
-        "location":"VI 404",
-        "slot":"H"
-    },
-    "MCL132":{
-        "location":"LH 408",
-        "slot":"H"
-    },
-    "MCL136":{
-        "location":"LH 602",
-        "slot":"H"
-    },
-    "MCL347":{
-        "location":"LH 604",
-        "slot":"H"
-    },
-    "MCL748":{
-        "location":"LH 620",
-        "slot":"H"
-    },
-    "MCL771":{
-        "location":"III 339",
-        "slot":"H"
-    },
-    "MCL826":{
-        "location":"IV 339",
-        "slot":"H"
-    },
-    "MTL776":{
-        "location":"LH 418",
-        "slot":"H"
-    },
-    "PYL102":{
-        "location":"LH 108",
-        "slot":"H"
-    },
-    "PYL556":{
-        "location":"LH 510",
-        "slot":"H"
-    },
-    "PYL650":{
-        "location":"III 342",
-        "slot":"H"
-    },
-    "PYL725":{
-        "location":"V 417",
-        "slot":"H"
-    },
-    "PYL746":{
-        "location":"V 418",
-        "slot":"H"
-    },
-    "PYL761":{
-        "location":"IV 323",
-        "slot":"H"
-    },
-    "PYL892":{
-        "location":"III 336",
-        "slot":"H"
-    },
-    "RDL701":{
-        "location":"LH 512",
-        "slot":"H"
-    },
-    "TXL773":{
-        "location":"II 337",
-        "slot":"H"
-    },
-    "TXL777":{
-        "location":"TX 120",
-        "slot":"H"
-    },
-    "AMP776":{
-        "location":"LH 621",
-        "slot":"J"
-    },
-    "APL774":{
-        "location":"LH 615",
-        "slot":"J"
-    },
-    "ASL763":{
-        "location":"LH 619",
-        "slot":"J"
-    },
-    "BBL343":{
-        "location":"LH 308",
-        "slot":"J"
-    },
-    "BBL431":{
-        "location":"LH 310",
-        "slot":"J"
-    },
-    "BBL445":{
-        "location":"LH 510",
-        "slot":"J"
-    },
-    "BML750":{
-        "location":"LH 518",
-        "slot":"J"
-    },
-    "BML820":{
-        "location":"VI 404",
-        "slot":"J"
-    },
-    "COL726":{
-        "location":"LH 527",
-        "slot":"J"
-    },
-    "COL829":{
-        "location":"LH 603",
-        "slot":"J"
-    },
-    "CRL706":{
-        "location":"LH 605",
-        "slot":"J"
-    },
-    "CVL431":{
-        "location":"LH 316",
-        "slot":"J"
-    },
-    "CVL482":{
-        "location":"LH 612",
-        "slot":"J"
-    },
-    "CVL735":{
-        "location":"III 342",
-        "slot":"J"
-    },
-    "CVL859":{
-        "location":"LH 614",
-        "slot":"J"
-    },
-    "CVL864":{
-        "location":"LH 623",
-        "slot":"J"
-    },
-    "DSL714":{
-        "location":"LH 620",
-        "slot":"J"
-    },
-    "DSL732":{
-        "location":"LH 622",
-        "slot":"J"
-    },
-    "EEL861":{
-        "location":"IIA 106",
-        "slot":"J"
-    },
-    "ELL821":{
-        "location":"IIA 106",
-        "slot":"J"
-    },
-    "ELL365":{
-        "location":"LH 108",
-        "slot":"J"
-    },
-    "ELL409":{
-        "location":"LH 517",
-        "slot":"J"
-    },
-    "ELL705":{
-        "location":"IIA 201",
-        "slot":"J"
-    },
-    "ELL817":{
-        "location":"IIA 305",
-        "slot":"J"
-    },
-    "ESL300":{
-        "location":"LH 318",
-        "slot":"J"
-    },
-    "ESL340":{
-        "location":"LH 408",
-        "slot":"J"
-    },
-    "HUL307":{
-        "location":"LH 519",
-        "slot":"J"
-    },
-    "HUL360":{
-        "location":"LH 521",
-        "slot":"J"
-    },
-    "HUL362":{
-        "location":"LH 602",
-        "slot":"J"
-    },
-    "HUL372":{
-        "location":"LH 604",
-        "slot":"J"
-    },
-    "HUL375":{
-        "location":"LH 606",
-        "slot":"J"
-    },
-    "HUL381":{
-        "location":"LH 611",
-        "slot":"J"
-    },
-    "ITL702":{
-        "location":"V 344",
-        "slot":"J"
-    },
-    "MAL245":{
-        "location":"LH 410",
-        "slot":"J"
-    },
-    "MTL411":{
-        "location":"LH 410",
-        "slot":"J"
-    },
-    "MCL343":{
-        "location":"LH 613",
-        "slot":"J"
-    },
-    "MCL747":{
-        "location":"III 339",
-        "slot":"J"
-    },
-    "MTL508":{
-        "location":"MZ 163",
-        "slot":"J"
-    },
-    "PTL709":{
-        "location":"IV 339",
-        "slot":"J"
-    },
-    "PYL204":{
-        "location":"LH 416",
-        "slot":"J"
-    },
-    "PYL707":{
-        "location":"LH 512",
-        "slot":"J"
-    },
-    "PYL772":{
-        "location":"IV 323",
-        "slot":"J"
-    },
-    "RDL700":{
-        "location":"TX 120",
-        "slot":"J"
-    },
-    "RDL760":{
-        "location":"VI LT 1",
-        "slot":"J"
-    },
-    "TXL372":{
-        "location":"LH 418",
-        "slot":"J"
-    },
-    "TXL771":{
-        "location":"LH 121",
-        "slot":"J"
-    },
-    "APL711":{
-        "location":"LH 521",
-        "slot":"K"
-    },
-    "ASL760":{
-        "location":"LH 602",
-        "slot":"K"
-    },
-    "BML741":{
-        "location":"LH 606",
-        "slot":"K"
-    },
-    "CML695":{
-        "location":"LH 310",
-        "slot":"K"
-    },
-    "CML739":{
-        "location":"LH 310",
-        "slot":"K"
-    },
-    "COL781":{
-        "location":"LH 526",
-        "slot":"K"
-    },
-    "COL819":{
-        "location":"IIA 106",
-        "slot":"K"
-    },
-    "CVL746":{
-        "location":"LH 611",
-        "slot":"K"
-    },
-    "HUL843":{
-        "location":"II 336",
-        "slot":"K"
-    },
-    "MTL145":{
-        "location":"LH 308",
-        "slot":"K"
-    },
-    "MTL792":{
-        "location":"LH 604",
-        "slot":"K"
-    },
-    "PYL726":{
-        "location":"VI 404",
-        "slot":"K"
-    },
-    "PYL741":{
-        "location":"LH 410",
-        "slot":"K"
-    },
-    "CML675":{
-        "location":"LH 310",
-        "slot":"L"
-    },
-    "CML740":{
-        "location":"LH 310",
-        "slot":"L"
-    },
-    "COL867":{
-        "location":"IIA 305",
-        "slot":"L"
-    },
-    "COL869":{
-        "location":"IIA 106",
-        "slot":"L"
-    },
-    "CVL844":{
-        "location":"LH 605",
-        "slot":"L"
-    },
-    "PYL758":{
-        "location":"VI 404",
-        "slot":"L"
-    },
-    "APL720":{
-        "location":"LH 615",
-        "slot":"M"
-    },
-    "BML735":{
-        "location":"LH 518",
-        "slot":"M"
-    },
-    "CVL422":{
-        "location":"LH 512",
-        "slot":"M"
-    },
-    "CVL845":{
-        "location":"LH 606",
-        "slot":"M"
-    },
-    "CVL849":{
-        "location":"LH 605",
-        "slot":"M"
-    },
-    "ELL726":{
-        "location":"IIA 201",
-        "slot":"M"
-    },
-    "ELL800":{
-        "location":"IV 323",
-        "slot":"M"
-    },
-    "ELL850":{
-        "location":"IIA 305",
-        "slot":"M"
-    },
-    "ELL870":{
-        "location":"LH 603",
-        "slot":"M"
-    },
-    "ELL881":{
-        "location":"LH 602",
-        "slot":"M"
-    },
-    "ELL894":{
-        "location":"IIA 106",
-        "slot":"M"
-    },
-    "ESL714":{
-        "location":"LH 604",
-        "slot":"M"
-    },
-    "ESL718":{
-        "location":"VI 402",
-        "slot":"M"
-    },
-    "ESL880":{
-        "location":"LH 520",
-        "slot":"M"
-    },
-    "HUL234":{
-        "location":"LH 308",
-        "slot":"M"
-    },
-    "HUL253":{
-        "location":"LH 416",
-        "slot":"M"
-    },
-    "HUL271":{
-        "location":"LH 316",
-        "slot":"M"
-    },
-    "HUL272":{
-        "location":"LH 318",
-        "slot":"M"
-    },
-    "HUL275":{
-        "location":"LH 408",
-        "slot":"M"
-    },
-    "HUL315":{
-        "location":"LH 517",
-        "slot":"M"
-    },
-    "HUL335":{
-        "location":"LH 519",
-        "slot":"M"
-    },
-    "HUL356":{
-        "location":"LH 521",
-        "slot":"M"
-    },
-    "HUL736":{
-        "location":"II 336",
-        "slot":"M"
-    },
-    "HUL810":{
-        "location":"LH 527",
-        "slot":"M"
-    },
-    "MSL301":{
-        "location":"LH 410",
-        "slot":"M"
-    },
-    "MTL737":{
-        "location":"V 417",
-        "slot":"M"
-    },
-    "MTL782":{
-        "location":"LH 418",
-        "slot":"M"
-    },
-    "PTL706":{
-        "location":"IV 339",
-        "slot":"M"
-    },
-    "PYL742":{
-        "location":"LH 510",
-        "slot":"M"
-    },
-    "PYL770":{
-        "location":"VI 404",
-        "slot":"M"
-    },
-    "RDL726":{
-        "location":"LH 612",
-        "slot":"M"
-    },
-    "SBL701":{
-        "location":"V 344",
-        "slot":"M"
-    },
-    "VEL700":{
-        "location":"LH 611",
-        "slot":"M"
-    },
-    "NEN101":{
-        "location":"VI 429",
-        "slot":"PAL"
+    "AML300": {
+        "A": "LH 308"
+    },
+    "AML310": {
+        "A": "LH 308"
+    },
+    "APL380": {
+        "A": "LH 308"
+    },
+    "AML831": {
+        "A": "LH 604"
+    },
+    "AML832": {
+        "A": "LH 606"
+    },
+    "AML835": {
+        "A": "LH 518"
+    },
+    "APL105": {
+        "A": "LH 108"
+    },
+    "APL715": {
+        "A": "LH 520"
+    },
+    "APL767": {
+        "A": "LH 623"
+    },
+    "CLL121": {
+        "A": "LH 310"
+    },
+    "CLL731": {
+        "A": "LH 316"
+    },
+    "CML522": {
+        "A": "LH 517"
+    },
+    "COL362": {
+        "A": "LH 318"
+    },
+    "COL632": {
+        "A": "LH 318"
+    },
+    "CRL712": {
+        "A": "LH 603"
+    },
+    "CRL732": {
+        "A": "LH 605"
+    },
+    "CVL715": {
+        "A": "VI 404"
+    },
+    "CVL728": {
+        "A": "IV 323"
+    },
+    "CVL833": {
+        "A": "LH 612"
+    },
+    "CVL847": {
+        "A": "LH 613"
+    },
+    "CVL871": {
+        "A": "LH 615"
+    },
+    "ELL717": {
+        "A": "IIA 106"
+    },
+    "ELL731": {
+        "A": "IIA 101"
+    },
+    "ELL783": {
+        "A": "VI 301"
+    },
+    "ESL730": {
+        "A": "VI 402"
+    },
+    "HUL211": {
+        "A": "LH 408",
+        "H": "LH 310"
+    },
+    "HUL212": {
+        "A": "LH 410"
+    },
+    "HUL236": {
+        "A": "LH 111"
+    },
+    "HUL256": {
+        "A": "LH 416"
+    },
+    "HUL258": {
+        "A": "LH 418"
+    },
+    "HUL261": {
+        "A": "LH 510"
+    },
+    "HUL265": {
+        "A": "LH 512"
+    },
+    "HUL320": {
+        "A": "LH 519"
+    },
+    "HUL350": {
+        "A": "LH 521"
+    },
+    "HUL364": {
+        "A": "II 336"
+    },
+    "HUL371": {
+        "A": "LH 602"
+    },
+    "MCL331": {
+        "A": "LH 526"
+    },
+    "MCL733": {
+        "A": "LH 619"
+    },
+    "MSL303": {
+        "A": "LH 527"
+    },
+    "MTL509": {
+        "A": "MZ 163"
+    },
+    "PYL100": {
+        "A": "LH 121"
+    },
+    "PYL112": {
+        "A": "LH 325"
+    },
+    "TXL725": {
+        "A": "LH 621"
+    },
+    "APL100": {
+        "AM": "LH 114"
+    },
+    "AML795": {
+        "B": "LH 620"
+    },
+    "APL763": {
+        "B": "LH 622"
+    },
+    "APL871": {
+        "B": "LH 521"
+    },
+    "ASL754": {
+        "B": "LH 602"
+    },
+    "BBL341": {
+        "B": "LH 517"
+    },
+    "BBL443": {
+        "B": "LH 606"
+    },
+    "BBL736": {
+        "B": "LH 611"
+    },
+    "CLL251": {
+        "B": "LH 108"
+    },
+    "CLL352": {
+        "B": "LH 308"
+    },
+    "CLL475": {
+        "B": "LH 519"
+    },
+    "CLL722": {
+        "B": "LH 613"
+    },
+    "CLL735": {
+        "B": "LH 520"
+    },
+    "CLL767": {
+        "B": "LH 615"
+    },
+    "CML525": {
+        "B": "LH 619"
+    },
+    "CML801": {
+        "B": "LH 621"
+    },
+    "COL216": {
+        "B": "LH 310"
+    },
+    "COL718": {
+        "B": "IIA 305"
+    },
+    "CRL724": {
+        "B": "LH 605"
+    },
+    "CVL212": {
+        "B": "LH 316"
+    },
+    "CVL261": {
+        "B": "LH 318"
+    },
+    "CVL703": {
+        "B": "LH 623"
+    },
+    "CVL724": {
+        "B": "VI LT 1"
+    },
+    "CVL761": {
+        "B": "VI 402"
+    },
+    "CVL775": {
+        "B": "VI 404"
+    },
+    "EEL768": {
+        "B": "IIA 106"
+    },
+    "ELL719": {
+        "B": "IIA 106"
+    },
+    "ELL201": {
+        "B": "LH 121"
+    },
+    "ELL332": {
+        "B": "LH 408"
+    },
+    "ELL752": {
+        "B": "IIA 201"
+    },
+    "ESL330": {
+        "B": "LH 410"
+    },
+    "ESL350": {
+        "B": "LH 416"
+    },
+    "ESL360": {
+        "B": "LH 418"
+    },
+    "ESL710": {
+        "B": "VI 301"
+    },
+    "HUL707": {
+        "B": "II 336"
+    },
+    "HUL737": {
+        "B": "II 337"
+    },
+    "HUL756": {
+        "B": "III 342"
+    },
+    "HUL766": {
+        "B": "III 336"
+    },
+    "ITL714": {
+        "B": "LH 612"
+    },
+    "MAL390": {
+        "B": "LH 510"
+    },
+    "MTL390": {
+        "B": "LH 510"
+    },
+    "MCL212": {
+        "B": "LH 512"
+    },
+    "MCL241": {
+        "B": "LH 526"
+    },
+    "MCL730": {
+        "B": "III 339"
+    },
+    "MCL738": {
+        "B": "IV 339"
+    },
+    "MCL782": {
+        "B": "IV 323"
+    },
+    "MTL507": {
+        "B": "MZ 163"
+    },
+    "PTL702": {
+        "B": "LH 614"
+    },
+    "PYL321": {
+        "B": "LH 527"
+    },
+    "PYL552": {
+        "B": "V 417"
+    },
+    "PYL800": {
+        "B": "V 418"
+    },
+    "RDL740": {
+        "B": "WS 101"
+    },
+    "SBL705": {
+        "B": "V 344"
+    },
+    "SIL765": {
+        "B": "IIA 101"
+    },
+    "TXL231": {
+        "B": "TX 120"
+    },
+    "TXL743": {
+        "B": "LH 604"
+    },
+    "TXL766": {
+        "B": "LH603"
+    },
+    "MCP101": {
+        "B1": "LH325"
+    },
+    "MCP100": {
+        "B2": "LH325",
+        "PAL": "II 378"
+    },
+    "COL100": {
+        "BM": "LH114"
+    },
+    "AML793": {
+        "C": "LH 604"
+    },
+    "APL796": {
+        "C": "LH 521"
+    },
+    "BML800": {
+        "C": "LH 606"
+    },
+    "CML100": {
+        "C": "LH 111",
+        "EP": "LH 111"
+    },
+    "CML526": {
+        "C": "LH 619"
+    },
+    "CML729": {
+        "C": "LH 621"
+    },
+    "COL380": {
+        "C": "LH 308"
+    },
+    "COL756": {
+        "C": "IIA 305"
+    },
+    "COL812": {
+        "C": "LH 518"
+    },
+    "CRL722": {
+        "C": "LH 517"
+    },
+    "CVL100": {
+        "C": "LH 325"
+    },
+    "CVL244": {
+        "C": "LH 310"
+    },
+    "CVL762": {
+        "C": "LH 611"
+    },
+    "CVL875": {
+        "C": "LH 605"
+    },
+    "ELL718": {
+        "C": "LH 620"
+    },
+    "ELL730": {
+        "C": "IIA 201"
+    },
+    "ELL784": {
+        "C": "IIA 106"
+    },
+    "MCL705": {
+        "C": "III 339"
+    },
+    "MCL741": {
+        "C": "IV 339"
+    },
+    "MSL720": {
+        "C": "LH 408"
+    },
+    "MTL795": {
+        "C": "MZ 163"
+    },
+    "PYL302": {
+        "C": "LH 316"
+    },
+    "PYL558": {
+        "C": "LH 410"
+    },
+    "PYL727": {
+        "C": "V 417"
+    },
+    "PYL754": {
+        "C": "V 418"
+    },
+    "SBL100": {
+        "C": "LH 121"
+    },
+    "TXL371": {
+        "C": "LH 318"
+    },
+    "ASL736": {
+        "D": "LH 615"
+    },
+    "BBL433": {
+        "D": "LH 611"
+    },
+    "BBL740": {
+        "D": "LH 619"
+    },
+    "BBL742": {
+        "D": "LH 517"
+    },
+    "CLL122": {
+        "D": "LH 121"
+    },
+    "CLL271": {
+        "D": "LH 310"
+    },
+    "CLL733": {
+        "D": "VI 301"
+    },
+    "CML523": {
+        "D": "LH 621"
+    },
+    "CML665": {
+        "D": "LH 519"
+    },
+    "COL757": {
+        "D": "LH 518"
+    },
+    "COL758": {
+        "D": "IIA 106"
+    },
+    "CRL704": {
+        "D": "LH 603"
+    },
+    "CVL242": {
+        "D": "LH 316"
+    },
+    "CVL342": {
+        "D": "LH 318"
+    },
+    "CVL713": {
+        "D": "LH 623"
+    },
+    "CVL734": {
+        "D": "LH 521"
+    },
+    "CVL769": {
+        "D": "IV 339"
+    },
+    "CVL776": {
+        "D": "VI 404"
+    },
+    "CVL825": {
+        "D": "LH 605"
+    },
+    "CVL861": {
+        "D": "LH 602"
+    },
+    "ELL205": {
+        "D": "LH 408"
+    },
+    "ELL301": {
+        "D": "LH 604"
+    },
+    "ELL802": {
+        "D": "IIA 201"
+    },
+    "ESL734": {
+        "D": "LH 520"
+    },
+    "MCL142": {
+        "D": "LH 410"
+    },
+    "MCL361": {
+        "D": "LH 416"
+    },
+    "MCL421": {
+        "D": "LH 418"
+    },
+    "MCL736": {
+        "D": "LH 418"
+    },
+    "MCL825": {
+        "D": "LH 606"
+    },
+    "MTL100": {
+        "D": "LH 108",
+        "DM": "LH 114"
+    },
+    "MTL103": {
+        "D": "LH 308"
+    },
+    "MTL106": {
+        "D": "LH 111"
+    },
+    "MTL108": {
+        "D": "LH 510"
+    },
+    "MTL510": {
+        "D": "MZ 163"
+    },
+    "PYL116": {
+        "D": "LH 512"
+    },
+    "PYL563": {
+        "D": "V 417"
+    },
+    "PYL704": {
+        "D": "III 336"
+    },
+    "PYL752": {
+        "D": "LH 613"
+    },
+    "SBL703": {
+        "D": "V 344"
+    },
+    "TXL211": {
+        "D": "LH 526"
+    },
+    "TXL361": {
+        "D": "LH 527"
+    },
+    "TXL715": {
+        "D": "TX 120"
+    },
+    "TXL775": {
+        "D": "VI 402"
+    },
+    "MTL101": {
+        "DP": "LH 111"
+    },
+    "AML702": {
+        "E": "LH 604"
+    },
+    "APL102": {
+        "E": "LH 108"
+    },
+    "ASL733": {
+        "E": "II 336"
+    },
+    "ASL737": {
+        "E": "LH 518"
+    },
+    "ASL757": {
+        "E": "LH 602"
+    },
+    "BBL747": {
+        "E": "LH 606"
+    },
+    "CHL727": {
+        "E": "VI 301"
+    },
+    "CLL727": {
+        "E": "VI 301"
+    },
+    "CLL371": {
+        "E": "LH 308"
+    },
+    "CLL772": {
+        "E": "LH 520"
+    },
+    "CLL782": {
+        "E": "LH 603"
+    },
+    "CLL786": {
+        "E": "LH 613"
+    },
+    "CML524": {
+        "E": "LH 619"
+    },
+    "CML737": {
+        "E": "LH 621"
+    },
+    "COL331": {
+        "E": "LH 121"
+    },
+    "COL633": {
+        "E": "LH 121"
+    },
+    "CRL702": {
+        "E": "LH 521"
+    },
+    "CVL281": {
+        "E": "LH 316"
+    },
+    "CVL381": {
+        "E": "VI LT 1"
+    },
+    "CVL706": {
+        "E": "LH 605"
+    },
+    "CVL712": {
+        "E": "LH 612"
+    },
+    "CVL721": {
+        "E": "LH 512"
+    },
+    "CVL760": {
+        "E": "III 342"
+    },
+    "CVL774": {
+        "E": "VI 404"
+    },
+    "DSL712": {
+        "E": "LH 615"
+    },
+    "ELL100": {
+        "E": "LH 318"
+    },
+    "ELL212": {
+        "E": "IIA 101"
+    },
+    "ELL231": {
+        "E": "LH 517"
+    },
+    "ELL316": {
+        "E": "LH 410"
+    },
+    "ELL400": {
+        "E": "LH 519"
+    },
+    "ELL776": {
+        "E": "LH 614"
+    },
+    "ELL786": {
+        "E": "IIA 106"
+    },
+    "ESL720": {
+        "E": "VI 402"
+    },
+    "MCL201": {
+        "E": "LH 416"
+    },
+    "MCL311": {
+        "E": "LH 114"
+    },
+    "MCL745": {
+        "E": "LH 611"
+    },
+    "MCL754": {
+        "E": "IV 323"
+    },
+    "MCL786": {
+        "E": "III 339"
+    },
+    "MCL823": {
+        "E": "LH 620"
+    },
+    "MTL102": {
+        "E": "LH 325"
+    },
+    "MTL506": {
+        "E": "MZ 163"
+    },
+    "PYL114": {
+        "E": "LH 418"
+    },
+    "PYL560": {
+        "E": "V 417"
+    },
+    "PYL705": {
+        "E": "V 418"
+    },
+    "PYL760": {
+        "E": "III 336"
+    },
+    "PYL792": {
+        "E": "LH 527"
+    },
+    "SBL704": {
+        "E": "LH 623"
+    },
+    "TXL221": {
+        "E": "LH 510"
+    },
+    "TXL740": {
+        "E": "TX 120"
+    },
+    "TXL783": {
+        "E": "II 337"
+    },
+    "ASL410": {
+        "F": "LH 308"
+    },
+    "ASL755": {
+        "F": "LH 602"
+    },
+    "BBL434": {
+        "F": "LH 606"
+    },
+    "BBL746": {
+        "F": "LH 611"
+    },
+    "BBL749": {
+        "F": "LH 619"
+    },
+    "CLL231": {
+        "F": "LH 108"
+    },
+    "CLL771": {
+        "F": "LH 613"
+    },
+    "CLL793": {
+        "F": "LH 615"
+    },
+    "CML521": {
+        "F": "LH 621"
+    },
+    "CML738": {
+        "F": "LH 521"
+    },
+    "COL106": {
+        "F": "LH 111"
+    },
+    "COL226": {
+        "F": "LH 114"
+    },
+    "COL774": {
+        "F": "LH 526"
+    },
+    "CVL222": {
+        "F": "LH 310"
+    },
+    "CVL313": {
+        "F": "LH 517"
+    },
+    "CVL705": {
+        "F": "LH 623"
+    },
+    "CVL714": {
+        "F": "III 342"
+    },
+    "CVL723": {
+        "F": "VI 402"
+    },
+    "CVL778": {
+        "F": "LH 605"
+    },
+    "CVL830": {
+        "F": "LH 612"
+    },
+    "DSL811": {
+        "F": "LH 518"
+    },
+    "DSR862": {
+        "F": "LH 520"
+    },
+    "ELL225": {
+        "F": "LH 316"
+    },
+    "ELL303": {
+        "F": "LH 318"
+    },
+    "ELL703": {
+        "F": "IIA 201"
+    },
+    "ELL715": {
+        "F": "LH 527"
+    },
+    "ELL723": {
+        "F": "IIA 106"
+    },
+    "ELL769": {
+        "F": "IIA 101"
+    },
+    "ELL778": {
+        "F": "LH 603"
+    },
+    "ELL855": {
+        "F": "LH 620"
+    },
+    "ESL746": {
+        "F": "LH 622"
+    },
+    "ESL755": {
+        "F": "II 336"
+    },
+    "ITL711": {
+        "F": "V 344"
+    },
+    "MCL131": {
+        "F": "LH 408"
+    },
+    "MCL133": {
+        "F": "LH 510"
+    },
+    "MCL321": {
+        "F": "LH 410"
+    },
+    "MCL345": {
+        "F": "III 339"
+    },
+    "MCL743": {
+        "F": "IV 339"
+    },
+    "MCL784": {
+        "F": "IV 323"
+    },
+    "MCL814": {
+        "F": "LH 325"
+    },
+    "MCL865": {
+        "F": "LH 604"
+    },
+    "MTL122": {
+        "F": "LH 416"
+    },
+    "MTL732": {
+        "F": "WS 101"
+    },
+    "MTL743": {
+        "F": "MZ 163"
+    },
+    "MTL766": {
+        "F": "II 337"
+    },
+    "PTL716": {
+        "F": "IV 254"
+    },
+    "PYL202": {
+        "F": "LH 418"
+    },
+    "PYL651": {
+        "F": "V 418"
+    },
+    "PYL747": {
+        "F": "V 417"
+    },
+    "RDL722": {
+        "F": "LH 121"
+    },
+    "SBL201": {
+        "F": "LH 519"
+    },
+    "TXL241": {
+        "F": "LH 512"
+    },
+    "TXL742": {
+        "F": "VI 404"
+    },
+    "TXL782": {
+        "F": "TX 120"
+    },
+    "AML706": {
+        "H": "LH 518"
+    },
+    "APL705": {
+        "H": "LH 410"
+    },
+    "ASL734": {
+        "H": "II 336"
+    },
+    "ASL738": {
+        "H": "LH 615"
+    },
+    "BBL432": {
+        "H": "LH 416"
+    },
+    "BBL745": {
+        "H": "LH 606"
+    },
+    "CLL766": {
+        "H": "LH 613"
+    },
+    "CLL779": {
+        "H": "LH 611"
+    },
+    "CLL785": {
+        "H": "VI 301"
+    },
+    "CML724": {
+        "H": "LH 619"
+    },
+    "COL352": {
+        "H": "LH 526"
+    },
+    "COL740": {
+        "H": "LH 111"
+    },
+    "COL786": {
+        "H": "IIA 106"
+    },
+    "COL863": {
+        "H": "LH 520"
+    },
+    "CVL382": {
+        "H": "LH 517"
+    },
+    "CVL443": {
+        "H": "LH 519"
+    },
+    "CVL702": {
+        "H": "LH 623"
+    },
+    "CVL811": {
+        "H": "LH 605"
+    },
+    "CVL838": {
+        "H": "LH 612"
+    },
+    "DSL734": {
+        "H": "LH 621"
+    },
+    "DSL782": {
+        "H": "LH 603"
+    },
+    "ELL411": {
+        "H": "LH 308"
+    },
+    "ELL720": {
+        "H": "LH 527"
+    },
+    "ELL774": {
+        "H": "VI 402"
+    },
+    "ELL814": {
+        "H": "IIA 201"
+    },
+    "ESL732": {
+        "H": "LH 622"
+    },
+    "ESL871": {
+        "H": "LH 614"
+    },
+    "HUL231": {
+        "H": "LH 316"
+    },
+    "HUL242": {
+        "H": "LH 318",
+        "M": "LH 310"
+    },
+    "HUL380": {
+        "H": "LH 521"
+    },
+    "ITL709": {
+        "H": "VI 404"
+    },
+    "MCL132": {
+        "H": "LH 408"
+    },
+    "MCL136": {
+        "H": "LH 602"
+    },
+    "MCL347": {
+        "H": "LH 604"
+    },
+    "MCL748": {
+        "H": "LH 620"
+    },
+    "MCL771": {
+        "H": "III 339"
+    },
+    "MCL826": {
+        "H": "IV 339"
+    },
+    "MTL776": {
+        "H": "LH 418"
+    },
+    "PYL102": {
+        "H": "LH 108"
+    },
+    "PYL556": {
+        "H": "LH 510"
+    },
+    "PYL650": {
+        "H": "III 342"
+    },
+    "PYL725": {
+        "H": "V 417"
+    },
+    "PYL746": {
+        "H": "V 418"
+    },
+    "PYL761": {
+        "H": "IV 323"
+    },
+    "PYL892": {
+        "H": "III 336"
+    },
+    "RDL701": {
+        "H": "LH 512"
+    },
+    "TXL773": {
+        "H": "II 337"
+    },
+    "TXL777": {
+        "H": "TX 120"
+    },
+    "AMP776": {
+        "J": "LH 621"
+    },
+    "APL774": {
+        "J": "LH 615"
+    },
+    "ASL763": {
+        "J": "LH 619"
+    },
+    "BBL343": {
+        "J": "LH 308"
+    },
+    "BBL431": {
+        "J": "LH 310"
+    },
+    "BBL445": {
+        "J": "LH 510"
+    },
+    "BML750": {
+        "J": "LH 518"
+    },
+    "BML820": {
+        "J": "VI 404"
+    },
+    "COL726": {
+        "J": "LH 527"
+    },
+    "COL829": {
+        "J": "LH 603"
+    },
+    "CRL706": {
+        "J": "LH 605"
+    },
+    "CVL431": {
+        "J": "LH 316"
+    },
+    "CVL482": {
+        "J": "LH 612"
+    },
+    "CVL735": {
+        "J": "III 342"
+    },
+    "CVL859": {
+        "J": "LH 614"
+    },
+    "CVL864": {
+        "J": "LH 623"
+    },
+    "DSL714": {
+        "J": "LH 620"
+    },
+    "DSL732": {
+        "J": "LH 622"
+    },
+    "EEL861": {
+        "J": "IIA 106"
+    },
+    "ELL821": {
+        "J": "IIA 106"
+    },
+    "ELL365": {
+        "J": "LH 108"
+    },
+    "ELL409": {
+        "J": "LH 517"
+    },
+    "ELL705": {
+        "J": "IIA 201"
+    },
+    "ELL817": {
+        "J": "IIA 305"
+    },
+    "ESL300": {
+        "J": "LH 318"
+    },
+    "ESL340": {
+        "J": "LH 408"
+    },
+    "HUL307": {
+        "J": "LH 519"
+    },
+    "HUL360": {
+        "J": "LH 521"
+    },
+    "HUL362": {
+        "J": "LH 602"
+    },
+    "HUL372": {
+        "J": "LH 604"
+    },
+    "HUL375": {
+        "J": "LH 606"
+    },
+    "HUL381": {
+        "J": "LH 611"
+    },
+    "ITL702": {
+        "J": "V 344"
+    },
+    "MAL245": {
+        "J": "LH 410"
+    },
+    "MTL411": {
+        "J": "LH 410"
+    },
+    "MCL343": {
+        "J": "LH 613"
+    },
+    "MCL747": {
+        "J": "III 339"
+    },
+    "MTL508": {
+        "J": "MZ 163"
+    },
+    "PTL709": {
+        "J": "IV 339"
+    },
+    "PYL204": {
+        "J": "LH 416"
+    },
+    "PYL707": {
+        "J": "LH 512"
+    },
+    "PYL772": {
+        "J": "IV 323"
+    },
+    "RDL700": {
+        "J": "TX 120"
+    },
+    "RDL760": {
+        "J": "VI LT 1"
+    },
+    "TXL372": {
+        "J": "LH 418"
+    },
+    "TXL771": {
+        "J": "LH 121"
+    },
+    "APL711": {
+        "K": "LH 521"
+    },
+    "ASL760": {
+        "K": "LH 602"
+    },
+    "BML741": {
+        "K": "LH 606"
+    },
+    "CML695": {
+        "K": "LH 310"
+    },
+    "CML739": {
+        "K": "LH 310"
+    },
+    "COL781": {
+        "K": "LH 526"
+    },
+    "COL819": {
+        "K": "IIA 106"
+    },
+    "CVL746": {
+        "K": "LH 611"
+    },
+    "HUL843": {
+        "K": "II 336"
+    },
+    "MTL145": {
+        "K": "LH 308"
+    },
+    "MTL792": {
+        "K": "LH 604"
+    },
+    "PYL726": {
+        "K": "VI 404"
+    },
+    "PYL741": {
+        "K": "LH 410"
+    },
+    "CML675": {
+        "L": "LH 310"
+    },
+    "CML740": {
+        "L": "LH 310"
+    },
+    "COL867": {
+        "L": "IIA 305"
+    },
+    "COL869": {
+        "L": "IIA 106"
+    },
+    "CVL844": {
+        "L": "LH 605"
+    },
+    "PYL758": {
+        "L": "VI 404"
+    },
+    "APL720": {
+        "M": "LH 615"
+    },
+    "BML735": {
+        "M": "LH 518"
+    },
+    "CVL422": {
+        "M": "LH 512"
+    },
+    "CVL845": {
+        "M": "LH 606"
+    },
+    "CVL849": {
+        "M": "LH 605"
+    },
+    "ELL726": {
+        "M": "IIA 201"
+    },
+    "ELL800": {
+        "M": "IV 323"
+    },
+    "ELL850": {
+        "M": "IIA 305"
+    },
+    "ELL870": {
+        "M": "LH 603"
+    },
+    "ELL881": {
+        "M": "LH 602"
+    },
+    "ELL894": {
+        "M": "IIA 106"
+    },
+    "ESL714": {
+        "M": "LH 604"
+    },
+    "ESL718": {
+        "M": "VI 402"
+    },
+    "ESL880": {
+        "M": "LH 520"
+    },
+    "HUL234": {
+        "M": "LH 308"
+    },
+    "HUL253": {
+        "M": "LH 416"
+    },
+    "HUL271": {
+        "M": "LH 316"
+    },
+    "HUL272": {
+        "M": "LH 318"
+    },
+    "HUL275": {
+        "M": "LH 408"
+    },
+    "HUL315": {
+        "M": "LH 517"
+    },
+    "HUL335": {
+        "M": "LH 519"
+    },
+    "HUL356": {
+        "M": "LH 521"
+    },
+    "HUL736": {
+        "M": "II 336"
+    },
+    "HUL810": {
+        "M": "LH 527"
+    },
+    "MSL301": {
+        "M": "LH 410"
+    },
+    "MTL737": {
+        "M": "V 417"
+    },
+    "MTL782": {
+        "M": "LH 418"
+    },
+    "PTL706": {
+        "M": "IV 339"
+    },
+    "PYL742": {
+        "M": "LH 510"
+    },
+    "PYL770": {
+        "M": "VI 404"
+    },
+    "RDL726": {
+        "M": "LH 612"
+    },
+    "SBL701": {
+        "M": "V 344"
+    },
+    "VEL700": {
+        "M": "LH 611"
+    },
+    "NEN101": {
+        "PAL": "VI 429"
     }
 }
