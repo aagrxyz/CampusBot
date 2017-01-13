@@ -356,7 +356,7 @@ bot.dialog('/converse', [
     function (session,args,next) {
         var task = builder.EntityRecognizer.findAllEntities(args.entities, 'convtopic');
                    // session.send(task);
-        if (!task) {
+        if (task.length==0) {
             builder.Prompts.text(session, "What would you like to talk about?");
         } else {
             var topics ="";
