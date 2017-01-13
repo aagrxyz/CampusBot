@@ -1,0 +1,526 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 warn package.json qnamakerbot@1.0.0 No description
+5 warn package.json qnamakerbot@1.0.0 No repository field.
+6 warn package.json qnamakerbot@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/home/yamuna/m/CampusBot/messages',
+8 verbose install   [ 'botbuilder',
+8 verbose install     'botbuilder-azure',
+8 verbose install     'botbuilder-cognitiveservices',
+8 verbose install     'easy-zip',
+8 verbose install     'fb',
+8 verbose install     'fs',
+8 verbose install     'fs-extra',
+8 verbose install     'http',
+8 verbose install     'path',
+8 verbose install     'request',
+8 verbose install     'restify' ] ]
+9 info preinstall qnamakerbot@1.0.0
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'botbuilder@^3.5.0-rc8', null ]
+12 verbose cache add name=undefined spec="botbuilder@^3.5.0-rc8" args=["botbuilder@^3.5.0-rc8",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'botbuilder@^3.5.0-rc8',
+13 verbose parsed url   path: 'botbuilder@^3.5.0-rc8',
+13 verbose parsed url   href: 'botbuilder@^3.5.0-rc8' }
+14 verbose cache add name="botbuilder" spec="^3.5.0-rc8" args=["botbuilder","^3.5.0-rc8"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: '^3.5.0-rc8',
+15 verbose parsed url   path: '^3.5.0-rc8',
+15 verbose parsed url   href: '^3.5.0-rc8' }
+16 verbose addNamed [ 'botbuilder', '^3.5.0-rc8' ]
+17 verbose addNamed [ null, '>=3.5.0-rc8 <4.0.0-0' ]
+18 verbose cache add [ 'botbuilder-azure@0.0.1', null ]
+19 verbose cache add name=undefined spec="botbuilder-azure@0.0.1" args=["botbuilder-azure@0.0.1",null]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'botbuilder-azure@0.0.1',
+20 verbose parsed url   path: 'botbuilder-azure@0.0.1',
+20 verbose parsed url   href: 'botbuilder-azure@0.0.1' }
+21 verbose cache add name="botbuilder-azure" spec="0.0.1" args=["botbuilder-azure","0.0.1"]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: '0.0.1',
+22 verbose parsed url   path: '0.0.1',
+22 verbose parsed url   href: '0.0.1' }
+23 verbose addNamed [ 'botbuilder-azure', '0.0.1' ]
+24 verbose addNamed [ '0.0.1', '0.0.1' ]
+25 verbose cache add [ 'easy-zip@0.0.4', null ]
+26 verbose cache add name=undefined spec="easy-zip@0.0.4" args=["easy-zip@0.0.4",null]
+27 verbose parsed url { protocol: null,
+27 verbose parsed url   slashes: null,
+27 verbose parsed url   auth: null,
+27 verbose parsed url   host: null,
+27 verbose parsed url   port: null,
+27 verbose parsed url   hostname: null,
+27 verbose parsed url   hash: null,
+27 verbose parsed url   search: null,
+27 verbose parsed url   query: null,
+27 verbose parsed url   pathname: 'easy-zip@0.0.4',
+27 verbose parsed url   path: 'easy-zip@0.0.4',
+27 verbose parsed url   href: 'easy-zip@0.0.4' }
+28 verbose cache add name="easy-zip" spec="0.0.4" args=["easy-zip","0.0.4"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '0.0.4',
+29 verbose parsed url   path: '0.0.4',
+29 verbose parsed url   href: '0.0.4' }
+30 verbose addNamed [ 'easy-zip', '0.0.4' ]
+31 verbose addNamed [ '0.0.4', '0.0.4' ]
+32 silly lockFile 97db0bcd-easy-zip-0-0-4 easy-zip@0.0.4
+33 verbose lock easy-zip@0.0.4 /home/yamuna/.npm/97db0bcd-easy-zip-0-0-4.lock
+34 verbose cache add [ 'botbuilder-cognitiveservices@^1.0.1', null ]
+35 verbose cache add name=undefined spec="botbuilder-cognitiveservices@^1.0.1" args=["botbuilder-cognitiveservices@^1.0.1",null]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: 'botbuilder-cognitiveservices@^1.0.1',
+36 verbose parsed url   path: 'botbuilder-cognitiveservices@^1.0.1',
+36 verbose parsed url   href: 'botbuilder-cognitiveservices@^1.0.1' }
+37 verbose cache add name="botbuilder-cognitiveservices" spec="^1.0.1" args=["botbuilder-cognitiveservices","^1.0.1"]
+38 verbose parsed url { protocol: null,
+38 verbose parsed url   slashes: null,
+38 verbose parsed url   auth: null,
+38 verbose parsed url   host: null,
+38 verbose parsed url   port: null,
+38 verbose parsed url   hostname: null,
+38 verbose parsed url   hash: null,
+38 verbose parsed url   search: null,
+38 verbose parsed url   query: null,
+38 verbose parsed url   pathname: '^1.0.1',
+38 verbose parsed url   path: '^1.0.1',
+38 verbose parsed url   href: '^1.0.1' }
+39 verbose addNamed [ 'botbuilder-cognitiveservices', '^1.0.1' ]
+40 verbose addNamed [ null, '>=1.0.1-0 <2.0.0-0' ]
+41 silly lockFile c8e72e63-tbuilder-cognitiveservices-1-0-1 botbuilder-cognitiveservices@^1.0.1
+42 verbose lock botbuilder-cognitiveservices@^1.0.1 /home/yamuna/.npm/c8e72e63-tbuilder-cognitiveservices-1-0-1.lock
+43 verbose cache add [ 'fb@^1.1.1', null ]
+44 verbose cache add name=undefined spec="fb@^1.1.1" args=["fb@^1.1.1",null]
+45 verbose parsed url { protocol: null,
+45 verbose parsed url   slashes: null,
+45 verbose parsed url   auth: null,
+45 verbose parsed url   host: null,
+45 verbose parsed url   port: null,
+45 verbose parsed url   hostname: null,
+45 verbose parsed url   hash: null,
+45 verbose parsed url   search: null,
+45 verbose parsed url   query: null,
+45 verbose parsed url   pathname: 'fb@^1.1.1',
+45 verbose parsed url   path: 'fb@^1.1.1',
+45 verbose parsed url   href: 'fb@^1.1.1' }
+46 verbose cache add name="fb" spec="^1.1.1" args=["fb","^1.1.1"]
+47 verbose parsed url { protocol: null,
+47 verbose parsed url   slashes: null,
+47 verbose parsed url   auth: null,
+47 verbose parsed url   host: null,
+47 verbose parsed url   port: null,
+47 verbose parsed url   hostname: null,
+47 verbose parsed url   hash: null,
+47 verbose parsed url   search: null,
+47 verbose parsed url   query: null,
+47 verbose parsed url   pathname: '^1.1.1',
+47 verbose parsed url   path: '^1.1.1',
+47 verbose parsed url   href: '^1.1.1' }
+48 verbose addNamed [ 'fb', '^1.1.1' ]
+49 verbose addNamed [ null, '>=1.1.1-0 <2.0.0-0' ]
+50 silly lockFile 8484903c-fb-1-1-1 fb@^1.1.1
+51 verbose lock fb@^1.1.1 /home/yamuna/.npm/8484903c-fb-1-1-1.lock
+52 verbose cache add [ 'fs@0.0.1-security', null ]
+53 verbose cache add name=undefined spec="fs@0.0.1-security" args=["fs@0.0.1-security",null]
+54 verbose parsed url { protocol: null,
+54 verbose parsed url   slashes: null,
+54 verbose parsed url   auth: null,
+54 verbose parsed url   host: null,
+54 verbose parsed url   port: null,
+54 verbose parsed url   hostname: null,
+54 verbose parsed url   hash: null,
+54 verbose parsed url   search: null,
+54 verbose parsed url   query: null,
+54 verbose parsed url   pathname: 'fs@0.0.1-security',
+54 verbose parsed url   path: 'fs@0.0.1-security',
+54 verbose parsed url   href: 'fs@0.0.1-security' }
+55 verbose cache add name="fs" spec="0.0.1-security" args=["fs","0.0.1-security"]
+56 verbose parsed url { protocol: null,
+56 verbose parsed url   slashes: null,
+56 verbose parsed url   auth: null,
+56 verbose parsed url   host: null,
+56 verbose parsed url   port: null,
+56 verbose parsed url   hostname: null,
+56 verbose parsed url   hash: null,
+56 verbose parsed url   search: null,
+56 verbose parsed url   query: null,
+56 verbose parsed url   pathname: '0.0.1-security',
+56 verbose parsed url   path: '0.0.1-security',
+56 verbose parsed url   href: '0.0.1-security' }
+57 verbose addNamed [ 'fs', '0.0.1-security' ]
+58 verbose addNamed [ '0.0.1-security', '0.0.1-security' ]
+59 silly lockFile 3c8687c2-fs-0-0-1-security fs@0.0.1-security
+60 verbose lock fs@0.0.1-security /home/yamuna/.npm/3c8687c2-fs-0-0-1-security.lock
+61 verbose cache add [ 'fs-extra@^1.0.0', null ]
+62 verbose cache add name=undefined spec="fs-extra@^1.0.0" args=["fs-extra@^1.0.0",null]
+63 verbose parsed url { protocol: null,
+63 verbose parsed url   slashes: null,
+63 verbose parsed url   auth: null,
+63 verbose parsed url   host: null,
+63 verbose parsed url   port: null,
+63 verbose parsed url   hostname: null,
+63 verbose parsed url   hash: null,
+63 verbose parsed url   search: null,
+63 verbose parsed url   query: null,
+63 verbose parsed url   pathname: 'fs-extra@^1.0.0',
+63 verbose parsed url   path: 'fs-extra@^1.0.0',
+63 verbose parsed url   href: 'fs-extra@^1.0.0' }
+64 verbose cache add name="fs-extra" spec="^1.0.0" args=["fs-extra","^1.0.0"]
+65 verbose parsed url { protocol: null,
+65 verbose parsed url   slashes: null,
+65 verbose parsed url   auth: null,
+65 verbose parsed url   host: null,
+65 verbose parsed url   port: null,
+65 verbose parsed url   hostname: null,
+65 verbose parsed url   hash: null,
+65 verbose parsed url   search: null,
+65 verbose parsed url   query: null,
+65 verbose parsed url   pathname: '^1.0.0',
+65 verbose parsed url   path: '^1.0.0',
+65 verbose parsed url   href: '^1.0.0' }
+66 verbose addNamed [ 'fs-extra', '^1.0.0' ]
+67 verbose addNamed [ null, '>=1.0.0-0 <2.0.0-0' ]
+68 silly lockFile bc9fffb5-fs-extra-1-0-0 fs-extra@^1.0.0
+69 verbose lock fs-extra@^1.0.0 /home/yamuna/.npm/bc9fffb5-fs-extra-1-0-0.lock
+70 verbose cache add [ 'http@0.0.0', null ]
+71 verbose cache add name=undefined spec="http@0.0.0" args=["http@0.0.0",null]
+72 verbose parsed url { protocol: null,
+72 verbose parsed url   slashes: null,
+72 verbose parsed url   auth: null,
+72 verbose parsed url   host: null,
+72 verbose parsed url   port: null,
+72 verbose parsed url   hostname: null,
+72 verbose parsed url   hash: null,
+72 verbose parsed url   search: null,
+72 verbose parsed url   query: null,
+72 verbose parsed url   pathname: 'http@0.0.0',
+72 verbose parsed url   path: 'http@0.0.0',
+72 verbose parsed url   href: 'http@0.0.0' }
+73 verbose cache add name="http" spec="0.0.0" args=["http","0.0.0"]
+74 verbose parsed url { protocol: null,
+74 verbose parsed url   slashes: null,
+74 verbose parsed url   auth: null,
+74 verbose parsed url   host: null,
+74 verbose parsed url   port: null,
+74 verbose parsed url   hostname: null,
+74 verbose parsed url   hash: null,
+74 verbose parsed url   search: null,
+74 verbose parsed url   query: null,
+74 verbose parsed url   pathname: '0.0.0',
+74 verbose parsed url   path: '0.0.0',
+74 verbose parsed url   href: '0.0.0' }
+75 verbose addNamed [ 'http', '0.0.0' ]
+76 verbose addNamed [ '0.0.0', '0.0.0' ]
+77 silly lockFile 5c64bf45-http-0-0-0 http@0.0.0
+78 verbose lock http@0.0.0 /home/yamuna/.npm/5c64bf45-http-0-0-0.lock
+79 verbose cache add [ 'path@^0.12.7', null ]
+80 verbose cache add name=undefined spec="path@^0.12.7" args=["path@^0.12.7",null]
+81 verbose parsed url { protocol: null,
+81 verbose parsed url   slashes: null,
+81 verbose parsed url   auth: null,
+81 verbose parsed url   host: null,
+81 verbose parsed url   port: null,
+81 verbose parsed url   hostname: null,
+81 verbose parsed url   hash: null,
+81 verbose parsed url   search: null,
+81 verbose parsed url   query: null,
+81 verbose parsed url   pathname: 'path@^0.12.7',
+81 verbose parsed url   path: 'path@^0.12.7',
+81 verbose parsed url   href: 'path@^0.12.7' }
+82 verbose cache add name="path" spec="^0.12.7" args=["path","^0.12.7"]
+83 verbose parsed url { protocol: null,
+83 verbose parsed url   slashes: null,
+83 verbose parsed url   auth: null,
+83 verbose parsed url   host: null,
+83 verbose parsed url   port: null,
+83 verbose parsed url   hostname: null,
+83 verbose parsed url   hash: null,
+83 verbose parsed url   search: null,
+83 verbose parsed url   query: null,
+83 verbose parsed url   pathname: '^0.12.7',
+83 verbose parsed url   path: '^0.12.7',
+83 verbose parsed url   href: '^0.12.7' }
+84 verbose addNamed [ 'path', '^0.12.7' ]
+85 verbose addNamed [ null, '>=0.12.7-0 <0.13.0-0' ]
+86 silly lockFile b89ee5ab-path-0-12-7 path@^0.12.7
+87 verbose lock path@^0.12.7 /home/yamuna/.npm/b89ee5ab-path-0-12-7.lock
+88 silly addNameRange { name: 'botbuilder-cognitiveservices',
+88 silly addNameRange   range: '>=1.0.1-0 <2.0.0-0',
+88 silly addNameRange   hasData: false }
+89 verbose cache add [ 'request@^2.78.0', null ]
+90 verbose cache add name=undefined spec="request@^2.78.0" args=["request@^2.78.0",null]
+91 verbose parsed url { protocol: null,
+91 verbose parsed url   slashes: null,
+91 verbose parsed url   auth: null,
+91 verbose parsed url   host: null,
+91 verbose parsed url   port: null,
+91 verbose parsed url   hostname: null,
+91 verbose parsed url   hash: null,
+91 verbose parsed url   search: null,
+91 verbose parsed url   query: null,
+91 verbose parsed url   pathname: 'request@^2.78.0',
+91 verbose parsed url   path: 'request@^2.78.0',
+91 verbose parsed url   href: 'request@^2.78.0' }
+92 verbose cache add name="request" spec="^2.78.0" args=["request","^2.78.0"]
+93 verbose parsed url { protocol: null,
+93 verbose parsed url   slashes: null,
+93 verbose parsed url   auth: null,
+93 verbose parsed url   host: null,
+93 verbose parsed url   port: null,
+93 verbose parsed url   hostname: null,
+93 verbose parsed url   hash: null,
+93 verbose parsed url   search: null,
+93 verbose parsed url   query: null,
+93 verbose parsed url   pathname: '^2.78.0',
+93 verbose parsed url   path: '^2.78.0',
+93 verbose parsed url   href: '^2.78.0' }
+94 verbose addNamed [ 'request', '^2.78.0' ]
+95 verbose addNamed [ null, '>=2.78.0-0 <3.0.0-0' ]
+96 silly lockFile d30a46eb-request-2-78-0 request@^2.78.0
+97 verbose lock request@^2.78.0 /home/yamuna/.npm/d30a46eb-request-2-78-0.lock
+98 verbose cache add [ 'restify@^4.1.1', null ]
+99 verbose cache add name=undefined spec="restify@^4.1.1" args=["restify@^4.1.1",null]
+100 verbose parsed url { protocol: null,
+100 verbose parsed url   slashes: null,
+100 verbose parsed url   auth: null,
+100 verbose parsed url   host: null,
+100 verbose parsed url   port: null,
+100 verbose parsed url   hostname: null,
+100 verbose parsed url   hash: null,
+100 verbose parsed url   search: null,
+100 verbose parsed url   query: null,
+100 verbose parsed url   pathname: 'restify@^4.1.1',
+100 verbose parsed url   path: 'restify@^4.1.1',
+100 verbose parsed url   href: 'restify@^4.1.1' }
+101 verbose cache add name="restify" spec="^4.1.1" args=["restify","^4.1.1"]
+102 verbose parsed url { protocol: null,
+102 verbose parsed url   slashes: null,
+102 verbose parsed url   auth: null,
+102 verbose parsed url   host: null,
+102 verbose parsed url   port: null,
+102 verbose parsed url   hostname: null,
+102 verbose parsed url   hash: null,
+102 verbose parsed url   search: null,
+102 verbose parsed url   query: null,
+102 verbose parsed url   pathname: '^4.1.1',
+102 verbose parsed url   path: '^4.1.1',
+102 verbose parsed url   href: '^4.1.1' }
+103 verbose addNamed [ 'restify', '^4.1.1' ]
+104 verbose addNamed [ null, '>=4.1.1-0 <5.0.0-0' ]
+105 silly lockFile bcef6491-restify-4-1-1 restify@^4.1.1
+106 verbose lock restify@^4.1.1 /home/yamuna/.npm/bcef6491-restify-4-1-1.lock
+107 silly addNameRange { name: 'fb', range: '>=1.1.1-0 <2.0.0-0', hasData: false }
+108 silly lockFile d9ba1bb5-botbuilder-azure-0-0-1 botbuilder-azure@0.0.1
+109 verbose lock botbuilder-azure@0.0.1 /home/yamuna/.npm/d9ba1bb5-botbuilder-azure-0-0-1.lock
+110 verbose url raw easy-zip/0.0.4
+111 verbose url resolving [ 'https://registry.npmjs.org/', './easy-zip/0.0.4' ]
+112 verbose url resolved https://registry.npmjs.org/easy-zip/0.0.4
+113 info trying registry request attempt 1 at 21:18:29
+114 http GET https://registry.npmjs.org/easy-zip/0.0.4
+115 verbose url raw botbuilder-cognitiveservices
+116 verbose url resolving [ 'https://registry.npmjs.org/',
+116 verbose url resolving   './botbuilder-cognitiveservices' ]
+117 verbose url resolved https://registry.npmjs.org/botbuilder-cognitiveservices
+118 info trying registry request attempt 1 at 21:18:29
+119 http GET https://registry.npmjs.org/botbuilder-cognitiveservices
+120 silly addNameRange { name: 'fs-extra', range: '>=1.0.0-0 <2.0.0-0', hasData: false }
+121 silly addNameRange { name: 'path', range: '>=0.12.7-0 <0.13.0-0', hasData: false }
+122 verbose url raw fb
+123 verbose url resolving [ 'https://registry.npmjs.org/', './fb' ]
+124 verbose url resolved https://registry.npmjs.org/fb
+125 info trying registry request attempt 1 at 21:18:29
+126 http GET https://registry.npmjs.org/fb
+127 verbose url raw fs/0.0.1-security
+128 verbose url resolving [ 'https://registry.npmjs.org/', './fs/0.0.1-security' ]
+129 verbose url resolved https://registry.npmjs.org/fs/0.0.1-security
+130 info trying registry request attempt 1 at 21:18:29
+131 http GET https://registry.npmjs.org/fs/0.0.1-security
+132 verbose url raw fs-extra
+133 verbose url resolving [ 'https://registry.npmjs.org/', './fs-extra' ]
+134 verbose url resolved https://registry.npmjs.org/fs-extra
+135 info trying registry request attempt 1 at 21:18:29
+136 http GET https://registry.npmjs.org/fs-extra
+137 verbose url raw http/0.0.0
+138 verbose url resolving [ 'https://registry.npmjs.org/', './http/0.0.0' ]
+139 verbose url resolved https://registry.npmjs.org/http/0.0.0
+140 info trying registry request attempt 1 at 21:18:29
+141 http GET https://registry.npmjs.org/http/0.0.0
+142 silly addNameRange { name: 'request', range: '>=2.78.0-0 <3.0.0-0', hasData: false }
+143 silly addNameRange { name: 'restify', range: '>=4.1.1-0 <5.0.0-0', hasData: false }
+144 verbose url raw path
+145 verbose url resolving [ 'https://registry.npmjs.org/', './path' ]
+146 verbose url resolved https://registry.npmjs.org/path
+147 info trying registry request attempt 1 at 21:18:29
+148 http GET https://registry.npmjs.org/path
+149 silly lockFile 99601da9-botbuilder-3-5-0-rc8 botbuilder@^3.5.0-rc8
+150 verbose lock botbuilder@^3.5.0-rc8 /home/yamuna/.npm/99601da9-botbuilder-3-5-0-rc8.lock
+151 verbose url raw request
+152 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+153 verbose url resolved https://registry.npmjs.org/request
+154 info trying registry request attempt 1 at 21:18:29
+155 http GET https://registry.npmjs.org/request
+156 verbose url raw restify
+157 verbose url resolving [ 'https://registry.npmjs.org/', './restify' ]
+158 verbose url resolved https://registry.npmjs.org/restify
+159 info trying registry request attempt 1 at 21:18:29
+160 http GET https://registry.npmjs.org/restify
+161 verbose url raw botbuilder-azure/0.0.1
+162 verbose url resolving [ 'https://registry.npmjs.org/', './botbuilder-azure/0.0.1' ]
+163 verbose url resolved https://registry.npmjs.org/botbuilder-azure/0.0.1
+164 info trying registry request attempt 1 at 21:18:29
+165 http GET https://registry.npmjs.org/botbuilder-azure/0.0.1
+166 silly addNameRange { name: 'botbuilder',
+166 silly addNameRange   range: '>=3.5.0-rc8 <4.0.0-0',
+166 silly addNameRange   hasData: false }
+167 verbose url raw botbuilder
+168 verbose url resolving [ 'https://registry.npmjs.org/', './botbuilder' ]
+169 verbose url resolved https://registry.npmjs.org/botbuilder
+170 info trying registry request attempt 1 at 21:18:29
+171 http GET https://registry.npmjs.org/botbuilder
+172 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+173 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+174 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+175 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+176 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+177 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+178 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+179 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+180 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+181 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+182 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+183 info trying registry request attempt 2 at 21:18:39
+184 http GET https://registry.npmjs.org/botbuilder
+185 info trying registry request attempt 2 at 21:18:39
+186 http GET https://registry.npmjs.org/easy-zip/0.0.4
+187 info trying registry request attempt 2 at 21:18:39
+188 http GET https://registry.npmjs.org/http/0.0.0
+189 info trying registry request attempt 2 at 21:18:39
+190 http GET https://registry.npmjs.org/fs-extra
+191 info trying registry request attempt 2 at 21:18:39
+192 http GET https://registry.npmjs.org/fs/0.0.1-security
+193 info trying registry request attempt 2 at 21:18:39
+194 http GET https://registry.npmjs.org/fb
+195 info trying registry request attempt 2 at 21:18:39
+196 http GET https://registry.npmjs.org/path
+197 info trying registry request attempt 2 at 21:18:39
+198 http GET https://registry.npmjs.org/botbuilder-cognitiveservices
+199 info trying registry request attempt 2 at 21:18:39
+200 http GET https://registry.npmjs.org/restify
+201 info trying registry request attempt 2 at 21:18:39
+202 http GET https://registry.npmjs.org/request
+203 info trying registry request attempt 2 at 21:18:39
+204 http GET https://registry.npmjs.org/botbuilder-azure/0.0.1
+205 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+206 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+207 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+208 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+209 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+210 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+211 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+212 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+213 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+214 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+215 info retry will retry, error on last attempt: Error: tunneling socket could not be established, statusCode=302
+216 info trying registry request attempt 3 at 21:19:39
+217 http GET https://registry.npmjs.org/http/0.0.0
+218 info trying registry request attempt 3 at 21:19:39
+219 http GET https://registry.npmjs.org/botbuilder
+220 info trying registry request attempt 3 at 21:19:39
+221 http GET https://registry.npmjs.org/fs/0.0.1-security
+222 info trying registry request attempt 3 at 21:19:39
+223 http GET https://registry.npmjs.org/easy-zip/0.0.4
+224 info trying registry request attempt 3 at 21:19:39
+225 http GET https://registry.npmjs.org/path
+226 info trying registry request attempt 3 at 21:19:39
+227 http GET https://registry.npmjs.org/fs-extra
+228 info trying registry request attempt 3 at 21:19:39
+229 http GET https://registry.npmjs.org/fb
+230 info trying registry request attempt 3 at 21:19:39
+231 http GET https://registry.npmjs.org/request
+232 info trying registry request attempt 3 at 21:19:39
+233 http GET https://registry.npmjs.org/botbuilder-azure/0.0.1
+234 info trying registry request attempt 3 at 21:19:39
+235 http GET https://registry.npmjs.org/restify
+236 info trying registry request attempt 3 at 21:19:39
+237 http GET https://registry.npmjs.org/botbuilder-cognitiveservices
+238 silly lockFile d9ba1bb5-botbuilder-azure-0-0-1 botbuilder-azure@0.0.1
+239 silly lockFile d9ba1bb5-botbuilder-azure-0-0-1 botbuilder-azure@0.0.1
+240 silly lockFile bcef6491-restify-4-1-1 restify@^4.1.1
+241 silly lockFile bcef6491-restify-4-1-1 restify@^4.1.1
+242 silly lockFile 97db0bcd-easy-zip-0-0-4 easy-zip@0.0.4
+243 silly lockFile 97db0bcd-easy-zip-0-0-4 easy-zip@0.0.4
+244 silly lockFile c8e72e63-tbuilder-cognitiveservices-1-0-1 botbuilder-cognitiveservices@^1.0.1
+245 silly lockFile c8e72e63-tbuilder-cognitiveservices-1-0-1 botbuilder-cognitiveservices@^1.0.1
+246 silly lockFile 99601da9-botbuilder-3-5-0-rc8 botbuilder@^3.5.0-rc8
+247 silly lockFile 99601da9-botbuilder-3-5-0-rc8 botbuilder@^3.5.0-rc8
+248 silly lockFile 3c8687c2-fs-0-0-1-security fs@0.0.1-security
+249 silly lockFile 3c8687c2-fs-0-0-1-security fs@0.0.1-security
+250 silly lockFile 5c64bf45-http-0-0-0 http@0.0.0
+251 silly lockFile 5c64bf45-http-0-0-0 http@0.0.0
+252 silly lockFile 8484903c-fb-1-1-1 fb@^1.1.1
+253 silly lockFile 8484903c-fb-1-1-1 fb@^1.1.1
+254 error network tunneling socket could not be established, statusCode=302
+254 error network This is most likely not a problem with npm itself
+254 error network and is related to network connectivity.
+254 error network In most cases you are behind a proxy or have bad network settings.
+254 error network
+254 error network If you are behind a proxy, please make sure that the
+254 error network 'proxy' config is set properly.  See: 'npm help config'
+255 error System Linux 3.13.0-52-generic
+256 error command "/usr/bin/nodejs" "/usr/bin/npm" "install"
+257 error cwd /home/yamuna/m/CampusBot/messages
+258 error node -v v0.10.25
+259 error npm -v 1.3.10
+260 error code ECONNRESET
+261 verbose exit [ 1, true ]

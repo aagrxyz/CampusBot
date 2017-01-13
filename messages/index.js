@@ -222,11 +222,33 @@ bot.dialog('/profile', [
 
 bot.dialog('/complaint', [
     function (session, args, next) {
-        if(!session.userData.name || !session.userData.en){
-            session.beginDialog("/profile");
+        if(!session.userData.name){
+            builder.Prompts.text(session, "What's your Name?");
         }
-        builder.Prompts.text(session, "Enter the subject of your complaint");        
+    else{
+        next();
+    }
     },
+
+ function (session,results,next) {
+        if (results.response) {
+             session.userData.name = results.response;
+        }
+        if(!session.userData.en){
+            builder.Prompts.text(session, "What's your Entry No.?");
+        }
+        else{
+        next();
+        }
+    },
+    function (session,results,next) {
+        if (results.response) {
+             session.userData.en = results.response;
+        }
+        builder.Prompts.text(session, "Enter the subject of your complaint");
+    },
+
+
     function (session, results, next) {
         if (results.response) {
             session.dialogData.sub = results.response;
