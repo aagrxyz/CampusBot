@@ -87,7 +87,7 @@ bot.dialog('/events',[
 ]);
 
 bot.dialog('/schedule',[
-    function(session, args,next) {
+    function(session) {
         session.send("Entered first");
         builder.Prompts.text(session, "What's your entry number?");
         // if (!session.userData.en) {
