@@ -294,13 +294,18 @@ bot.dialog('/schedule',[
     {
         var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
         var day = undefined;
-        // console.log(session.dialogData.arrr.entities);
+        console.log(session.dialogData.arrr.entities);
         try
         {
             var str = session.dialogData.arrr.entities[0].resolution.date;
             if(str.substr(0,9)==="XXXX-WXX-")
             {
                 day = days[parseInt(str[9])];
+            }
+            else if(str.substr(0,4)==="XXXX")
+            {
+                day = new Date(Date.now()).getFullYear()+str.substr(4);
+                day = days[new Date(str).getDay()];
             }
             else
             {
@@ -353,29 +358,33 @@ bot.dialog('/schedule',[
 ]);
 
 bot.dialog('/converse', [
-    function (session,args,next) {
-        var task = builder.EntityRecognizer.findAllEntities(args.entities, 'convtopic');
-                   // session.send(task);
-        if (task.length==0) {
-            builder.Prompts.text(session, "What would you like to talk about?");
-        } else {
-            var topics ="";
-             for( var i =0; i<task.length-1;i++)
-             {
-                  topics += task[i].entity + " ";
-              }
-        //     topics += task[task.length-1].entity;
-             next({ response: topics });
-             //  next({ response: task.entity });
+    function(session,args,next)
+    {
+        if(args.in_conv !== "yes")
+        {
+            builder.Prompts.text(session, "Hi!, what would you like to talk about? (type \"end\" to exit)");
+        }
+        else
+        {
+            builder.Prompts.text(session,args.msg);
         }
     },
-    function (session, results) {
-        Cleverbot.prepare(function(){
-          cleverbot.write(results.response, function (resp) {
-               session.send(resp.message);
-               session.endDialog();
-          });
-        });
+    function(session,results)
+    {
+        if(results.response === "end" || results.response === "\"end\"")
+        {
+            session.send("Thank you for chatting :)");
+            session.endDialog();
+        }
+        else
+        {
+            Cleverbot.prepare(function(){
+                cleverbot.write(results.response, function (resp) {
+                    session.endDialog();
+                    session.beginDialog('/converse',{in_conv: "yes",msg: resp.message});
+                });
+            });
+        }
     }
 ]);
 
