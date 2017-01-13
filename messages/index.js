@@ -50,76 +50,24 @@ intents.matches('schedule', '/schedule');
 intents.matches('course','/course');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
-//bot.dialog('/qna', basicQnAMakerDialog);
-
-bot.dialog('/course',[
-    function(session,args,next)
-    {
-        builder.Prompts.text("Give me the course code");
+bot.dialog('/profile', [
+    function (session, args, next) {
+            builder.Prompts.text(session, "What's your name?");
     },
-    function(session,results)
-    {
-        var c = course.get_course(results.response);
-        if(c === undefined)
-        {
-            session.send("No such course code found!");
+    function (session, results, next) {
+        if (results.response) {
+            session.userData.name = results.response;
         }
-        else
-        {
-            session.send(course.pretty_course(c));
-        }
-        session.endDialog();
-    }
-]);
-
-bot.dialog('/events',[
-    function(session,args)
-    {
-        events.get_events(function(result){
-            var story = events.story(result);
-            for(var i=0;i<story.length;i++)
-            {
-                session.send(story[i]);
-            }
-            session.endDialog();
-        });
-    }
-]);
-
-bot.dialog('/schedule',[
-    function(session) {
-        session.send("Entered first");
-        builder.Prompts.text(session, "What's your entry number?");
-        // if (!session.userData.en) {
-        // } else {
-        //     next();
-        // }
+        builder.Prompts.text(session, "What your entry number?");
     },
-    function(session,results)
-    {
-        session.send("Entered second");
+    function (session, results) {
         if (results.response) {
             session.userData.en = results.response;
+            session.send("Thanks, "+session.userData.name+", Your profile has been saved");
         }
-        var courses = schedule.courses(session.userData.en);
-        if(courses !== undefined)
-        {
-            var week = schedule.week_schedule(courses.courses);
-            var sch = schedule.pretty_week(week);
-            for(var i=0;i<sch.length;i++)
-            {
-                session.send(sch[i]);
-            }
-        }
-        else
-        {
-            session.userData.en = undefined;
-            session.send("Invalid entry number provided!");
-        }
-        session.endDialog();
+        session.endDialogWithResult({ response: session.userData });
     }
 ]);
-
 
 bot.dialog('/whois', [
     function (session,args,next) {
@@ -127,12 +75,12 @@ bot.dialog('/whois', [
       if (!nameoren) {
          builder.Prompts.text(session, 'Give me a Name or an Entry number');
       } else {
-      	var name ="";
-      	for( var i =0; i<nameoren.length-1;i++)
-      	{
-      		name += nameoren[i].entity + " ";
-      	}
-      	name += nameoren[nameoren.length-1].entity;
+        var name ="";
+        for( var i =0; i<nameoren.length-1;i++)
+        {
+            name += nameoren[i].entity + " ";
+        }
+        name += nameoren[nameoren.length-1].entity;
         next({ response: name });
       }
     },
@@ -162,6 +110,32 @@ bot.dialog('/whois', [
     }
 ]);
 
+bot.dialog('/qna', [
+    function (session) {
+        builder.Prompts.text(session, 'Ask me anything!');
+    },  
+    function (session, results) {
+        var postBody = '{"question":"' + results.response + '"}';
+            request({
+                url: "https://westus.api.cognitive.microsoft.com/qnamaker/v1.0/knowledgebases/03d2ac21-ace5-4cbf-88ac-d0e272037e1b/generateAnswer",
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
+                },
+                body: postBody
+            },
+            function (error, response, body) {
+                var result;
+                result = JSON.parse(body);
+                result.score = result.score / 100;
+                session.send(result.answer);
+            }
+            );
+        session.endDialog();
+    }
+]);
+
 bot.dialog('/papers', [
     function (session, args, next) {
         if (!session.userData.en) {
@@ -175,18 +149,18 @@ bot.dialog('/papers', [
         session.userData.en = results.response;
         }
         var http = require('http');
-	    var options = {
-	        host: 'www.cse.iitd.ernet.in',
-	        path: '/aces-acm/api?entry='+ session.userData.en
-	    };
-	    http.get(options, function(resp){
-	      resp.on('data', function(chunk){
-	      });
-	    }).on("error", function(e){
-	      session.send("Got some error, please try later");
-	    });
-	    session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
-	    
+        var options = {
+            host: 'www.cse.iitd.ernet.in',
+            path: '/aces-acm/api?entry='+ session.userData.en
+        };
+        http.get(options, function(resp){
+          resp.on('data', function(chunk){
+          });
+        }).on("error", function(e){
+          session.send("Got some error, please try later");
+        });
+        session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
+        
       session.endDialogWithResult({ response: session.userData });
     }      
 ]);
@@ -201,35 +175,15 @@ bot.dialog('/repeat', [
     }
 ]);
 
-bot.dialog('/profile', [
-    function (session, args, next) {
-            builder.Prompts.text(session, "What's your name?");
-    },
-    function (session, results, next) {
-        if (results.response) {
-            session.userData.name = results.response;
-        }
-        builder.Prompts.text(session, "What your entry number?");
-    },
-    function (session, results) {
-        if (results.response) {
-            session.userData.en = results.response;
-            session.send("Thanks, "+session.userData.name+", Your profile has been saved");
-        }
-        session.endDialogWithResult({ response: session.userData });
-    }
-]);
-
 bot.dialog('/complaint', [
     function (session, args, next) {
         if(!session.userData.name){
             builder.Prompts.text(session, "What's your Name?");
         }
-    else{
+        else{
         next();
-    }
+        }
     },
-
  function (session,results,next) {
         if (results.response) {
              session.userData.name = results.response;
@@ -247,8 +201,6 @@ bot.dialog('/complaint', [
         }
         builder.Prompts.text(session, "Enter the subject of your complaint");
     },
-
-
     function (session, results, next) {
         if (results.response) {
             session.dialogData.sub = results.response;
@@ -288,42 +240,77 @@ bot.dialog('/complaint', [
      }
 ]);
 
-bot.dialog('/qna', [
-    function (session) {
-       // builder.Prompts.text(session, 'Hi! What is your name?');
-        //session.send("What's ur query?");
-        builder.Prompts.text(session, 'Ask me anything!');
-     //  session.beginDialogue(basicQnAMakerDialog);
-        //session.endDialog();
+bot.dialog('/events',[
+    function(session,args)
+    {
+        events.get_events(function(result){
+            var story = events.story(result);
+            for(var i=0;i<story.length;i++)
+            {
+                session.send(story[i]);
+            }
+            session.endDialog();
+        });
+    }
+]);
 
-   },  function (session, results) {
-       
-       
-       var postBody = '{"question":"' + results.response + '"}';
-            request({
-                url: "https://westus.api.cognitive.microsoft.com/qnamaker/v1.0/knowledgebases/03d2ac21-ace5-4cbf-88ac-d0e272037e1b/generateAnswer",
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': "9e13de47c0cd4210b08592d36559fbd6"
-                },
-                body: postBody
-            },
-                function (error, response, body) {
-                    var result;
-                       // console.log(body);
-                            result = JSON.parse(body);
-                            result.score = result.score / 100;
-                         //   result.answer = htmlentities.decode(result.answer);
-                            session.send(result.answer);
-                }
-            );
-
-
-   //session.send(results.response);
+bot.dialog('/course',[
+    function(session,args,next)
+    {
+        builder.Prompts.text("Give me the course code");
+    },
+    function(session,results)
+    {
+        var c = course.get_course(results.response);
+        if(c === undefined)
+        {
+            session.send("No such course code found!");
+        }
+        else
+        {
+            session.send(course.pretty_course(c));
+        }
         session.endDialog();
     }
-    ]);
+]);
+
+
+bot.dialog('/schedule',[
+    function(session) {
+        session.send("Entered first");
+        builder.Prompts.text(session, "What's your entry number?");
+        // if (!session.userData.en) {
+        // } else {
+        //     next();
+        // }
+    },
+    function(session,results)
+    {
+        session.send("Entered second");
+        if (results.response) {
+            session.userData.en = results.response;
+        }
+        var courses = schedule.courses(session.userData.en);
+        if(courses !== undefined)
+        {
+            var week = schedule.week_schedule(courses.courses);
+            var sch = schedule.pretty_week(week);
+            for(var i=0;i<sch.length;i++)
+            {
+                session.send(sch[i]);
+            }
+        }
+        else
+        {
+            session.userData.en = undefined;
+            session.send("Invalid entry number provided!");
+        }
+        session.endDialog();
+    }
+]);
+
+
+
 
 
 bot.dialog('/converse', [
@@ -336,7 +323,7 @@ bot.dialog('/converse', [
         }
     },
     function (session, results) {
-        session.send("Yes"+ session.userData.name+" I do like talking about " + results.response);
+        session.send("Yes "+ session.userData.name+" I do like talking about " + results.response);
         session.endDialog();
     }
 ]);
