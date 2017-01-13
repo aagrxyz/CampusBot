@@ -41,5 +41,5 @@ The bot is presently published on various platforms as described below :
 3. Telegram: @Super_Campus_Bot
 4. It is presently for review on fb Messenger.
 
-For the demo video, follow the Link [CampusBot Demo Video](https://1drv.ms/f/s!AjbJsd8eLElBhRXu41mAwvNdqjc3)
+For the demo video, follow the Link [CampusBot Demo Video](https://youtu.be/dz85KdvNZTs)
 
