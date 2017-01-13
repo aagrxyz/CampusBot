@@ -281,6 +281,7 @@ bot.dialog('/course',[
 
 bot.dialog('/schedule',[
     function(session,args,next) {
+        session.dialogData.arrr = args;
         if (!session.userData.en) {
             builder.Prompts.text(session, "What's your entry number?");
         } else {
@@ -289,6 +290,7 @@ bot.dialog('/schedule',[
     },
     function(session,results)
     {
+        date_rec = session.dialogData.arrr.entities[0].resolution.date;
         if (results.response) {
             session.userData.en = results.response;
         }
