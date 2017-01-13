@@ -17,7 +17,7 @@ It has many functionalities which are described below:
 	6. **Course Info :** The bot tells about the information of the course that is floated in the present semester by just sending the message "course < course_code > ".
 	7. **Class Schedule :** The user can ask about his/her classes schedule for the day, for tomorrow, for a specific date or for the complete week. This can be achieved by the message *"schedule for < specific_date >"* or by *"schedule"* to get the full week's schedule.
 	8. **Paper Download :** The user can download Past Question papers for the courses they are registered in by just sending a message *"Question papers"*. These question papers can be really helpful while preparing for exams.
- 6. **Complaint System :** This is a very useful feature as it lets the user lodge a complaint for any problem by just sending a message *"complaint"* and then answering the questions regarding the complaint.
+ 6. **Complaint System :** This is a very useful feature as it lets the user lodge a complaint for any problem by just sending a message *"complaint"* and then answering the questions regarding the complaint. The complaints logged can be viewed at [Complaints Page](http://www.cse.iitd.ernet.in/aces-acm/complaints).
  7. **Conversation :** At last the bot can perform intelligent chats with the user. This dialog mode can be started by the *"converse"* message. To exit the mode send the message *"end"*.
 
 ----------
