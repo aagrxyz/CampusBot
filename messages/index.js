@@ -358,7 +358,14 @@ bot.dialog('/converse', [
         if (!task) {
             builder.Prompts.text(session, "What would you like to talk about?");
         } else {
-            next({ response: task.entity });
+            var topics ="";
+             for( var i =0; i<task.length-1;i++)
+             {
+                  topics += task[i].entity + " ";
+              }
+             topics += task[task.length-1].entity;
+             next({ response: topics });
+             //  next({ response: task.entity });
         }
     },
     function (session, results) {
