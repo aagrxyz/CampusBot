@@ -267,14 +267,14 @@ bot.dialog('/course',[
         //    name += coursecode[i].entity + " ";
        // }
        // name += coursecode[coursecode.length-1].entity;
-       session.send(coursecode.entity);
+   //    session.send(coursecode.entity);
         next({ response: coursecode.entity });
 
       }
     },
     function(session,results)
     {
-        session.send("sss");
+       // session.send("sss");
         var c = course.get_course(results.response);
         if(c === undefined)
         {
