@@ -280,13 +280,12 @@ bot.dialog('/course',[
 ]);
 
 bot.dialog('/schedule',[
-    function(session) {
-        session.send("Entered first");
-        builder.Prompts.text(session, "What's your entry number?");
-        // if (!session.userData.en) {
-        // } else {
-        //     next();
-        // }
+    function(session,args,next) {
+        if (!session.userData.en) {
+            builder.Prompts.text(session, "What's your entry number?");
+        } else {
+            next();
+        }
     },
     function(session,results)
     {
