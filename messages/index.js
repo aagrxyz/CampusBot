@@ -88,6 +88,7 @@ bot.dialog('/events',[
 
 bot.dialog('/schedule',[
     function(session,args,next) {
+        session.send("Entered first");
         if (!session.userData.en) {
             builder.Prompts.text(session, "What's your entry number?");
         } else {
@@ -96,6 +97,7 @@ bot.dialog('/schedule',[
     },
     function(session,results)
     {
+        session.send("Entered second");
         if (results.response) {
             session.userData.en = results.response;
         }
@@ -108,14 +110,13 @@ bot.dialog('/schedule',[
             {
                 session.send(sch[i]);
             }
-            session.endDialog();
         }
         else
         {
             session.userData.en = undefined;
             session.send("Invalid entry number provided!");
-            session.endDialog();
         }
+        session.endDialog();
     }
 ]);
 
