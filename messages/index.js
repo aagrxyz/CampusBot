@@ -292,9 +292,18 @@ bot.dialog('/schedule',[
     {
         var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
         var day = undefined;
+        // console.log(session.dialogData.arrr.entities);
         try
         {
-            day = days[new Date(session.dialogData.arrr.entities[0].resolution.date).getDay()];
+            var str = session.dialogData.arrr.entities[0].resolution.date;
+            if(str.substr(0,9)==="XXXX-WXX-")
+            {
+                day = days[parseInt(str[9])];
+            }
+            else
+            {
+                day = days[new Date(str).getDay()];
+            }
         }
         catch(e)
         {
@@ -323,7 +332,7 @@ bot.dialog('/schedule',[
                 // console.log("We have entity - "+day);
                 if(["SUNDAY","SATURDAY"].includes(day))
                 {
-                    session.send(day+" is holiday!");
+                    session.send(day+" is a holiday!");
                 }
                 else
                 {
