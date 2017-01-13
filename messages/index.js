@@ -37,16 +37,16 @@ var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
                 defaultMessage: 'No match! Try changing the query terms!',
                 qnaThreshold: 0.3}
 );
-var introMessage = `Welcome to Campus Bot. Main functionalities are described below\n\n\n
-Profile : Say 'hi' or 'setup' at any time to setup your profile and display this help message.\n\n\n
+var introMessage = `Welcome to Campus Bot.\n\n\n\n Main functionalities are described below\n\n\n\n
+Profile : Say 'hi' or 'setup' at any time to setup your profile and display this help message.\n\n\n\n
 FAQ : Say 'faq' or 'question answer' to ask the bot a commonly encountered campus question ( like 'what is disco? or 'what is phone number of dean of student affairs' \n\n
-Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.\n\n\n
-Who is :   Ask the bot 'Who is Name/EN' to find students in the institute with that Name/EN\n\n\n
-Events :   Ask 'events' to find upcoming events in the campus (from facebook)\n\n\n
-Course info :  Ask "Course information COL216" or "details of COL331 course to see some details abut that course."\n\n
-Paper Download : Say 'download my papers' or 'question papers' to download previous papers of all courses you are registered. \n\n\n
-Complaint : Type 'complaint' etc to register a complaint with the institute.\n\n\n
-Have fun using me!\n\n\n
+Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.\n\n\n\n
+Who is :   Ask the bot 'Who is Name/EN' to find students in the institute with that Name/EN\n\n\n\n
+Events :   Ask 'events' to find upcoming events in the campus (from facebook)\n\n\n\n
+Course info :  Ask "Course information COL216" or "details of COL331 course to see some details abut that course."\n\n\n\n
+Paper Download : Say 'download my papers' or 'question papers' to download previous papers of all courses you are registered. \n\n\n\n
+Complaint : Type 'complaint' etc to register a complaint with the institute.\n\n\n\n
+Have fun using me!\n\n\n\n
 `;
 bot.dialog('/', intents);
 
