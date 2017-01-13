@@ -122,7 +122,7 @@ function pretty_week_schedule(schedule)
         {
             if(schedule[i] !== undefined)
             {
-                pretty_sch += pretty_day_schedule(i,schedule[i]);
+                pretty_sch.push(pretty_day_schedule(i,schedule[i]));
             }
             else
             {

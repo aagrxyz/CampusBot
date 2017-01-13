@@ -280,19 +280,19 @@ bot.dialog('/course',[
 ]);
 
 bot.dialog('/schedule',[
-    function(session,args,next) {
-        if (!session.userData.en) {
-            builder.Prompts.text(session, "What's your entry number?");
-        } else {
-            next();
-        }
-    },
-    function(session,results)
+    // function(session,args,next) {
+    //     if (!session.userData.en) {
+    //         builder.Prompts.text(session, "What's your entry number?");
+    //     } else {
+    //         next();
+    //     }
+    // },
+    function(session,args)
     {
         session.send("Entered second");
-        if (results.response) {
-            session.userData.en = results.response;
-        }
+        // if (results.response) {
+        //     session.userData.en = results.response;
+        // }
         var courses = schedule.courses(session.userData.en);
         if(courses !== undefined)
         {
