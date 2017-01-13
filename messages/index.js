@@ -92,7 +92,7 @@ bot.dialog('/schedule',[
         if (!session.userData.en) {
             builder.Prompts.text(session, "What's your entry number?");
         } else {
-            next();
+            next({ response: "a" });
         }
     },
     function(session,results)
