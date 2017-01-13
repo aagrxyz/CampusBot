@@ -260,21 +260,12 @@ bot.dialog('/course',[
         var coursecode = builder.EntityRecognizer.findEntity(args.entities, 'courseent');
         if (!coursecode) {
               builder.Prompts.text(session,"Give me the course code");
-      } else {
-        //var name ="";
-       // for( var i =0; i<coursecode.length-1;i++)
-       // {
-        //    name += coursecode[i].entity + " ";
-       // }
-       // name += coursecode[coursecode.length-1].entity;
-   //    session.send(coursecode.entity);
-        next({ response: coursecode.entity });
-
-      }
+        } else {
+            next({ response: coursecode.entity });
+        }
     },
     function(session,results)
     {
-       // session.send("sss");
         var c = course.get_course(results.response);
         if(c === undefined)
         {
@@ -287,7 +278,6 @@ bot.dialog('/course',[
         session.endDialog();
     }
 ]);
-
 
 bot.dialog('/schedule',[
     function(session) {
