@@ -386,9 +386,9 @@ bot.dialog('/converse', [
         var check;
         // console.log(results.response);
         if((typeof results.response !== 'undefined') && results.response){
-            check = results.respone;
+            check = results.response.toUpperCase().trim();
         }
-        if(results.response ==="end" || results.response === "END" || results.response === "\"END\"")
+        if(check === "END" || check === "\"END\"")
         {
             session.send("Thank you for chatting :)");
             session.endDialog();
