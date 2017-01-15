@@ -1,7 +1,7 @@
 
 CampusBot
 ===================
- [Chat with Me](http://bit.ly/campusbot)
+ [Chat with Me](http://bit.ly/campusbot) (say 'hi' at start and use '2015CS10201' as entry number if you don't have one.)
 
 Campus Bot is a chat bot that was built for **Code.fun.do** organised by Microsoft at IIT Delhi on 7th January 2016.
 Campus Bot is one stop solution for all the campus needs that students and the faculty in the campus can use. 
