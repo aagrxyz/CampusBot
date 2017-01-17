@@ -41,6 +41,12 @@ var page_ids = [
 "SPIC.MACAY.IITD",      //Spic Macay
 "AAIPIITD"            //Alumni Association
 ];
+
+// var page_ids = [
+//     "eesiitd",
+//     "acesacm"
+//     ];
+
 var requests = [];
 
 for (var id in page_ids)
@@ -64,7 +70,7 @@ function fetch_events(callback)
                 for (var ev =0;ev<event.events.data.length;ev++)
                 {
                     var eve = event.events.data[ev];
-                    if (Date.parse(eve.end_time) > Date.now())
+                    if (Date.parse(eve.start_time) > Date.now() || Date.parse(eve.end_time) > Date.now())
                     {
                         events.push(eve);
                     }
@@ -76,7 +82,7 @@ function fetch_events(callback)
             }
         }
         events.sort(function(a, b){
-            var cmp = Date.parse(a.end_time) - Date.parse(b.end_time);
+            var cmp = Date.parse(a.start_time) - Date.parse(b.start_time);
             if(cmp < 0) return -1;
             if(cmp > 0) return 1;
             return 0;
