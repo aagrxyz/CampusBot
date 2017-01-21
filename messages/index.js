@@ -16,11 +16,16 @@ var Cleverbot = require('cleverbot-node');
 var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
-    appId: process.env['MicrosoftAppId'],
-    appPassword: process.env['MicrosoftAppPassword'],
-    stateEndpoint: process.env['BotStateEndpoint'],
-    openIdMetadata: process.env['BotOpenIdMetadata']
+// var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
+//     appId: process.env['MicrosoftAppId'],
+//     appPassword: process.env['MicrosoftAppPassword'],
+//     stateEndpoint: process.env['BotStateEndpoint'],
+//     openIdMetadata: process.env['BotOpenIdMetadata']
+// });
+
+var connector = new builder.ChatConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword']
 });
 
 var bot = new builder.UniversalBot(connector);
@@ -39,18 +44,19 @@ var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
                 defaultMessage: 'No match! Try changing the query terms!',
                 qnaThreshold: 0.3}
 );
-var introMessage = `Welcome to Campus Bot.\n\n\n\n Main functionalities are described below-\n\n\n\n
-Profile : Say 'hi' or 'setup' at any time to setup your profile and display this help message.\n\n\n\n
-FAQ : Say 'faq' or 'question answer' to ask the bot a commonly encountered campus question ( like 'what is disco? or 'what is phone number of dean of student affairs'.\n\n
-Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.\n\n\n\n
-Conversation : Say "talk about snowy mounains" or "converse" or "chat" to enter converation mode. Say "end" to exit this mode. \n\n\n\n
-Who is :   Ask the bot 'Who is Name/EN' to find students in the institute with that Name/EN.\n\n\n\n
-Events :   Ask 'events' to find upcoming events in the campus (from facebook).\n\n\n\n
-Course info :  Ask "Course information COL216" or "details of COL331 course to see some details about that course."\n\n\n\n
-Paper Download : Say 'download my papers' or 'question papers' to download previous papers of all the courses that you are registered in. \n\n\n\n
-Complaint : Type 'complaint' etc to register a complaint with the institute.\n\n\n\n
-Have fun using me!\n\n\n\n
-`;
+var introMessage = ['Main functionalities are described below-',
+'Profile : Say \'hi\' or \'setup\' at any time to setup your profile.',
+'FAQ : Say \'faq\' or \'question answer\' to ask the bot a FAQ about insti',
+'Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.',
+'Conversation : Say "talk about snowy mounains" or "converse" or "chat" to enter converation mode. Say "end" to exit this mode.',
+'Who is :   Ask the bot \'Who is Name/EN\' to find students in the institute with that Name/EN.',
+'Events :   Ask \'events\' to find upcoming events in the campus (from facebook).',
+'Course info :  Ask "Course information COL216" or "details of COL331 course to see some details about that course.',
+'Paper Download : Say \'download my papers\' or \'question papers\' to download previous papers of all the courses that you are registered in.',
+'Complaint : Type \'complaint\' etc to register a complaint with the institute.\n'
+];
+
+
 bot.dialog('/', intents);
 
 intents.matches('qna', '/qna');
@@ -65,11 +71,75 @@ intents.matches('schedule', '/schedule');
 intents.matches('course','/course');
 intents.matches('mess','/mess');
 intents.matches('review','/review');
+intents.matches('main','/main');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
+
+
+bot.dialog('/main',[
+    function(session,args,next) {
+        if(!session.userData.en || !session.userData.name)
+        {
+            session.replaceDialog('/profile');
+        }
+        builder.Prompts.choice(session, "What would you like to see?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Profile Setup|FAQ");
+    },
+    function(session,results){
+        if(results.response)
+        {
+            console.log("coming in menu");
+            switch(results.response.entity)
+            {
+                case "Upcoming Events":
+                    console.log("going in events");
+                    session.beginDialog('/events');
+                    console.log("exited from events");
+                    break;
+                case "Class Schedule":
+                    console.log("going in schedule");
+                    session.beginDialog('/schedule');
+                    console.log("coming out");
+                    break;
+                case "Papers Download":
+                    session.beginDialog('/papers');
+                    break;
+                case "Who is":
+                    session.beginDialog('/whois');
+                    break;
+                case "Mess Schedule":
+                    session.beginDialog('/mess');
+                    break;
+                case "Profile Setup":
+                    session.userData.en = undefined;
+                    session.userData.name = undefined;
+                    session.replaceDialog('/profile');
+                    break;
+                case "FAQ":
+                    session('/qna');
+                    break;
+            }
+        }
+        else
+        {
+            session.endDialog();
+        }
+    }
+]);
+
 
 bot.dialog('/profile', [
     function (session, args, next) {
+        var introCard = new builder.HeroCard(session)
+                .title("Campus Bot")
+                .text("Your own campus assistant")
+                .images([
+                    builder.CardImage.create(session, "https://s24.postimg.org/jwjmzedid/dev.png")
+                ]);
+        var msg = new builder.Message(session).attachments([introCard]);
+        session.send(msg);
         session.send(introMessage);
+        introMessage.forEach(function(ms){
+            session.send(ms);
+        });
         builder.Prompts.text(session, "What's your name?");
     },
     function (session, results, next) {
@@ -83,14 +153,21 @@ bot.dialog('/profile', [
             session.userData.en = results.response;
             session.send("Thanks, "+session.userData.name+", Your profile has been saved");
         }
-        session.endDialogWithResult({ response: session.userData });
+        session.replaceDialog('/main');
     }
 ]);
 
 bot.dialog('/whois', [
     function (session,args,next) {
-      var nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
-      if (!nameoren) {
+      var nameoren = [];
+      try{
+        nameoren = builder.EntityRecognizer.findAllEntities(args.entities, 'whoisent');
+      }
+      catch(e)
+      {
+        nameoren = [];
+      }
+      if (!nameoren || nameoren.length === 0) {
          builder.Prompts.text(session, 'Give me a Name or an Entry number');
       } else {
         var name ="";
@@ -110,19 +187,23 @@ bot.dialog('/whois', [
         }
         else
         {
-            var ans = "";
+            var attach = [];
             if(result.length > 4)
             {
                 session.send("Your query was too general. Here are top 4 results :");
             }
-            else if(result.length > 1)
-            {
-                session.send("Matches found :");
-            }
             for(var i=0;i<result.length && i < 4;i++)
             {
-                session.send(whois.story(result[i]));
+                attach.push(
+                    new builder.HeroCard(session)
+                        .title(result[i].name)
+                        .text("Entry - "+result[i].entry+"\n"+"Email - "+result[i].email)
+                    );
+                // session.send(whois.story(result[i]));
             }
+            var msg = new builder.Message(session)
+                    .attachments(attach);
+            session.send(msg);
         }
         session.endDialog();
     }
@@ -177,9 +258,22 @@ bot.dialog('/papers', [
         }).on("error", function(e){
           session.send("Got some error, please try later");
         });
-        session.send("Download Papers at www.cse.iitd.ernet.in/aces-acm/download/" + session.userData.en.toUpperCase() + ".zip");      
+        // var message = new builder.Message(session)
+        //     .attachments([{
+        //         name: "Question Paper",
+        //         contentType: "application/zip",
+        //         contentUrl: "https://www.cse.iitd.ernet.in/aces-acm/download/"+ session.userData.en.toUpperCase() + ".zip"
+        //     }]);
+        //     
+        var message = new builder.Message(session)
+                .attachments([
+                    new builder.HeroCard(session)
+                        .title("Exam Papers")
+                        .subtitle("Magna was never so easy :P")
+                        .buttons([builder.CardAction.downloadFile(session,"https://www.cse.iitd.ernet.in/aces-acm/download/"+ session.userData.en.toUpperCase() + ".zip","Download")])
+                ]);
+        session.endDialog(message);
         
-      session.endDialogWithResult({ response: session.userData });
     }      
 ]);
 
@@ -261,13 +355,39 @@ bot.dialog('/complaint', [
 bot.dialog('/events',[
     function(session,args)
     {
+        // console.log("EVENTS----------");
         events.get_events(function(result){
-            var story = events.story(result);
-            for(var i=0;i<story.length;i++)
-            {
-                session.send(story[i]);
-            }
-            session.endDialog();
+            // console.log("answer captured");
+            var attach = [];
+            result.forEach(function(ev){
+                // console.log(ev);
+                var card = new builder.ThumbnailCard(session)
+                            .title(ev.name)
+                            .subtitle(ev.start_time+" - "+ev.end_time)
+                            .tap(
+                                builder.CardAction.openUrl(session,ev.link)
+                            );
+                if(ev.cover)
+                {
+                    card = card.images([builder.CardImage.create(session,ev.cover)]);
+                }
+                // console.log(card);
+                attach.push(card);
+            });
+            // console.log("answer synthesized");
+            // console.log(attach);
+            var msg = new builder.Message(session)
+                    .attachmentLayout(builder.AttachmentLayout.carousel)
+                    .attachments(attach);
+            // console.log("message synthesized");
+            // var story = events.story(result);
+            // for(var i=0;i<story.length;i++)
+            // {
+            //     session.send(story[i]);
+            // }
+            // session.send(msg);
+            // console.log("ending");
+            session.endDialog(msg);
         });
     }
 ]);
@@ -374,7 +494,7 @@ bot.dialog('/schedule',[
     {
         var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
         var day = undefined;
-        console.log(session.dialogData.arrr.entities);
+        // console.log(session.dialogData.arrr.entities);
         try
         {
             var str = session.dialogData.arrr.entities[0].resolution.date;
@@ -406,12 +526,41 @@ bot.dialog('/schedule',[
         if(courses !== undefined)
         {
             var week = schedule.week_schedule(courses.courses);
+            // console.log("In Schedule:");
             if(day === undefined)
             {
-                var sch = schedule.pretty_week(week);
-                for(var i=0;i<sch.length;i++)
+                // console.log("day is undefined");
+                // var sch = schedule.pretty_week(week);
+
+                // for(var i=0;i<sch.length;i++)
+                // {
+                //     session.send(sch[i]);
+                // }
+                
+                // console.log("after msg");
+                for(var i in week)
                 {
-                    session.send(sch[i]);
+                    // console.log("Week - "+i);
+                    // console.log(week[i]);
+                    var attach = [];
+                    if(week[i] !== undefined)
+                    {
+                        for(var c in week[i])
+                        {
+                            attach.push(
+                                    new builder.ThumbnailCard(session)
+                                        .title(week[i][c].course)
+                                        .text(week[i][c].location+": "+week[i][c].timing.start+"-"+week[i][c].timing.end)
+                            );
+                        }
+                        // console.log("Sending");
+                        var msg = new builder.Message(session)
+                            .textFormat(builder.TextFormat.markdown)
+                            .attachmentLayout(builder.AttachmentLayout.carousel)
+                            .attachments(attach);
+                        session.send(i);
+                        session.send(msg);
+                    }
                 }
             }
             else
@@ -423,8 +572,21 @@ bot.dialog('/schedule',[
                 }
                 else
                 {
-                    var sch = schedule.pretty_day(day,week[day]);
-                    session.send(sch);
+                    var attach = [];
+                    day = day.toUpperCase();
+                    for(var i in week[day])
+                    {
+                        attach.push(
+                            new builder.ThumbnailCard(session)
+                                .title(week[day][i].course)
+                                .text(week[day][i].location+": "+week[day][i].timing.start+"-"+week[day][i].timing.end)
+                            );
+                    }
+                    // var sch = schedule.pretty_day(day,week[day]);
+                    var msg = new builder.Message(session)
+                            .attachments(attach);
+                    session.send(day);
+                    session.send(msg);
                 }
             }
         }
@@ -536,12 +698,12 @@ bot.dialog('/review', [
 ]);
 
 if (useEmulator) {
-    // var restify = require('restify');
-    // var server = restify.createServer();
-    // server.listen(3978, function() {
-    //     console.log('test bot endpont at http://localhost:3978/api/messages');
-    // });
-    // server.post('/api/messages', connector.listen());    
+    var restify = require('restify');
+    var server = restify.createServer();
+    server.listen(8000, function() {
+        console.log('test bot endpoint at http://localhost:8000/api/messages');
+    });
+    server.post('/api/messages', connector.listen());    
 } else {
-    module.exports = { default: connector.listen() }
+    module.exports = { default: connector.listen() };
 }

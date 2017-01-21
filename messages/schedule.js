@@ -113,6 +113,16 @@ function pretty_day_schedule(day,schedule)
     }
 }
 
+function pretty_schedule(schedule)
+{
+    var str = "";
+    for(var i=0;i<schedule.length;i++)
+    {
+        str+= schedule[i].course+"("+schedule[i].slot+") : "+schedule[i].location+" \n\t"+schedule[i].timing.start+"-"+schedule[i].timing.end+"\n";
+    }
+    return str;
+}
+
 function pretty_week_schedule(schedule)
 {
     if(schedule !== undefined)
@@ -143,5 +153,6 @@ module.exports = {
     "day_schedule" : get_day_schedule,
     "class_schedule" : get_class_schedule,
     "pretty_week" : pretty_week_schedule,
-    "pretty_day" : pretty_day_schedule
+    "pretty_day" : pretty_day_schedule,
+    "pretty_schedule": pretty_schedule
 };

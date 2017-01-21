@@ -1,0 +1,617 @@
+t=2017-01-21T19:05:58+0530 lvl=info msg="no configuration paths supplied"
+t=2017-01-21T19:05:58+0530 lvl=info msg="ignoring default config path, could not stat it" path=/home/suyash1212/.ngrok2/ngrok.yml err="stat /home/suyash1212/.ngrok2/ngrok.yml: no such file or directory"
+t=2017-01-21T19:05:58+0530 lvl=info msg="run component" obj=controller comp=consoleui
+t=2017-01-21T19:05:58+0530 lvl=info msg="run component" obj=controller comp=web
+t=2017-01-21T19:05:58+0530 lvl=info msg="run component" obj=controller comp=updater
+t=2017-01-21T19:05:58+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040
+t=2017-01-21T19:05:58+0530 lvl=info msg="run component" obj=controller comp="memory storage"
+t=2017-01-21T19:05:58+0530 lvl=info msg="run component" obj=controller comp="Tunnel session"
+t=2017-01-21T19:05:59+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-21T19:05:59+0530 lvl=info msg="client session established" obj=csess id=0a8fb509a4a6
+t=2017-01-21T19:06:05+0530 lvl=warn msg="failed to open private leg" id=cc33eb5f3665 privaddr=localhost:3798 err="dial tcp 127.0.0.1:3798: getsockopt: connection refused"
+t=2017-01-21T19:06:05+0530 lvl=info msg="join connections" obj=join id=77ccf95eed32 l=nil r=103.27.8.42:50945
+t=2017-01-21T19:06:06+0530 lvl=warn msg="failed to open private leg" id=833c782133de privaddr=localhost:3798 err="dial tcp 127.0.0.1:3798: getsockopt: connection refused"
+t=2017-01-21T19:06:06+0530 lvl=info msg="join connections" obj=join id=577f424e2ee3 l=nil r=103.27.8.42:50945
+t=2017-01-21T19:07:41+0530 lvl=info msg="Got quit command" obj=consoleui
+t=2017-01-21T19:07:41+0530 lvl=info msg="component stopped" obj=controller comp=consoleui err=nil
+t=2017-01-21T19:07:41+0530 lvl=info msg="requesting shutdown" obj=controller
+t=2017-01-21T19:07:41+0530 lvl=info msg="component stopped" obj=controller comp="memory storage" err=nil
+t=2017-01-21T19:07:41+0530 lvl=info msg="session closing" obj=tunSess err=nil
+t=2017-01-21T19:07:41+0530 lvl=info msg="component stopped" obj=controller comp="Tunnel session" err=nil
+t=2017-01-21T19:07:41+0530 lvl=info msg="component stopped" obj=controller comp=updater err=nil
+t=2017-01-21T19:07:41+0530 lvl=info msg="component stopped" obj=controller comp=web err=nil
+t=2017-01-21T19:07:41+0530 lvl=info msg="all component stopped" obj=controller
+t=2017-01-21T19:07:42+0530 lvl=info msg="no configuration paths supplied"
+t=2017-01-21T19:07:42+0530 lvl=info msg="ignoring default config path, could not stat it" path=/home/suyash1212/.ngrok2/ngrok.yml err="stat /home/suyash1212/.ngrok2/ngrok.yml: no such file or directory"
+t=2017-01-21T19:07:42+0530 lvl=info msg="run component" obj=controller comp=consoleui
+t=2017-01-21T19:07:42+0530 lvl=info msg="run component" obj=controller comp="memory storage"
+t=2017-01-21T19:07:42+0530 lvl=info msg="run component" obj=controller comp=updater
+t=2017-01-21T19:07:42+0530 lvl=info msg="run component" obj=controller comp=web
+t=2017-01-21T19:07:42+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040
+t=2017-01-21T19:07:42+0530 lvl=info msg="run component" obj=controller comp="Tunnel session"
+t=2017-01-21T19:07:43+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-21T19:07:43+0530 lvl=info msg="client session established" obj=csess id=7bdce701da31
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/ id=03ab9352531b7d41
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/ id=03ab9352531b7d41 status=302 dur=120.592µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/inspect/http id=f99835c57cc777f5
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/inspect/http id=f99835c57cc777f5 status=200 dur=596.186µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/css/highlight.min.css id=ccedecdc1dc29eef
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/css/highlight.min.css id=ccedecdc1dc29eef status=200 dur=187.931µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/css/bootstrap.min.css id=8e7e20a4d1e54f1f
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/css/bootstrap.min.css id=8e7e20a4d1e54f1f status=200 dur=1.480101ms
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/css/ngrok.css id=20a76f1d402eede2
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/css/ngrok.css id=20a76f1d402eede2 status=200 dur=213.037µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/js/vendor/highlight-8.1.min.js id=6245dafeecb1599b
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/js/vendor/highlight-8.1.min.js id=6245dafeecb1599b status=200 dur=498.527µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/js/vendor/jquery-2.1.1.min.js id=2523092e6f32e383
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/js/vendor/jquery-2.1.1.min.js id=2523092e6f32e383 status=200 dur=2.582232ms
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/js/vendor/vkbeautify.js id=b38800c52400feae
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/js/vendor/vkbeautify.js id=b38800c52400feae status=200 dur=395.896µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/js/vendor/underscore-1.6.0.min.js id=ba8c3528a739d31b
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/js/vendor/underscore-1.6.0.min.js id=ba8c3528a739d31b status=200 dur=457.217µs
+t=2017-01-21T19:07:46+0530 lvl=info msg=start pg=/static/js/vendor/moment-2.7.0.js id=698b53de49009c62
+t=2017-01-21T19:07:46+0530 lvl=info msg=end pg=/static/js/vendor/moment-2.7.0.js id=698b53de49009c62 status=200 dur=1.314697ms
+t=2017-01-21T19:07:47+0530 lvl=info msg=start pg=/static/js/vendor/react-15.1.0.min.js id=df252b1d7320331b
+t=2017-01-21T19:07:47+0530 lvl=info msg=end pg=/static/js/vendor/react-15.1.0.min.js id=df252b1d7320331b status=200 dur=2.948989ms
+t=2017-01-21T19:07:47+0530 lvl=info msg=start pg=/static/js/vendor/base64.js id=e7bb68da52bda005
+t=2017-01-21T19:07:47+0530 lvl=info msg=end pg=/static/js/vendor/base64.js id=e7bb68da52bda005 status=200 dur=18.164839ms
+t=2017-01-21T19:07:47+0530 lvl=info msg=start pg=/static/js/compiled/shared.js id=8a3894d4dc3ed4af
+t=2017-01-21T19:07:47+0530 lvl=info msg=end pg=/static/js/compiled/shared.js id=8a3894d4dc3ed4af status=200 dur=290.543µs
+t=2017-01-21T19:07:47+0530 lvl=info msg=start pg=/static/js/vendor/react-dom-15.1.0.min.js id=e181705af3ce5b1e
+t=2017-01-21T19:07:47+0530 lvl=info msg=end pg=/static/js/vendor/react-dom-15.1.0.min.js id=e181705af3ce5b1e status=200 dur=172.076µs
+t=2017-01-21T19:07:47+0530 lvl=info msg=start pg=/static/js/compiled/inspect.js id=7354406efaefa505
+t=2017-01-21T19:07:47+0530 lvl=info msg=end pg=/static/js/compiled/inspect.js id=7354406efaefa505 status=200 dur=594.025µs
+t=2017-01-21T19:07:47+0530 lvl=info msg=start pg=/_ws id=510e8b5a0c5b197f
+t=2017-01-21T19:07:55+0530 lvl=warn msg="failed to open private leg" id=5e5641a4e190 privaddr=localhost:3798 err="dial tcp 127.0.0.1:3798: getsockopt: connection refused"
+t=2017-01-21T19:07:55+0530 lvl=info msg="join connections" obj=join id=196ba987c9e7 l=nil r=103.27.8.42:39224
+t=2017-01-21T19:07:56+0530 lvl=info msg=start pg=/static/fonts/glyphicons-halflings-regular.woff id=d6110a78f5e7f724
+t=2017-01-21T19:07:56+0530 lvl=info msg=end pg=/static/fonts/glyphicons-halflings-regular.woff id=d6110a78f5e7f724 status=200 dur=1.016866ms
+t=2017-01-21T19:07:56+0530 lvl=warn msg="failed to open private leg" id=a0b4ccde29a9 privaddr=localhost:3798 err="dial tcp 127.0.0.1:3798: getsockopt: connection refused"
+t=2017-01-21T19:07:56+0530 lvl=info msg="join connections" obj=join id=7d90c1c6d46d l=nil r=103.27.8.42:39224
+t=2017-01-21T19:08:05+0530 lvl=warn msg="failed to open private leg" id=2641ff739da6 privaddr=localhost:3798 err="dial tcp 127.0.0.1:3798: getsockopt: connection refused"
+t=2017-01-21T19:08:05+0530 lvl=info msg="join connections" obj=join id=8f96a8073100 l=nil r=103.27.8.42:39224
+t=2017-01-21T19:08:06+0530 lvl=warn msg="failed to open private leg" id=36ed8cf85893 privaddr=localhost:3798 err="dial tcp 127.0.0.1:3798: getsockopt: connection refused"
+t=2017-01-21T19:08:06+0530 lvl=info msg="join connections" obj=join id=de33d9ea9181 l=nil r=103.27.8.42:39224
+t=2017-01-21T19:08:46+0530 lvl=info msg="Got quit command" obj=consoleui
+t=2017-01-21T19:08:46+0530 lvl=info msg="component stopped" obj=controller comp=consoleui err=nil
+t=2017-01-21T19:08:46+0530 lvl=info msg="requesting shutdown" obj=controller
+t=2017-01-21T19:08:46+0530 lvl=info msg="component stopped" obj=controller comp=updater err=nil
+t=2017-01-21T19:08:46+0530 lvl=info msg="session closing" obj=tunSess err=nil
+t=2017-01-21T19:08:46+0530 lvl=info msg="component stopped" obj=controller comp="memory storage" err=nil
+t=2017-01-21T19:08:46+0530 lvl=info msg="component stopped" obj=controller comp=web err=nil
+t=2017-01-21T19:08:46+0530 lvl=info msg="component stopped" obj=controller comp="Tunnel session" err=nil
+t=2017-01-21T19:08:46+0530 lvl=info msg="all component stopped" obj=controller
+t=2017-01-21T19:08:53+0530 lvl=info msg="no configuration paths supplied"
+t=2017-01-21T19:08:53+0530 lvl=info msg="ignoring default config path, could not stat it" path=/home/suyash1212/.ngrok2/ngrok.yml err="stat /home/suyash1212/.ngrok2/ngrok.yml: no such file or directory"
+t=2017-01-21T19:08:53+0530 lvl=info msg="run component" obj=controller comp=consoleui
+t=2017-01-21T19:08:53+0530 lvl=info msg="run component" obj=controller comp=web
+t=2017-01-21T19:08:53+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040
+t=2017-01-21T19:08:53+0530 lvl=info msg="run component" obj=controller comp=updater
+t=2017-01-21T19:08:53+0530 lvl=info msg="run component" obj=controller comp="Tunnel session"
+t=2017-01-21T19:08:53+0530 lvl=info msg="run component" obj=controller comp="memory storage"
+t=2017-01-21T19:08:53+0530 lvl=info msg=start pg=/_ws id=50a7d70c30207d28
+t=2017-01-21T19:08:54+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-21T19:08:54+0530 lvl=info msg="client session established" obj=csess id=a3287a99ffd1
+t=2017-01-21T19:09:02+0530 lvl=info msg="join connections" obj=join id=b4c7cb3264a5 l=127.0.0.1:8000 r=103.27.8.42:46865
+t=2017-01-21T19:09:04+0530 lvl=info msg="join connections" obj=join id=862efecc224d l=127.0.0.1:8000 r=103.27.8.42:46865
+t=2017-01-21T19:09:57+0530 lvl=info msg="join connections" obj=join id=fce29436b84e l=127.0.0.1:8000 r=103.27.8.42:5914
+t=2017-01-21T19:09:58+0530 lvl=info msg="join connections" obj=join id=934c385fecd6 l=127.0.0.1:8000 r=103.27.8.42:5914
+t=2017-01-21T19:10:00+0530 lvl=info msg="join connections" obj=join id=8281a684fa61 l=127.0.0.1:8000 r=103.27.8.42:36860
+t=2017-01-21T19:12:59+0530 lvl=warn msg="failed to open private leg" id=63bbf7e30c63 privaddr=localhost:8000 err="dial tcp 127.0.0.1:8000: getsockopt: connection refused"
+t=2017-01-21T19:12:59+0530 lvl=info msg="join connections" obj=join id=a1ef17002945 l=nil r=137.116.155.57:36168
+t=2017-01-21T19:13:13+0530 lvl=warn msg="failed to open private leg" id=b37b8d219814 privaddr=localhost:8000 err="dial tcp 127.0.0.1:8000: getsockopt: connection refused"
+t=2017-01-21T19:13:13+0530 lvl=info msg="join connections" obj=join id=57fe1eec2b80 l=nil r=137.116.153.103:43680
+t=2017-01-21T19:13:45+0530 lvl=info msg="join connections" obj=join id=effea293a755 l=127.0.0.1:8000 r=137.116.153.103:54520
+t=2017-01-21T19:13:50+0530 lvl=info msg="join connections" obj=join id=fbd1a569aae1 l=127.0.0.1:8000 r=52.163.59.179:1520
+t=2017-01-21T19:13:58+0530 lvl=info msg="Got quit command" obj=consoleui
+t=2017-01-21T19:13:58+0530 lvl=info msg="component stopped" obj=controller comp=consoleui err=nil
+t=2017-01-21T19:13:58+0530 lvl=info msg="requesting shutdown" obj=controller
+t=2017-01-21T19:13:58+0530 lvl=info msg="component stopped" obj=controller comp="memory storage" err=nil
+t=2017-01-21T19:13:58+0530 lvl=info msg="session closing" obj=tunSess err=nil
+t=2017-01-21T19:13:58+0530 lvl=info msg="component stopped" obj=controller comp="Tunnel session" err=nil
+t=2017-01-21T19:13:58+0530 lvl=info msg="component stopped" obj=controller comp=updater err=nil
+t=2017-01-21T19:13:58+0530 lvl=info msg="component stopped" obj=controller comp=web err=nil
+t=2017-01-21T19:13:58+0530 lvl=info msg="all component stopped" obj=controller
+t=2017-01-21T19:14:00+0530 lvl=info msg="no configuration paths supplied"
+t=2017-01-21T19:14:00+0530 lvl=info msg="ignoring default config path, could not stat it" path=/home/suyash1212/.ngrok2/ngrok.yml err="stat /home/suyash1212/.ngrok2/ngrok.yml: no such file or directory"
+t=2017-01-21T19:14:00+0530 lvl=info msg="run component" obj=controller comp=consoleui
+t=2017-01-21T19:14:00+0530 lvl=info msg="run component" obj=controller comp="Tunnel session"
+t=2017-01-21T19:14:00+0530 lvl=info msg="run component" obj=controller comp="memory storage"
+t=2017-01-21T19:14:00+0530 lvl=info msg="run component" obj=controller comp=web
+t=2017-01-21T19:14:00+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040
+t=2017-01-21T19:14:00+0530 lvl=info msg="run component" obj=controller comp=updater
+t=2017-01-21T19:14:00+0530 lvl=info msg=start pg=/_ws id=277619e322a6bc10
+t=2017-01-21T19:14:01+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-21T19:14:01+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-21T19:14:11+0530 lvl=info msg="join connections" obj=join id=e76271f20813 l=127.0.0.1:8000 r=103.27.8.42:37579
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/ id=c7632baef2762849
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/ id=c7632baef2762849 status=302 dur=99.149µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/inspect/http id=af7ea678d469901b
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/inspect/http id=af7ea678d469901b status=200 dur=1.861475ms
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/css/highlight.min.css id=95b9960ec3498252
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/css/highlight.min.css id=95b9960ec3498252 status=200 dur=214.495µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/highlight-8.1.min.js id=799476831c7b23ac
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/css/ngrok.css id=5e7ce6162ec7dffa
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/css/ngrok.css id=5e7ce6162ec7dffa status=200 dur=178.439µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/highlight-8.1.min.js id=799476831c7b23ac status=200 dur=472.507µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/css/bootstrap.min.css id=62df5e8e37bd6ca2
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/css/bootstrap.min.css id=62df5e8e37bd6ca2 status=200 dur=4.291835ms
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/vkbeautify.js id=77fbe00d8a67b077
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/vkbeautify.js id=77fbe00d8a67b077 status=200 dur=475.616µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/moment-2.7.0.js id=29333e84c8717585
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/moment-2.7.0.js id=29333e84c8717585 status=200 dur=1.436342ms
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/underscore-1.6.0.min.js id=d54e953526a47683
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/underscore-1.6.0.min.js id=d54e953526a47683 status=200 dur=516.261µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/jquery-2.1.1.min.js id=03200b9de33a4388
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/react-15.1.0.min.js id=1d2cb8d276a0fe91
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/jquery-2.1.1.min.js id=03200b9de33a4388 status=200 dur=2.390463ms
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/react-dom-15.1.0.min.js id=69527746ac810b2c
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/react-dom-15.1.0.min.js id=69527746ac810b2c status=200 dur=255.633µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/react-15.1.0.min.js id=1d2cb8d276a0fe91 status=200 dur=5.563734ms
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/vendor/base64.js id=99ee57f76e5d1139
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/vendor/base64.js id=99ee57f76e5d1139 status=200 dur=305.686µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/compiled/shared.js id=c7620c0f89a53cac
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/compiled/shared.js id=c7620c0f89a53cac status=200 dur=312.228µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/js/compiled/inspect.js id=22b918295caa73f7
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/js/compiled/inspect.js id=22b918295caa73f7 status=200 dur=626.58µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/_ws id=5768c05a76702c10
+t=2017-01-21T19:14:35+0530 lvl=info msg=start pg=/static/fonts/glyphicons-halflings-regular.woff id=cab803ed126911bc
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/static/fonts/glyphicons-halflings-regular.woff id=cab803ed126911bc status=200 dur=670.229µs
+t=2017-01-21T19:14:35+0530 lvl=info msg=end pg=/_ws id=277619e322a6bc10 status=0 dur=34.952169647s
+t=2017-01-21T19:15:11+0530 lvl=info msg="join connections" obj=join id=28dff0d4c9c1 l=127.0.0.1:8000 r=137.116.153.103:54520
+t=2017-01-21T19:15:22+0530 lvl=info msg="join connections" obj=join id=bdb952aeee94 l=127.0.0.1:8000 r=137.116.153.103:43232
+t=2017-01-21T19:15:38+0530 lvl=info msg="join connections" obj=join id=5560117b105f l=127.0.0.1:8000 r=137.116.155.123:37536
+t=2017-01-21T19:15:41+0530 lvl=info msg="join connections" obj=join id=3487b17372f7 l=127.0.0.1:8000 r=52.163.59.179:1521
+t=2017-01-21T19:15:48+0530 lvl=info msg="join connections" obj=join id=c5c88ab30844 l=127.0.0.1:8000 r=52.163.59.179:1520
+t=2017-01-21T19:15:49+0530 lvl=info msg="join connections" obj=join id=56c69434d21f l=127.0.0.1:8000 r=52.163.59.179:1521
+t=2017-01-21T19:15:51+0530 lvl=info msg="join connections" obj=join id=958baffd86d6 l=127.0.0.1:8000 r=52.163.59.179:1522
+t=2017-01-21T19:15:52+0530 lvl=info msg="join connections" obj=join id=6c507e5d5a8e l=127.0.0.1:8000 r=52.163.59.179:1523
+t=2017-01-21T19:15:58+0530 lvl=info msg="join connections" obj=join id=5fce7fdee1bd l=127.0.0.1:8000 r=52.163.59.179:1592
+t=2017-01-21T19:16:00+0530 lvl=info msg="join connections" obj=join id=2cb1e8fc064c l=127.0.0.1:8000 r=137.116.155.123:37536
+t=2017-01-21T19:16:31+0530 lvl=info msg="join connections" obj=join id=4ae86c99c426 l=127.0.0.1:8000 r=137.116.153.103:47520
+t=2017-01-21T19:22:02+0530 lvl=info msg="join connections" obj=join id=b48540aa3986 l=127.0.0.1:8000 r=137.116.153.103:46840
+t=2017-01-21T19:22:08+0530 lvl=info msg="join connections" obj=join id=e5936ac033dc l=127.0.0.1:8000 r=137.116.158.128:18000
+t=2017-01-21T19:22:09+0530 lvl=info msg="join connections" obj=join id=0518af866454 l=127.0.0.1:8000 r=137.116.158.128:18001
+t=2017-01-21T19:26:11+0530 lvl=info msg="join connections" obj=join id=b9ced0dc21ce l=127.0.0.1:8000 r=40.78.17.157:18488
+t=2017-01-21T19:26:12+0530 lvl=info msg="join connections" obj=join id=43b79b9e590c l=127.0.0.1:8000 r=40.78.17.157:18489
+t=2017-01-21T19:31:59+0530 lvl=info msg="join connections" obj=join id=67dfd5ea4dc1 l=127.0.0.1:8000 r=40.78.21.180:29584
+t=2017-01-21T19:33:04+0530 lvl=info msg="join connections" obj=join id=ddc066e7e0c6 l=127.0.0.1:8000 r=40.78.17.157:59800
+t=2017-01-21T19:33:42+0530 lvl=info msg="join connections" obj=join id=ef646853520e l=127.0.0.1:8000 r=40.78.22.38:41944
+t=2017-01-21T19:35:03+0530 lvl=info msg="join connections" obj=join id=10bee6823543 l=127.0.0.1:8000 r=40.78.22.38:41944
+t=2017-01-21T19:36:12+0530 lvl=info msg="join connections" obj=join id=4ff1ad86a5cf l=127.0.0.1:8000 r=40.78.22.38:41944
+t=2017-01-21T19:36:22+0530 lvl=info msg="join connections" obj=join id=6cf89e7222ee l=127.0.0.1:8000 r=40.78.22.38:41945
+t=2017-01-21T19:36:46+0530 lvl=info msg="join connections" obj=join id=73245df5059a l=127.0.0.1:8000 r=40.78.17.157:59800
+t=2017-01-21T19:37:11+0530 lvl=info msg="join connections" obj=join id=4756751485bb l=127.0.0.1:8000 r=40.127.189.87:50192
+t=2017-01-21T19:37:32+0530 lvl=info msg="join connections" obj=join id=b0e01453245d l=127.0.0.1:8000 r=40.78.17.157:59800
+t=2017-01-21T19:37:41+0530 lvl=info msg="join connections" obj=join id=d0c168bcdeae l=127.0.0.1:8000 r=40.127.189.87:50192
+t=2017-01-21T19:37:49+0530 lvl=info msg="join connections" obj=join id=449ba31929fd l=127.0.0.1:8000 r=40.127.183.64:14088
+t=2017-01-21T19:38:01+0530 lvl=info msg="join connections" obj=join id=9fd2968d0eef l=127.0.0.1:8000 r=40.127.189.87:50192
+t=2017-01-21T19:59:54+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=1da1b59c6c8b clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-21T19:59:54+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-21T19:59:54+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:38618->[::1]:53: read: connection refused"
+t=2017-01-21T19:59:55+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:59748->[::1]:53: read: connection refused"
+t=2017-01-21T19:59:56+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:44285->[::1]:53: read: connection refused"
+t=2017-01-21T19:59:58+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:58116->[::1]:53: read: connection refused"
+t=2017-01-21T20:00:00+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:00:03+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:57936->[::1]:53: read: connection refused"
+t=2017-01-21T20:00:09+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:33951->[::1]:53: read: connection refused"
+t=2017-01-21T20:00:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:46192->[::1]:53: read: connection refused"
+t=2017-01-21T20:00:33+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:00:52+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:43252->[::1]:53: read: connection refused"
+t=2017-01-21T20:01:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:49126->[::1]:53: read: connection refused"
+t=2017-01-21T20:01:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:57267->[::1]:53: read: connection refused"
+t=2017-01-21T20:02:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:32859->[::1]:53: read: connection refused"
+t=2017-01-21T20:02:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:49895->[::1]:53: read: connection refused"
+t=2017-01-21T20:03:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:03:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:40469->[::1]:53: read: connection refused"
+t=2017-01-21T20:04:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:39129->[::1]:53: read: connection refused"
+t=2017-01-21T20:04:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:48741->[::1]:53: read: connection refused"
+t=2017-01-21T20:05:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:05:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:53191->[::1]:53: read: connection refused"
+t=2017-01-21T20:06:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:35171->[::1]:53: read: connection refused"
+t=2017-01-21T20:06:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:50095->[::1]:53: read: connection refused"
+t=2017-01-21T20:07:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:50773->[::1]:53: read: connection refused"
+t=2017-01-21T20:07:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:35462->[::1]:53: read: connection refused"
+t=2017-01-21T20:08:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:08:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:52554->[::1]:53: read: connection refused"
+t=2017-01-21T20:09:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:41468->[::1]:53: read: connection refused"
+t=2017-01-21T20:09:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:56141->[::1]:53: read: connection refused"
+t=2017-01-21T20:10:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:10:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:53206->[::1]:53: read: connection refused"
+t=2017-01-21T20:11:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:33629->[::1]:53: read: connection refused"
+t=2017-01-21T20:11:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:55507->[::1]:53: read: connection refused"
+t=2017-01-21T20:12:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:41091->[::1]:53: read: connection refused"
+t=2017-01-21T20:12:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:57187->[::1]:53: read: connection refused"
+t=2017-01-21T20:13:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:13:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:52306->[::1]:53: read: connection refused"
+t=2017-01-21T20:14:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=AAAA: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:49957->[::1]:53: read: connection refused"
+t=2017-01-21T20:14:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:49934->[::1]:53: read: connection refused"
+t=2017-01-21T20:15:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:15:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:33638->[::1]:53: read: connection refused"
+t=2017-01-21T20:16:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:44710->[::1]:53: read: connection refused"
+t=2017-01-21T20:16:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:33474->[::1]:53: read: connection refused"
+t=2017-01-21T20:17:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:43413->[::1]:53: read: connection refused"
+t=2017-01-21T20:17:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:47090->[::1]:53: read: connection refused"
+t=2017-01-21T20:18:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:18:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:42653->[::1]:53: read: connection refused"
+t=2017-01-21T20:19:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:55143->[::1]:53: read: connection refused"
+t=2017-01-21T20:19:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:32825->[::1]:53: read: connection refused"
+t=2017-01-21T20:20:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:20:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:56847->[::1]:53: read: connection refused"
+t=2017-01-21T20:21:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:39639->[::1]:53: read: connection refused"
+t=2017-01-21T20:21:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:55807->[::1]:53: read: connection refused"
+t=2017-01-21T20:22:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:49377->[::1]:53: read: connection refused"
+t=2017-01-21T20:22:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:45250->[::1]:53: read: connection refused"
+t=2017-01-21T20:23:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:23:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:39787->[::1]:53: read: connection refused"
+t=2017-01-21T20:24:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:58747->[::1]:53: read: connection refused"
+t=2017-01-21T20:24:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:51762->[::1]:53: read: connection refused"
+t=2017-01-21T20:25:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:25:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:51817->[::1]:53: read: connection refused"
+t=2017-01-21T20:26:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:56443->[::1]:53: read: connection refused"
+t=2017-01-21T20:26:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:44448->[::1]:53: read: connection refused"
+t=2017-01-21T20:27:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:35505->[::1]:53: read: connection refused"
+t=2017-01-21T20:27:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:52526->[::1]:53: read: connection refused"
+t=2017-01-21T20:28:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:28:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:42050->[::1]:53: read: connection refused"
+t=2017-01-21T20:29:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:51178->[::1]:53: read: connection refused"
+t=2017-01-21T20:29:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:42289->[::1]:53: read: connection refused"
+t=2017-01-21T20:30:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:30:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:50537->[::1]:53: read: connection refused"
+t=2017-01-21T20:31:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:60351->[::1]:53: read: connection refused"
+t=2017-01-21T20:31:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:46251->[::1]:53: read: connection refused"
+t=2017-01-21T20:32:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:47683->[::1]:53: read: connection refused"
+t=2017-01-21T20:32:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:37775->[::1]:53: read: connection refused"
+t=2017-01-21T20:33:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:33:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:38394->[::1]:53: read: connection refused"
+t=2017-01-21T20:34:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:58632->[::1]:53: read: connection refused"
+t=2017-01-21T20:34:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:51826->[::1]:53: read: connection refused"
+t=2017-01-21T20:35:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:35:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:40204->[::1]:53: read: connection refused"
+t=2017-01-21T20:36:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:57090->[::1]:53: read: connection refused"
+t=2017-01-21T20:36:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:38930->[::1]:53: read: connection refused"
+t=2017-01-21T20:37:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:44056->[::1]:53: read: connection refused"
+t=2017-01-21T20:37:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:56064->[::1]:53: read: connection refused"
+t=2017-01-21T20:38:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:38:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:33249->[::1]:53: read: connection refused"
+t=2017-01-21T20:39:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:49953->[::1]:53: read: connection refused"
+t=2017-01-21T20:39:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:38571->[::1]:53: read: connection refused"
+t=2017-01-21T20:40:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:40:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:34856->[::1]:53: read: connection refused"
+t=2017-01-21T20:41:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:34823->[::1]:53: read: connection refused"
+t=2017-01-21T20:41:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:45098->[::1]:53: read: connection refused"
+t=2017-01-21T20:42:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=AAAA: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:58207->[::1]:53: read: connection refused"
+t=2017-01-21T20:42:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:60221->[::1]:53: read: connection refused"
+t=2017-01-21T20:43:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:43:48+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:41077->[::1]:53: read: connection refused"
+t=2017-01-21T20:44:18+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:47288->[::1]:53: read: connection refused"
+t=2017-01-21T20:44:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:39273->[::1]:53: read: connection refused"
+t=2017-01-21T20:45:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:45:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:56132->[::1]:53: read: connection refused"
+t=2017-01-21T20:46:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:59949->[::1]:53: read: connection refused"
+t=2017-01-21T20:46:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:54570->[::1]:53: read: connection refused"
+t=2017-01-21T20:47:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=AAAA: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:57046->[::1]:53: read: connection refused"
+t=2017-01-21T20:47:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:57292->[::1]:53: read: connection refused"
+t=2017-01-21T20:48:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:48:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:33214->[::1]:53: read: connection refused"
+t=2017-01-21T20:49:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=AAAA: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:40302->[::1]:53: read: connection refused"
+t=2017-01-21T20:49:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:49938->[::1]:53: read: connection refused"
+t=2017-01-21T20:50:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:50:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:43082->[::1]:53: read: connection refused"
+t=2017-01-21T20:51:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:52896->[::1]:53: read: connection refused"
+t=2017-01-21T20:51:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:58244->[::1]:53: read: connection refused"
+t=2017-01-21T20:52:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:34309->[::1]:53: read: connection refused"
+t=2017-01-21T20:52:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:52013->[::1]:53: read: connection refused"
+t=2017-01-21T20:53:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:53:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:52624->[::1]:53: read: connection refused"
+t=2017-01-21T20:54:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=AAAA: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:58908->[::1]:53: read: connection refused"
+t=2017-01-21T20:54:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:40097->[::1]:53: read: connection refused"
+t=2017-01-21T20:55:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:55:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:40659->[::1]:53: read: connection refused"
+t=2017-01-21T20:56:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:42315->[::1]:53: read: connection refused"
+t=2017-01-21T20:56:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:37272->[::1]:53: read: connection refused"
+t=2017-01-21T20:57:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=AAAA: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:50262->[::1]:53: read: connection refused"
+t=2017-01-21T20:57:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:48355->[::1]:53: read: connection refused"
+t=2017-01-21T20:58:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T20:58:49+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:57278->[::1]:53: read: connection refused"
+t=2017-01-21T20:59:19+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:42868->[::1]:53: read: connection refused"
+t=2017-01-21T20:59:52+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-21T20:59:53+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-21T21:03:48+0530 lvl=info msg="join connections" obj=join id=62169e650731 l=127.0.0.1:8000 r=40.78.17.157:41736
+t=2017-01-21T21:15:03+0530 lvl=info msg="join connections" obj=join id=4a56690ee8ec l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-21T21:15:46+0530 lvl=info msg="join connections" obj=join id=8ec33d372217 l=127.0.0.1:8000 r=40.78.17.157:41736
+t=2017-01-21T21:21:42+0530 lvl=info msg="join connections" obj=join id=fe98d3e29cf0 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T21:21:53+0530 lvl=info msg="join connections" obj=join id=3b99806ce242 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-21T21:23:39+0530 lvl=info msg="join connections" obj=join id=01dac23bed77 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-21T21:26:30+0530 lvl=info msg="join connections" obj=join id=ef2c4312257e l=127.0.0.1:8000 r=40.121.91.106:10216
+t=2017-01-21T21:26:31+0530 lvl=info msg="join connections" obj=join id=34f8e913e283 l=127.0.0.1:8000 r=40.121.92.251:49808
+t=2017-01-21T21:27:03+0530 lvl=info msg="join connections" obj=join id=55625f38b851 l=127.0.0.1:8000 r=40.121.91.106:15456
+t=2017-01-21T21:31:22+0530 lvl=info msg="join connections" obj=join id=2eefe9d426cb l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T21:31:39+0530 lvl=info msg="join connections" obj=join id=e55327a8b683 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T21:31:55+0530 lvl=info msg="join connections" obj=join id=063d2aa16065 l=127.0.0.1:8000 r=40.78.17.157:41736
+t=2017-01-21T21:32:05+0530 lvl=info msg="join connections" obj=join id=ff0fc5c6aa6e l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T21:32:54+0530 lvl=info msg="join connections" obj=join id=e75de88171fa l=127.0.0.1:8000 r=40.78.17.157:50448
+t=2017-01-21T21:35:00+0530 lvl=info msg="join connections" obj=join id=40e39ce35788 l=127.0.0.1:8000 r=40.78.17.157:51568
+t=2017-01-21T21:35:29+0530 lvl=info msg="join connections" obj=join id=007da3f2f256 l=127.0.0.1:8000 r=40.78.17.157:51568
+t=2017-01-21T21:35:47+0530 lvl=info msg="join connections" obj=join id=38046b093f81 l=127.0.0.1:8000 r=40.78.17.157:51568
+t=2017-01-21T21:36:22+0530 lvl=info msg="join connections" obj=join id=1e8a5fe61d78 l=127.0.0.1:8000 r=40.78.17.157:51568
+t=2017-01-21T21:37:12+0530 lvl=info msg="join connections" obj=join id=30bf6c2e1eef l=127.0.0.1:8000 r=40.78.17.157:50448
+t=2017-01-21T21:37:33+0530 lvl=info msg="join connections" obj=join id=1c5dffc138e7 l=127.0.0.1:8000 r=40.78.17.157:50448
+t=2017-01-21T21:37:54+0530 lvl=info msg="join connections" obj=join id=c650920e6083 l=127.0.0.1:8000 r=40.78.22.38:58728
+t=2017-01-21T21:38:14+0530 lvl=info msg="join connections" obj=join id=40340918f9a6 l=127.0.0.1:8000 r=40.78.17.157:51568
+t=2017-01-21T21:38:25+0530 lvl=info msg="join connections" obj=join id=6b782853c934 l=127.0.0.1:8000 r=40.78.17.157:50448
+t=2017-01-21T21:52:37+0530 lvl=info msg="join connections" obj=join id=648213ff41e6 l=127.0.0.1:8000 r=40.78.17.157:41736
+t=2017-01-21T21:56:22+0530 lvl=info msg="join connections" obj=join id=9f891b988584 l=127.0.0.1:8000 r=40.78.17.157:56547
+t=2017-01-21T21:56:59+0530 lvl=info msg="join connections" obj=join id=d855960583cc l=127.0.0.1:8000 r=40.78.17.157:50448
+t=2017-01-21T21:57:33+0530 lvl=info msg="join connections" obj=join id=383e25940475 l=127.0.0.1:8000 r=40.78.17.157:50448
+t=2017-01-21T21:57:57+0530 lvl=info msg="join connections" obj=join id=4e0e150df79c l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-21T21:58:14+0530 lvl=info msg="join connections" obj=join id=89a4e12fd7c1 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-21T21:58:34+0530 lvl=info msg="join connections" obj=join id=f103cb30a6bb l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-21T22:30:12+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=a714449301d6 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-21T22:30:12+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-21T22:30:22+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: i/o timeout"
+t=2017-01-21T22:30:24+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-21T22:30:24+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-21T22:30:34+0530 lvl=info msg="join connections" obj=join id=f107605c0886 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-21T22:36:26+0530 lvl=info msg="join connections" obj=join id=bbe1901342e9 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-21T22:36:47+0530 lvl=info msg="join connections" obj=join id=61429b586b3c l=127.0.0.1:8000 r=40.78.17.157:62208
+t=2017-01-21T22:36:57+0530 lvl=info msg="join connections" obj=join id=3d5cc599e805 l=127.0.0.1:8000 r=40.78.17.157:62209
+t=2017-01-21T22:37:17+0530 lvl=info msg="join connections" obj=join id=837709350aa4 l=127.0.0.1:8000 r=40.78.21.191:46856
+t=2017-01-21T22:44:23+0530 lvl=info msg="join connections" obj=join id=1d00ace30d50 l=127.0.0.1:8000 r=40.78.17.157:56546
+t=2017-01-21T22:44:58+0530 lvl=info msg="join connections" obj=join id=f104dc4e2b11 l=127.0.0.1:8000 r=40.78.17.157:61352
+t=2017-01-21T22:45:07+0530 lvl=info msg="join connections" obj=join id=0fc5adb26af4 l=127.0.0.1:8000 r=40.78.17.157:62208
+t=2017-01-21T22:45:17+0530 lvl=info msg="join connections" obj=join id=4ef13e853bd4 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-21T22:46:27+0530 lvl=info msg="join connections" obj=join id=beb026a3a924 l=127.0.0.1:8000 r=40.78.17.157:61352
+t=2017-01-21T22:46:46+0530 lvl=info msg="join connections" obj=join id=ee3ca771e318 l=127.0.0.1:8000 r=40.78.17.157:61352
+t=2017-01-21T22:46:55+0530 lvl=info msg="join connections" obj=join id=042a818483ce l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-21T22:47:06+0530 lvl=info msg="join connections" obj=join id=772f19343c21 l=127.0.0.1:8000 r=40.78.17.157:61352
+t=2017-01-21T22:50:37+0530 lvl=info msg="join connections" obj=join id=e9141ad15eaa l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T22:50:48+0530 lvl=info msg="join connections" obj=join id=41ebee18b734 l=127.0.0.1:8000 r=40.78.22.38:59585
+t=2017-01-21T22:51:27+0530 lvl=info msg="join connections" obj=join id=d605dc961c27 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T22:52:19+0530 lvl=info msg="join connections" obj=join id=07191d9fe279 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-21T22:52:34+0530 lvl=info msg="join connections" obj=join id=43b96a7faa7a l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-21T23:00:34+0530 lvl=info msg="join connections" obj=join id=6a7e02883e8a l=127.0.0.1:8000 r=40.121.93.134:33608
+t=2017-01-21T23:01:06+0530 lvl=info msg="join connections" obj=join id=efafb3db90f1 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-21T23:04:10+0530 lvl=info msg="join connections" obj=join id=2098fe52cbba l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-21T23:04:46+0530 lvl=info msg="join connections" obj=join id=1d3fc372e86c l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-21T23:05:05+0530 lvl=info msg="join connections" obj=join id=6e064a9be353 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-21T23:09:19+0530 lvl=info msg="join connections" obj=join id=194bee0231e1 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-21T23:09:39+0530 lvl=info msg="join connections" obj=join id=f63d1676aa03 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-21T23:09:56+0530 lvl=info msg="join connections" obj=join id=a8aea68f95ca l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-21T23:32:49+0530 lvl=info msg="join connections" obj=join id=c9f9e81915cb l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-21T23:34:14+0530 lvl=info msg="join connections" obj=join id=30a5d7f6fb1d l=127.0.0.1:8000 r=40.121.93.134:13536
+t=2017-01-21T23:34:30+0530 lvl=info msg="join connections" obj=join id=1e2da0ea27f0 l=127.0.0.1:8000 r=40.78.17.157:56548
+t=2017-01-21T23:34:48+0530 lvl=info msg="join connections" obj=join id=8cd8d74b9601 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-21T23:35:03+0530 lvl=info msg="join connections" obj=join id=74236c411181 l=127.0.0.1:8000 r=40.78.17.157:56548
+t=2017-01-21T23:48:57+0530 lvl=info msg="join connections" obj=join id=fd8d5625d52d l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-21T23:49:17+0530 lvl=info msg="join connections" obj=join id=0f20f0decdc8 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-21T23:49:27+0530 lvl=info msg="join connections" obj=join id=9c4d8976ca4b l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-21T23:53:52+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=a44dfe984740 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-21T23:53:52+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-21T23:54:02+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: i/o timeout"
+t=2017-01-21T23:54:02+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:57197->[::1]:53: read: connection refused"
+t=2017-01-21T23:54:04+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:42968->[::1]:53: read: connection refused"
+t=2017-01-21T23:54:06+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:49014->[::1]:53: read: connection refused"
+t=2017-01-21T23:54:09+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T23:54:13+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:40879->[::1]:53: read: connection refused"
+t=2017-01-21T23:54:20+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:48905->[::1]:53: read: connection refused"
+t=2017-01-21T23:54:30+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:50591->[::1]:53: read: connection refused"
+t=2017-01-21T23:54:45+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T23:55:10+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:55974->[::1]:53: read: connection refused"
+t=2017-01-21T23:55:40+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:48507->[::1]:53: read: connection refused"
+t=2017-01-21T23:56:10+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:54739->[::1]:53: read: connection refused"
+t=2017-01-21T23:56:40+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:59301->[::1]:53: read: connection refused"
+t=2017-01-21T23:57:10+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:39123->[::1]:53: read: connection refused"
+t=2017-01-21T23:57:40+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-21T23:58:10+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:42757->[::1]:53: read: connection refused"
+t=2017-01-21T23:58:40+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:42678->[::1]:53: read: connection refused"
+t=2017-01-21T23:59:10+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:40853->[::1]:53: read: connection refused"
+t=2017-01-21T23:59:40+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-22T00:00:10+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:56910->[::1]:53: read: connection refused"
+t=2017-01-22T00:00:40+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:53469->[::1]:53: read: connection refused"
+t=2017-01-22T00:01:20+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: i/o timeout"
+t=2017-01-22T00:01:50+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:39911->[::1]:53: read: connection refused"
+t=2017-01-22T00:02:23+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T00:02:23+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T00:02:31+0530 lvl=info msg="join connections" obj=join id=93702e619f1a l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:02:42+0530 lvl=info msg="join connections" obj=join id=8b1e45122b5a l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:03:00+0530 lvl=info msg="join connections" obj=join id=3ffef5252e91 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T00:03:09+0530 lvl=info msg="join connections" obj=join id=50b452f442e7 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T00:05:32+0530 lvl=info msg="join connections" obj=join id=09f5b8750625 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:05:46+0530 lvl=info msg="join connections" obj=join id=8876ef88f750 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:06:02+0530 lvl=info msg="join connections" obj=join id=2ae38a8be488 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:06:14+0530 lvl=info msg="join connections" obj=join id=208ebe262123 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T00:08:27+0530 lvl=info msg="join connections" obj=join id=fee5cdf892ae l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T00:08:44+0530 lvl=info msg="join connections" obj=join id=17e02129d11c l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T00:08:58+0530 lvl=info msg="join connections" obj=join id=0041bbc0e9ab l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:18:38+0530 lvl=info msg="join connections" obj=join id=7a94e54162ed l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:18:52+0530 lvl=info msg="join connections" obj=join id=81e7e8495a04 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T00:19:47+0530 lvl=info msg="join connections" obj=join id=0b3fb871e51b l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:19:59+0530 lvl=info msg="join connections" obj=join id=7e6e4dc68f43 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T00:21:03+0530 lvl=info msg="join connections" obj=join id=c6aa3ee2e34b l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:21:20+0530 lvl=info msg="join connections" obj=join id=6527c0474b2a l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:25:21+0530 lvl=info msg="join connections" obj=join id=033e9c3c888f l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T00:25:37+0530 lvl=info msg="join connections" obj=join id=b2490164c463 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:26:43+0530 lvl=info msg="join connections" obj=join id=fc7eed7f43a4 l=127.0.0.1:8000 r=40.78.17.157:56545
+t=2017-01-22T00:26:57+0530 lvl=info msg="join connections" obj=join id=b1a0d8c30846 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T00:37:35+0530 lvl=info msg="join connections" obj=join id=e81ee9878d8f l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T00:37:53+0530 lvl=info msg="join connections" obj=join id=4596a1bdc04d l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:41:02+0530 lvl=info msg="join connections" obj=join id=c9103527cc17 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T00:41:15+0530 lvl=info msg="join connections" obj=join id=db2a2088a520 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T00:41:53+0530 lvl=info msg="join connections" obj=join id=d0807b38c9d1 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:42:04+0530 lvl=info msg="join connections" obj=join id=29952952ac19 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T00:42:41+0530 lvl=info msg="join connections" obj=join id=80f18240df4d l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T00:42:42+0530 lvl=info msg="join connections" obj=join id=86377830326b l=127.0.0.1:8000 r=40.78.17.157:18473
+t=2017-01-22T00:42:53+0530 lvl=info msg="join connections" obj=join id=1727200a5239 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:42:53+0530 lvl=info msg="join connections" obj=join id=749887cb0b32 l=127.0.0.1:8000 r=40.78.17.157:56545
+t=2017-01-22T00:43:26+0530 lvl=info msg="join connections" obj=join id=683ac1e02c82 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:43:46+0530 lvl=info msg="join connections" obj=join id=d5d8fbf1f046 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:44:01+0530 lvl=info msg="join connections" obj=join id=6d8b0525884a l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:44:02+0530 lvl=info msg="join connections" obj=join id=048be52e0f90 l=127.0.0.1:8000 r=40.78.17.157:56545
+t=2017-01-22T00:44:12+0530 lvl=info msg="join connections" obj=join id=17db6f844c2d l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T00:44:22+0530 lvl=info msg="join connections" obj=join id=afa79723fa31 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:44:32+0530 lvl=info msg="join connections" obj=join id=70282725c553 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T00:58:06+0530 lvl=info msg="join connections" obj=join id=290df737a60f l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T00:58:20+0530 lvl=info msg="join connections" obj=join id=19b9cb6ce858 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T00:59:08+0530 lvl=info msg="join connections" obj=join id=c9ceb250a58c l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T00:59:16+0530 lvl=info msg="join connections" obj=join id=0cbc7f8cdab5 l=127.0.0.1:8000 r=40.78.17.157:41969
+t=2017-01-22T00:59:32+0530 lvl=info msg="join connections" obj=join id=e098794aa2aa l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T00:59:43+0530 lvl=info msg="join connections" obj=join id=d5d95f885121 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T01:02:05+0530 lvl=info msg="join connections" obj=join id=42abdd6c2c79 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T01:03:15+0530 lvl=info msg="join connections" obj=join id=eb53de2f0f42 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T01:06:10+0530 lvl=info msg="join connections" obj=join id=80734a271e05 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T01:06:49+0530 lvl=info msg="join connections" obj=join id=cca69f5319a1 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T01:07:15+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="read EOF from remote peer"
+t=2017-01-22T01:07:18+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:07:19+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=efed6a6b8455 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:07:21+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:11:15+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=d273d9b6152a clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:11:15+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T01:11:16+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:11:16+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:13:18+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=e6dbc5ed5bf8 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:13:18+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T01:13:22+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:13:28+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:15:07+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="read EOF from remote peer"
+t=2017-01-22T01:15:22+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=d32d2ee4907d clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:15:26+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:15:26+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:15:34+0530 lvl=info msg="join connections" obj=join id=2064052d1696 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T01:22:27+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=c758cebe8f4f clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:22:27+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T01:22:37+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: i/o timeout"
+t=2017-01-22T01:22:39+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:22:40+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:24:20+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=21690bd70438 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:24:20+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T01:24:24+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:24:25+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:24:49+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=560352ac0082 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:24:49+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T01:24:56+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:24:57+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:25:16+0530 lvl=info msg="join connections" obj=join id=ede8bee2b3be l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T01:25:45+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=6cd5df469766 clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T01:25:45+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T01:25:55+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: i/o timeout"
+t=2017-01-22T01:26:05+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: i/o timeout"
+t=2017-01-22T01:26:17+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)"
+t=2017-01-22T01:26:28+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: net/http: request canceled while waiting for connection"
+t=2017-01-22T01:26:41+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[read udp 10.194.30.174:52661->8.8.8.8:53: i/o timeout dial udp 8.8.4.4:53: i/o timeout]"
+t=2017-01-22T01:26:52+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T01:26:52+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T01:37:45+0530 lvl=info msg="join connections" obj=join id=8a54b0840348 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T01:37:57+0530 lvl=info msg="join connections" obj=join id=813a38fa50d9 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T01:38:11+0530 lvl=info msg="join connections" obj=join id=b6cce4b288fd l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T01:38:20+0530 lvl=info msg="join connections" obj=join id=571ac1881798 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T01:39:37+0530 lvl=info msg="join connections" obj=join id=fb676777cc7c l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T01:39:50+0530 lvl=info msg="join connections" obj=join id=ac3c3e0dd19d l=127.0.0.1:8000 r=40.78.17.157:56545
+t=2017-01-22T01:41:28+0530 lvl=info msg="join connections" obj=join id=7adb847b1ebb l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T01:46:35+0530 lvl=info msg="join connections" obj=join id=ce726d4bd5f8 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T01:50:28+0530 lvl=info msg="join connections" obj=join id=495661532cf4 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T01:53:02+0530 lvl=info msg="join connections" obj=join id=c9ad512f1524 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T01:54:13+0530 lvl=info msg="join connections" obj=join id=adbdd5085776 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T01:55:06+0530 lvl=info msg="join connections" obj=join id=bb40c8b2a090 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T01:57:21+0530 lvl=info msg="join connections" obj=join id=7dd15a43aacf l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T01:59:58+0530 lvl=info msg="join connections" obj=join id=106b298b821d l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T02:30:15+0530 lvl=info msg="join connections" obj=join id=78f659643777 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T02:31:51+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=csess id=986dd51da9de clientid=bd7d596c57225010fb053e43eec8a11f
+t=2017-01-22T02:31:51+0530 lvl=eror msg="session closed, starting reconnect loop" obj=csess id=a7de74da79d1 err="session closed"
+t=2017-01-22T02:31:51+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:47554->[::1]:53: read: connection refused"
+t=2017-01-22T02:31:52+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="dial tcp: lookup tunnel.us.ngrok.com on [::1]:53: read udp [::1]:60459->[::1]:53: read: connection refused"
+t=2017-01-22T02:31:53+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://dns.google.com/resolve?cd=true&name=tunnel.us.ngrok.com&type=A: dial tcp: lookup dns.google.com on [::1]:53: read udp [::1]:41485->[::1]:53: read: connection refused"
+t=2017-01-22T02:31:56+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="Get https://s3.amazonaws.com/dns.ngrok.com/tunnel.json: dial tcp: lookup s3.amazonaws.com on [::1]:53: read udp [::1]:37508->[::1]:53: read: connection refused"
+t=2017-01-22T02:31:59+0530 lvl=eror msg="failed to reconnect session" obj=csess id=a7de74da79d1 err="[dial udp 8.8.8.8:53: connect: network is unreachable dial udp 8.8.4.4:53: connect: network is unreachable]"
+t=2017-01-22T02:32:05+0530 lvl=info msg="tunnel session started" obj=tunSess
+t=2017-01-22T02:32:06+0530 lvl=info msg="client session established" obj=csess id=a7de74da79d1
+t=2017-01-22T02:32:34+0530 lvl=info msg="join connections" obj=join id=151c57de5aa6 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T02:33:27+0530 lvl=info msg="join connections" obj=join id=74e978d8df17 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T02:33:36+0530 lvl=info msg="join connections" obj=join id=c9d8f9afe53b l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T02:36:14+0530 lvl=info msg="join connections" obj=join id=f5cb45946eb0 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T02:36:29+0530 lvl=info msg="join connections" obj=join id=5b19a63c762b l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T02:38:25+0530 lvl=info msg="join connections" obj=join id=e571c775e3ba l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T02:40:24+0530 lvl=info msg="join connections" obj=join id=5ff4907f671f l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T02:42:42+0530 lvl=info msg="join connections" obj=join id=5d86855cb972 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T02:43:17+0530 lvl=info msg="join connections" obj=join id=4181c8f2fb0f l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T02:44:50+0530 lvl=info msg="join connections" obj=join id=1aa7f1e6adc4 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T02:46:34+0530 lvl=info msg="join connections" obj=join id=d78193b5361f l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T02:47:44+0530 lvl=info msg="join connections" obj=join id=2d3f1fda74d6 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T02:48:54+0530 lvl=info msg="join connections" obj=join id=f2d81ae00ec6 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T02:49:27+0530 lvl=info msg="join connections" obj=join id=cfe5975c3a32 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T02:51:33+0530 lvl=info msg="join connections" obj=join id=a9413422c14c l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T02:53:18+0530 lvl=info msg="join connections" obj=join id=c278199dc177 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T02:55:21+0530 lvl=info msg="join connections" obj=join id=230c14740eb4 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:00:44+0530 lvl=info msg="join connections" obj=join id=ad4d83330f03 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:03:33+0530 lvl=info msg="join connections" obj=join id=501c2ea02289 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T03:05:22+0530 lvl=info msg="join connections" obj=join id=fa5a99209a60 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T03:06:30+0530 lvl=info msg="join connections" obj=join id=074a54b6a2be l=127.0.0.1:8000 r=40.127.189.87:50192
+t=2017-01-22T03:06:42+0530 lvl=info msg="join connections" obj=join id=abb036531695 l=127.0.0.1:8000 r=40.127.189.87:50194
+t=2017-01-22T03:06:55+0530 lvl=info msg="join connections" obj=join id=d5d44bbd3e5f l=127.0.0.1:8000 r=40.127.189.87:50192
+t=2017-01-22T03:07:22+0530 lvl=info msg="join connections" obj=join id=53fc282dca33 l=127.0.0.1:8000 r=40.127.189.87:14096
+t=2017-01-22T03:09:13+0530 lvl=info msg="join connections" obj=join id=14c4c6014ef6 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T03:13:12+0530 lvl=info msg="join connections" obj=join id=6325228405e8 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:13:30+0530 lvl=info msg="join connections" obj=join id=ca9d1bfcd395 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T03:14:09+0530 lvl=info msg="join connections" obj=join id=624b94517eb3 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:17:16+0530 lvl=info msg="join connections" obj=join id=00b9eec7a902 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:19:21+0530 lvl=info msg="join connections" obj=join id=57a438cd559e l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T03:23:01+0530 lvl=info msg="join connections" obj=join id=0e4e4c2e498e l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:23:22+0530 lvl=info msg="join connections" obj=join id=e64378bf2bbf l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:23:59+0530 lvl=info msg="join connections" obj=join id=9b10783580a9 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:24:11+0530 lvl=info msg="join connections" obj=join id=8173abd5dd5a l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:24:30+0530 lvl=info msg="join connections" obj=join id=b569a80afa75 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T03:24:40+0530 lvl=info msg="join connections" obj=join id=1121511ccb99 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T03:25:21+0530 lvl=info msg="join connections" obj=join id=dce290648605 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:25:33+0530 lvl=info msg="join connections" obj=join id=5098c0a70ede l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:25:48+0530 lvl=info msg="join connections" obj=join id=75e2dbcb0fce l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T03:26:11+0530 lvl=info msg="join connections" obj=join id=e89b03bf5cbb l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:26:29+0530 lvl=info msg="join connections" obj=join id=bb9c9bc63613 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:26:47+0530 lvl=info msg="join connections" obj=join id=42538dab0e27 l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:27:38+0530 lvl=info msg="join connections" obj=join id=02a5f0037181 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T03:28:39+0530 lvl=info msg="join connections" obj=join id=d51afef6d589 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:28:39+0530 lvl=info msg="join connections" obj=join id=a668c6ffe366 l=127.0.0.1:8000 r=40.78.21.180:7553
+t=2017-01-22T03:28:50+0530 lvl=info msg="join connections" obj=join id=fab42064b0d1 l=127.0.0.1:8000 r=40.78.21.180:7554
+t=2017-01-22T03:29:09+0530 lvl=info msg="join connections" obj=join id=e0c5f289d9e4 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T03:29:16+0530 lvl=info msg="join connections" obj=join id=0718307d7763 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T03:29:20+0530 lvl=info msg="join connections" obj=join id=6ffcac1811a4 l=127.0.0.1:8000 r=40.78.21.180:34993
+t=2017-01-22T03:29:25+0530 lvl=info msg="join connections" obj=join id=97ff09c69b5d l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:29:27+0530 lvl=info msg="join connections" obj=join id=671ae816d832 l=127.0.0.1:8000 r=40.78.21.180:7553
+t=2017-01-22T03:29:27+0530 lvl=info msg="join connections" obj=join id=50922a2a1f9c l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:29:28+0530 lvl=info msg="join connections" obj=join id=82e166661383 l=127.0.0.1:8000 r=40.78.17.157:18457
+t=2017-01-22T03:29:29+0530 lvl=info msg="join connections" obj=join id=fd87c9f7b6fd l=127.0.0.1:8000 r=40.78.21.180:7554
+t=2017-01-22T03:29:29+0530 lvl=info msg="join connections" obj=join id=351b78a03939 l=127.0.0.1:8000 r=40.78.17.157:18458
+t=2017-01-22T03:29:30+0530 lvl=info msg="join connections" obj=join id=f2cde65d7ff7 l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T03:29:30+0530 lvl=info msg="join connections" obj=join id=5b321972bcb0 l=127.0.0.1:8000 r=40.78.21.180:7555
+t=2017-01-22T03:29:30+0530 lvl=info msg="join connections" obj=join id=eea318b92b51 l=127.0.0.1:8000 r=40.78.21.180:7556
+t=2017-01-22T03:29:31+0530 lvl=info msg="join connections" obj=join id=0541ca946ac7 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:29:31+0530 lvl=info msg="join connections" obj=join id=0fd624e3f3fe l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T03:29:31+0530 lvl=info msg="join connections" obj=join id=9664265154c5 l=127.0.0.1:8000 r=40.78.17.157:18459
+t=2017-01-22T03:29:34+0530 lvl=info msg="join connections" obj=join id=a2d2d81bf410 l=127.0.0.1:8000 r=40.78.21.180:7557
+t=2017-01-22T03:29:40+0530 lvl=info msg="join connections" obj=join id=be36ebe04ca8 l=127.0.0.1:8000 r=40.78.21.180:34992
+t=2017-01-22T03:29:50+0530 lvl=info msg="join connections" obj=join id=feeaf0481b7b l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:30:11+0530 lvl=info msg="join connections" obj=join id=ed1321ceda5a l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T03:30:19+0530 lvl=info msg="join connections" obj=join id=554cef644621 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:30:26+0530 lvl=info msg="join connections" obj=join id=1e10b63dd6cc l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:30:35+0530 lvl=info msg="join connections" obj=join id=2f0b705e03ef l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:30:45+0530 lvl=info msg="join connections" obj=join id=40b21b85d2f5 l=127.0.0.1:8000 r=40.78.17.157:41968
+t=2017-01-22T03:30:53+0530 lvl=info msg="join connections" obj=join id=6e6ecffcaae4 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:31:15+0530 lvl=info msg="join connections" obj=join id=bdb410d3ce77 l=127.0.0.1:8000 r=40.78.22.38:59584
+t=2017-01-22T03:31:42+0530 lvl=info msg="join connections" obj=join id=89f0cfac210c l=127.0.0.1:8000 r=40.78.17.157:18456
+t=2017-01-22T03:34:02+0530 lvl=info msg="join connections" obj=join id=78940f5d602f l=127.0.0.1:8000 r=40.78.17.157:18472
+t=2017-01-22T03:34:47+0530 lvl=info msg="join connections" obj=join id=6be4deffd016 l=127.0.0.1:8000 r=40.78.21.191:45520
+t=2017-01-22T03:35:52+0530 lvl=info msg="join connections" obj=join id=6f798ef33005 l=127.0.0.1:8000 r=40.78.17.157:11680
+t=2017-01-22T03:36:12+0530 lvl=info msg="join connections" obj=join id=a1123b7d6807 l=127.0.0.1:8000 r=40.78.21.191:45520
+t=2017-01-22T03:38:04+0530 lvl=info msg="join connections" obj=join id=42b5335b59e3 l=127.0.0.1:8000 r=40.78.17.157:56544
+t=2017-01-22T03:39:05+0530 lvl=info msg="join connections" obj=join id=05c93ec3bec6 l=127.0.0.1:8000 r=40.78.17.157:18464
+t=2017-01-22T03:40:00+0530 lvl=info msg="join connections" obj=join id=e807ca301c9e l=127.0.0.1:8000 r=40.78.17.157:11680
+t=2017-01-22T03:41:13+0530 lvl=info msg="join connections" obj=join id=31f7a3f37286 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:42:55+0530 lvl=info msg="join connections" obj=join id=79056595b239 l=127.0.0.1:8000 r=40.78.17.157:18464
+t=2017-01-22T03:43:07+0530 lvl=info msg="join connections" obj=join id=b47aa65a84aa l=127.0.0.1:8000 r=40.78.17.157:18465
+t=2017-01-22T03:43:16+0530 lvl=info msg="join connections" obj=join id=2a0cbee17b8a l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:44:06+0530 lvl=info msg="join connections" obj=join id=65bae808b734 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:45:38+0530 lvl=info msg="join connections" obj=join id=4a62bc94bc14 l=127.0.0.1:8000 r=40.78.21.180:7552
+t=2017-01-22T03:46:13+0530 lvl=info msg="join connections" obj=join id=2bd82ffd2716 l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:46:30+0530 lvl=info msg="join connections" obj=join id=5e4d70a9e30d l=127.0.0.1:8000 r=40.78.17.157:18480
+t=2017-01-22T03:54:09+0530 lvl=info msg="join connections" obj=join id=85d34235f906 l=127.0.0.1:8000 r=40.78.17.157:18464
+t=2017-01-22T03:54:26+0530 lvl=info msg="join connections" obj=join id=97575352f8d6 l=127.0.0.1:8000 r=40.78.17.157:18468
+t=2017-01-22T03:57:04+0530 lvl=info msg="join connections" obj=join id=f879ce930619 l=127.0.0.1:8000 r=40.78.17.157:11680

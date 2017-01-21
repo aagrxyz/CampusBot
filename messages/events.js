@@ -1,6 +1,6 @@
 var FB = require("fb");
 FB.setAccessToken(process.env.ACCESS_TOKEN);
-// var page_ids = ["music.iitd","rendezvous.iitd","acesacm"];
+var page_ids = ["music.iitd","rendezvous.iitd","acesacm"];
 var page_ids = [
 "music.iitd",           //Music Club
 "iitd.delhi",           //IIT Delhi
@@ -43,25 +43,26 @@ var page_ids = [
 ];
 
 // var page_ids = [
-//     "eesiitd",
-//     "acesacm"
+//     "IITD.tryst"
 //     ];
 
 var requests = [];
 
 for (var id in page_ids)
 {
-    requests.push({method: "get", relative_url: page_ids[id]+"?fields=events.limit(4)"});
+    requests.push({method: "get", relative_url: page_ids[id]+"?fields=events.limit(4){cover,name,start_time,end_time,place,id}"});
 }
 
 function fetch_events(callback)
 {
-    var events = [];
+    console.log("inside fetch");
+    var dic_events = {};
     FB.api('','post',{batch:requests},function(res){
         if(!res || res.error) {
             console.log(!res ? 'error occurred' : res.error);
             return;
         }
+        console.log("response got");
         for(var i=0;i<res.length;i++)
         {
             try
@@ -69,10 +70,34 @@ function fetch_events(callback)
                 event = (JSON.parse(res[i].body));
                 for (var ev =0;ev<event.events.data.length;ev++)
                 {
+                    // console.log("-------------");
                     var eve = event.events.data[ev];
+                    eve.start = new Date(eve.start_time);
+                    eve.end = new Date(eve.end_time);
+                    var parsed_event = {};
+                    try
+                    {
+                        parsed_event.cover = eve.cover.source;
+                    }
+                    catch(e)
+                    {
+                        parsed_event.cover = undefined;
+                    }
+                    parsed_event.name = eve.name;
+                    parsed_event.start_time = eve.start.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"});
+                    try
+                    {
+                        parsed_event.end_time = eve.end.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"});
+                    }
+                    catch(e)
+                    {
+                        parsed_event.end_time = "";
+                    }
+                    parsed_event.place = eve.place.name;
+                    parsed_event.link = "https://www.facebook.com/events/"+eve.id;
                     if (Date.parse(eve.start_time) > Date.now() || Date.parse(eve.end_time) > Date.now())
                     {
-                        events.push(eve);
+                        dic_events[eve.id] = parsed_event;
                     }
                 }
             }
@@ -81,12 +106,21 @@ function fetch_events(callback)
                 // console.log("Empty result");
             }
         }
+        var events = [];
+        for(var key in dic_events)
+        {
+            events.push(dic_events[key]);
+        }
+        
         events.sort(function(a, b){
             var cmp = Date.parse(a.start_time) - Date.parse(b.start_time);
             if(cmp < 0) return -1;
             if(cmp > 0) return 1;
             return 0;
         });
+        // console.log('E---------E------E');
+        console.log(events);
+        console.log("calling callback");
         callback(events);
     });
 }
@@ -101,7 +135,7 @@ function make_story(events)
         var end = new Date(event.end_time);
         try
         {
-            ans.push(event.name+"\n\n"+start.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"})+" - "+end.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"})+"\n\n"+event.place.name+"\n\n"+"Link- facebook.com/events/"+event.id);
+            ans.push(event.name+"\n"+start+" - "+end+"\n"+event.place+"\n\n"+"Link- "+event.link);
         }
         catch(e)
         {
