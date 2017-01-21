@@ -481,26 +481,35 @@ bot.dialog('/review', [
     function (session, results, next) {
         if (results.response) {
 			session.dialogData.cod = results.response;
-			if(review.get_course(results.response)==undefined){
-				session.send("Invalid response.")
-				session.endDialog();
+			if(review.get_course(results.response)===undefined){
+				session.send("Invalid response. Say 'review' again to retry.")
+                session.endDialog();
 			}
-            var res = review.get_reviews(results.response);
-			if(res.length==0){
-				session.send("Sorry there are no reviews yet.")
-			}
-			else{
-				session.send("Reviews for this course are - ");
-				for(var i=0;i<res.length;i++){
-					session.send(res[i]);
-				}
-			}
-			builder.Prompts.text(session, "Would you like to add a review for this course?");
-
+            else
+            {
+                var res = review.get_reviews(results.response);
+                if(res===undefined){
+                    session.send("Invalid response. Say 'review' again to retry.")
+                    session.endDialog();
+                }
+                else
+                {
+        			if(res.length==0){
+        				session.send("Sorry there are no reviews yet.")
+        			}
+        			else{
+        				session.send("Reviews for this course are - ");
+        				for(var i=0;i<res.length;i++){
+        					session.send(res[i]);
+        				}
+        			}
+        			builder.Prompts.text(session, "Would you like to add a review for this course?");
+                }
+            }
         }
         else{
             session.send("Invalid response. Say 'review' again to retry.")
-			sesion.endDialog();
+			session.endDialog();
 		}
     },
     function (session, results) {
@@ -522,7 +531,6 @@ bot.dialog('/review', [
 			review.record_review(session.dialogData.cod,results.response);
 			session.send("Thanks! Your review has been recorded.");
 		}
-        session.send("Invalid response. Say 'review' again to retry.")
         session.endDialog();
 	}
 ]);
