@@ -10,7 +10,6 @@ var events = require('./events');
 var schedule = require('./schedule');
 var course = require('./course');
 var mess = require('./mess');
-var review = require('./review');
 var useEmulator = (process.env.NODE_ENV == 'development');
 var Cleverbot = require('cleverbot-node');
 var cleverbot = new Cleverbot;
@@ -64,7 +63,6 @@ intents.matches('complaint', '/complaint');
 intents.matches('schedule', '/schedule');
 intents.matches('course','/course');
 intents.matches('mess','/mess');
-intents.matches('review','/review');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 bot.dialog('/profile', [
@@ -310,7 +308,6 @@ bot.dialog('/mess',[
     {
         var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
         var day = undefined;
-        console.log(session.dialogData.arrr.entities);
         try
         {
             var str = session.dialogData.arrr.entities[0].resolution.date;
@@ -471,60 +468,6 @@ bot.dialog('/converse', [
             });
         }
     }
-]);
-
-bot.dialog('/review', [
-    function (session, args) {
-
-		builder.Prompts.text(session, "What's the name of the course?");
-    },
-    function (session, results, next) {
-        if (results.response) {
-			session.dialogData.cod = results.response;
-			if(review.get_course(results.response)==undefined){
-				session.send("Invalid response.")
-				session.endDialog();
-			}
-            var res = review.get_reviews(results.response);
-			if(res.length==0){
-				session.send("Sorry there are no reviews yet.")
-			}
-			else{
-				session.send("Reviews for this course are - ");
-				for(var i=0;i<res.length;i++){
-					session.send(res[i]);
-				}
-			}
-			builder.Prompts.text(session, "Would you like to add a review for this course?");
-
-        }
-        else{
-            session.send("Invalid response. Say 'review' again to retry.")
-			sesion.endDialog();
-		}
-    },
-    function (session, results) {
-        if (results.response) {
-			var rr = results.response;
-			rr = rr.toUpperCase();  
-			if(rr=="YES"||rr=="YEAH"||rr=="Y"){
-				builder.Prompts.text(session, "What is your review?");
-			}
-			else{
-                session.send("Okay.")
-				session.endDialog();
-			}
-		}
-       // session.endDialog();
-    },
-	function (session, results) {
-		if (results.response) {
-			review.record_review(session.dialogData.cod,results.response);
-			session.send("Thanks! Your review has been recorded.");
-		}
-        session.send("Invalid response. Say 'review' again to retry.")
-        session.endDialog();
-	}
 ]);
 
 if (useEmulator) {
