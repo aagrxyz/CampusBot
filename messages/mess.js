@@ -13,7 +13,7 @@ function match_hostel(hostel)
 	for(var i= 0; i<no_hostels;i++)
 	{
 		var j=0;
-		while(hostel[j] === hostels[i][j])
+		while((j< hostel.length) && (hostel[j] === hostels[i][j]))
 		{
 			j++;
 		}
