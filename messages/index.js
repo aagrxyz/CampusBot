@@ -87,14 +87,14 @@ bot.dialog('/main',[
             switch(results.response.entity)
             {
                 case "Upcoming Events":
-                    console.log("going in events");
+                    // console.log("going in events");
                     session.beginDialog('/events');
-                    console.log("exited from events");
+                    // console.log("exited from events");
                     break;
                 case "Class Schedule":
-                    console.log("going in schedule");
+                    // console.log("going in schedule");
                     session.beginDialog('/schedule');
-                    console.log("coming out");
+                    // console.log("coming out");
                     break;
                 case "Papers Download":
                     session.beginDialog('/papers');

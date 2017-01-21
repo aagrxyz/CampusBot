@@ -55,14 +55,12 @@ for (var id in page_ids)
 
 function fetch_events(callback)
 {
-    console.log("inside fetch");
     var dic_events = {};
     FB.api('','post',{batch:requests},function(res){
         if(!res || res.error) {
             console.log(!res ? 'error occurred' : res.error);
             return;
         }
-        console.log("response got");
         for(var i=0;i<res.length;i++)
         {
             try
@@ -119,8 +117,6 @@ function fetch_events(callback)
             return 0;
         });
         // console.log('E---------E------E');
-        console.log(events);
-        console.log("calling callback");
         callback(events);
     });
 }
