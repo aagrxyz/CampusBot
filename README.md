@@ -12,6 +12,7 @@ It has many functionalities which are described below:
  1. **Profile :** The first time user says a *Hi*, the bot replies back by asking the user, his/her name and entry number which will be used for all future correspondences and chats.
  2. **FAQ :** The user can ask faqs related to any institute policy and even ask for telephone numbers. The FAQ mode can be started by sending faq as a message.
  3. **Who is this? :** This allows the user to ask the details about any student in the IITD campus by just sending a message *"who is (name/entry number)"*  . The bot replies by telling the name, entry number and the email address where the user can contact the person.
+ 4. **Mess Menu :** The user can ask for the menu of his/her hostel's mes for a particular day or for the current day depending on what the user asks. This can be achieved by the message *"mess < day >"*.
  4. **fb Events :** Various clubs of IIT Delhi, have their fb pages and regularly post the events. But unfortunately, there is no centralised service which can tell them the events going on in the campus. This chat bot tells you the events going on and the future events by just sending *"events"* as a message.
  5. ***Academic Tasks :***
 	6. **Course Info :** The bot tells about the information of the course that is floated in the present semester by just sending the message "course < course_code > ".
@@ -42,4 +43,3 @@ The bot is presently published on various platforms as described below :
 4. It is presently for review on fb Messenger.
 
 For the demo video, follow the Link [CampusBot Demo Video](https://youtu.be/dz85KdvNZTs)
-
