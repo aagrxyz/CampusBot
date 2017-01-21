@@ -34,7 +34,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"UDAIGIRI":{
 		"MONDAY":{
@@ -71,7 +71,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"ZANSKAR":{
 		"MONDAY":{
@@ -108,7 +108,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"JWALAMUKHI":{
 		"MONDAY":{
@@ -142,10 +142,10 @@
 			"DINNER":["Pav Bhaji + Dal Arhar Plain rice, Roti with ghee ,Hot milk"]
 		},
 		"SUNDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
-		},
+			"BREAKFAST":["Aloo Parantha ,Achar, Corn flakes, Seasonal Fruit Orange/pear"],
+			"LUNCH":["Palak paneer, MIssi roti,  Plain rice, Dal Malka Masoor, Onion Raita, Salad,Lemon"],
+			"DINNER":["Palak paneer, MIssi roti,  Plain rice, Dal Malka Masoor, Onion Raita, Salad,Lemon"]
+		}
 	},
 	"GIRNAR":{
 		"MONDAY":{
@@ -182,7 +182,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"ARAVALI":{
 		"MONDAY":{
@@ -219,44 +219,44 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"KARAKORAM":{
 		"MONDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
+			"BREAKFAST":["Namkeen, Sevaiya, Boiled Egg, Sprouts, Vada-Pav, Milk, Cornflakes"],
+			"LUNCH":["Masoor Dal, Phool Gobhi, Sabji, Roti, Dahi, Jeera Rice"],
+			"DINNER":["Pav Bhaji, Noodles, Manchurian, (Dry), Fruit-Ice-cream, Bhalla Papdi, chat, Tikki / Spring, Roll, Roti"]
 		},
 		"TUESDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
+			"BREAKFAST":["Paneer Parantha, Chutney, Milk"],
+			"LUNCH":["Mix-Veg, Rajma, Rice, Tawa Roti, Dahi"],
+			"DINNER":["Puri, Chole, Rice, Kheer/Sevaiyya"]
 		},
 		"WEDNESDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
+			"BREAKFAST":["Fried Idli, Vada, Sambhar, Coconut/Groundnut Chutney, Milk, Cornflakes"],
+			"LUNCH":["Aloo-Methi-Malai-Palak, Chana Dal, Rice, Bondi Raita, Roti"],
+			"DINNER":["Paneer Bhurji, Tawa Roti, Dal Makhani, Chicken(Extra, Messing), Gulab jamun"]
 		},
 		"THURSDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
+			"BREAKFAST":["Poha, Bread Roll, Fruit, Milk, Jalebi"],
+			"LUNCH":["Pakora Kadhi, Dry Chana, Jeera Aloo, Rice, Roti"],
+			"DINNER":["Aloo-pyaz parantha, Rajma, Dahi, Rice, Gajar Halwa, Tomato, Sauce"]
 		},
 		"FRIDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
+			"BREAKFAST":["Bread Pakora, Sprouts, Chutney, Omlette, Cornflakes, Milk"],
+			"LUNCH":["Kele ki Sabji, Arhar Dal, Roti, Dahi, Rice"],
+			"DINNER":["Veg Biriyani + Egg Biriyani, Aloo-Matar, Veg Raita, Roti, jalebi-Rabri"]
 		},
 		"SATURDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
+			"BREAKFAST":["Masala Dosa, Sambhar, Sprouts, Coconut, Chutney, Milk"],
+			"LUNCH":["Khichdi, Dum Aloo, Dahi, Butter, Papad, Roti"],
+			"DINNER":["Paneer-do-Pyaaza, Egg Curry, Tawa Roti, Masoor Dal, Rice, Rasgulla"]
 		},
 		"SUNDAY":{
-			"BREAKFAST":[""],
-			"LUNCH":[""],
-			"DINNER":[""]
-		},
+			"BREAKFAST":["Maggi, Sprouts, Besan-ka-Chilia, Fruit, Milk"],
+			"LUNCH":["Pindi Chole, Boondi Raita, Kulcha, Bhatura, Rice"],
+			"DINNER":["Loki-Kaddu, Tawa-Roti, Panjmel Dal, Fruit Custurd, Jeera-Rice"]
+		}
 	},
 	"NILGIRI":{
 		"MONDAY":{
@@ -293,7 +293,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"SHIVALIK":{
 		"MONDAY":{
@@ -330,7 +330,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"SATPURA":{
 		"MONDAY":{
@@ -367,7 +367,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"VINDHYACHAL":{
 		"MONDAY":{
@@ -404,7 +404,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"HIMADRI":{
 		"MONDAY":{
@@ -441,7 +441,7 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	},
 	"KAILASH":{
 		"MONDAY":{
@@ -478,6 +478,6 @@
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
-		},
+		}
 	}
 }

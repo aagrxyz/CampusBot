@@ -9,6 +9,7 @@ var papers = require('./get_papers');
 var events = require('./events');
 var schedule = require('./schedule');
 var course = require('./course');
+var mess = require('./mess');
 var useEmulator = (process.env.NODE_ENV == 'development');
 var Cleverbot = require('cleverbot-node');
 var cleverbot = new Cleverbot;
@@ -61,6 +62,7 @@ intents.matches('events', '/events');
 intents.matches('complaint', '/complaint');
 intents.matches('schedule', '/schedule');
 intents.matches('course','/course');
+intents.matches('mess','/mess');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 bot.dialog('/profile', [
@@ -288,6 +290,63 @@ bot.dialog('/course',[
         else
         {
             session.send(course.pretty_course(c));
+        }
+        session.endDialog();
+    }
+]);
+
+bot.dialog('/mess',[
+    function(session,args,next) {
+        session.dialogData.arrr = args;
+        if (!session.userData.hostel) {
+            builder.Prompts.text(session, "What's your Hostel?");
+        } else {
+            next();
+        }
+    },
+    function(session,results)
+    {
+        var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+        var day = undefined;
+        try
+        {
+            var str = session.dialogData.arrr.entities[0].resolution.date;
+            if(str.substr(0,9)==="XXXX-WXX-")
+            {
+                day = days[parseInt(str[9])];
+            }
+            else if(str.substr(0,4)==="XXXX")
+            {
+                day = new Date(Date.now()).getFullYear()+str.substr(4);
+                day = days[new Date(str).getDay()];
+            }
+            else
+            {
+                day = days[new Date(str).getDay()];
+            }
+        }
+        catch(e)
+        {
+            day = undefined;
+        }
+        session.dialogData.arrr = undefined;
+
+        if (results.response) {
+            session.userData.hostel = results.response;
+        }
+        var hostel = mess.get_mess_hostel(session.userData.hostel);
+        if(hostel!==null)
+        {
+            var menu_day = mess.get_mess_day(hostel,day);
+            var pretty_menu = mess.pretty_mess(menu_day);
+            session.send(pretty_menu[0]);
+            session.send(pretty_menu[1]);
+            session.send(pretty_menu[2]);
+        }
+        else
+        {
+            session.userData.hostel = undefined;
+            session.send("Invalid Hostel provided!");
         }
         session.endDialog();
     }
