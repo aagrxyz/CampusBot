@@ -329,6 +329,12 @@ bot.dialog('/mess',[
         {
             day = undefined;
         }
+        if(day === undefined)
+        {
+            var dd = new Date(Date.now());
+            var day =dd.toLocaleDateString('en-US',{weekday: "long", timeZone: "Asia/Kolkata"});
+            day = day.toUpperCase();  
+        }
         session.dialogData.arrr = undefined;
 
         if (results.response) {
