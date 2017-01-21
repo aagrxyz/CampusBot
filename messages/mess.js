@@ -2,9 +2,46 @@ var fs = require("fs-extra");
 var menu_database = (process.env.NODE_ENV=="development")?"./database/menu.json":"D:\\home\\site\\wwwroot\\messages\\database\\menu.json";
 var menu_db = JSON.parse(fs.readFileSync(menu_database));
 
+function match_hostel(hostel)
+{
+	var hostels = ["JWALAMUKHI","ARAVALI","KARAKORAM","NILIGIRI","ZANSKAR","KUMAON","VINDHYACHAL","SHIVALIK","SATPURA","GIRNAR","UDAIGIRI","KAILASH","HIMADRI"];
+	hostel=hostel.toUpperCase();
+	var no_hostels =hostels.length;
+	var max_length = 0;
+	var index =-1;
+	var element_max_numbers=0;
+	for(var i= 0; i<no_hostels;i++)
+	{
+		var j=0;
+		while(hostel[j] === hostels[i][j])
+		{
+			j++;
+		}
+		if(j>max_length)
+		{
+			max_length=j;
+			index=i;
+			element_max_numbers=1;
+		}
+		else if(j===max_length)
+		{
+			element_max_numbers++;
+		}
+		else
+		{}
+	}
+	if(element_max_numbers === 1)
+	{
+		return hostels[index];
+	}
+	else
+	{
+		return null;
+	}
+}
 function get_mess_hostel(hostel)
 {
-	hostel = hostel.toUpperCase();
+	hostel = match_hostel(hostel);
 	if(hostel in menu_db)
 	{
 		return menu_db[hostel];
