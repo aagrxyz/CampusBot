@@ -11,6 +11,7 @@ var schedule = require('./schedule');
 var course = require('./course');
 var mess = require('./mess');
 var review = require('./review');
+var entry2name = require('./entry2name');
 var useEmulator = (process.env.NODE_ENV == 'development');
 var Cleverbot = require('cleverbot-node');
 var cleverbot = new Cleverbot;
@@ -29,6 +30,8 @@ var connector = new builder.ChatConnector({
 });
 
 var bot = new builder.UniversalBot(connector);
+bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
+bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
 //var recognizer = new builder_cognitiveservices.QnAMakerRecognizer({
       //          knowledgeBaseId: process.env.QnAKnowledgebaseId, 
@@ -44,16 +47,11 @@ var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
                 defaultMessage: 'No match! Try changing the query terms!',
                 qnaThreshold: 0.3}
 );
-var introMessage = ['Main functionalities are described below-',
-'Profile : Say \'hi\' or \'setup\' at any time to setup your profile.',
-'FAQ : Say \'faq\' or \'question answer\' to ask the bot a FAQ about insti',
-'Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.',
-'Conversation : Say "talk about snowy mounains" or "converse" or "chat" to enter converation mode. Say "end" to exit this mode.',
-'Who is :   Ask the bot \'Who is Name/EN\' to find students in the institute with that Name/EN.',
-'Events :   Ask \'events\' to find upcoming events in the campus (from facebook).',
-'Course info :  Ask "Course information COL216" or "details of COL331 course to see some details about that course.',
-'Paper Download : Say \'download my papers\' or \'question papers\' to download previous papers of all the courses that you are registered in.',
-'Complaint : Type \'complaint\' etc to register a complaint with the institute.\n'
+var introMessage = ['Main functionalities are described below-\n\nProfile : Say \'hi\' or \'setup\' at any time to setup your profile.\n\nFAQ : Say \'faq\' or \'question answer\' to ask the bot a FAQ about insti',
+'Class Schedule : Ask the bot "My schedule for the week" or "Monday schedule" or "schedule tomorrow" to get your lecture schedule.\n\nConversation : Say "talk about snowy mounains" or "converse" or "chat" to enter converation mode. Say "end" to exit this mode.',
+'Who is :   Ask the bot \'Who is Name/EN\' to find students in the institute with that Name/EN.\n\nEvents :   Ask \'events\' to find upcoming events in the campus (from facebook).',
+'Course info :  Ask "Course information COL216" or "details of COL331 course to see some details about that course.\n\nPaper Download : Say \'download my papers\' or \'question papers\' to download previous papers of all the courses that you are registered in.',
+'Complaint : Type \'complaint\' etc to register a complaint with the institute.'
 ];
 
 
@@ -79,14 +77,14 @@ bot.dialog('/main',[
     function(session,args,next) {
         if(!session.userData.en || !session.userData.name)
         {
-            session.replaceDialog('/profile');
+            session.beginDialog('/help');
+            session.beginDialog('/profile');
         }
-        builder.Prompts.choice(session, "What would you like to see?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Profile Setup|FAQ");
+        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Profile Setup|FAQ|Help");
     },
     function(session,results){
         if(results.response)
         {
-            console.log("coming in menu");
             switch(results.response.entity)
             {
                 case "Upcoming Events":
@@ -111,10 +109,16 @@ bot.dialog('/main',[
                 case "Profile Setup":
                     session.userData.en = undefined;
                     session.userData.name = undefined;
-                    session.replaceDialog('/profile');
+                    session.beginDialog('/profile');
                     break;
                 case "FAQ":
-                    session('/qna');
+                    session.beginDialog('/qna');
+                    break;
+                case "Course Review":
+                    session.beginDialog('/review');
+                    break;
+                case "Help":
+                    session.beginDialog('/help');
                     break;
             }
         }
@@ -125,9 +129,9 @@ bot.dialog('/main',[
     }
 ]);
 
-
-bot.dialog('/profile', [
-    function (session, args, next) {
+bot.dialog('/help',[
+    function(session)
+    {
         var introCard = new builder.HeroCard(session)
                 .title("Campus Bot")
                 .text("Your own campus assistant")
@@ -136,24 +140,38 @@ bot.dialog('/profile', [
                 ]);
         var msg = new builder.Message(session).attachments([introCard]);
         session.send(msg);
-        session.send(introMessage);
         introMessage.forEach(function(ms){
             session.send(ms);
         });
-        builder.Prompts.text(session, "What's your name?");
+        session.endDialog();
+    }
+]);
+
+bot.dialog('/profile', [
+    function (session, args, next) {
+        builder.Prompts.text(session, "What your entry number?");
     },
     function (session, results, next) {
         if (results.response) {
-            session.userData.name = results.response;
+            session.userData.en = results.response.toUpperCase();
+            session.userData.name = entry2name(session.userData.en);
+            if(session.userData.name === undefined)
+            {
+                session.send("Invalid Entry Number Given. Please try again");
+                session.replaceDialog('/profile');
+            }
+            else
+            {
+                var name = session.userData.name.split(" ")[0].toLowerCase();
+                session.userData.name = name[0].toUpperCase()+name.substring(1);
+                session.send('Hi '+session.userData.name+", Welcome to CampusBot");
+                session.endDialog();
+            }
         }
-        builder.Prompts.text(session, "What your entry number?");
-    },
-    function (session, results) {
-        if (results.response) {
-            session.userData.en = results.response;
-            session.send("Thanks, "+session.userData.name+", Your profile has been saved");
+        else
+        {
+            session.endDialog();
         }
-        session.replaceDialog('/main');
     }
 ]);
 
@@ -430,7 +448,6 @@ bot.dialog('/mess',[
     {
         var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
         var day = undefined;
-        console.log(session.dialogData.arrr.entities);
         try
         {
             var str = session.dialogData.arrr.entities[0].resolution.date;
