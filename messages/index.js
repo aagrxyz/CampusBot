@@ -17,12 +17,16 @@ var Cleverbot = require('cleverbot-node');
 var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-// var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
-//     appId: process.env['MicrosoftAppId'],
-//     appPassword: process.env['MicrosoftAppPassword'],
-//     stateEndpoint: process.env['BotStateEndpoint'],
-//     openIdMetadata: process.env['BotOpenIdMetadata']
-// });
+var connector = useEmulator ? new builder.ChatConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword']
+    }):
+    new botbuilder_azure.BotServiceConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword'],
+        stateEndpoint: process.env['BotStateEndpoint'],
+        openIdMetadata: process.env['BotOpenIdMetadata']
+});
 
 var connector = new builder.ChatConnector({
         appId: process.env['MicrosoftAppId'],
