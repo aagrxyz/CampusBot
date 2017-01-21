@@ -99,7 +99,18 @@ function make_story(events)
         var event = events[i];
         var start = new Date(event.start_time);
         var end = new Date(event.end_time);
-        ans.push(event.name+"\n\n"+start.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"})+" - "+end.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"})+"\n\n"+event.place.name+"\n\n"+"Link- facebook.com/events/"+event.id);
+        try
+        {
+            ans.push(event.name+"\n\n"+start.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"})+" - "+end.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",hour: "numeric",minute: "numeric",timeZone: "Asia/Kolkata"})+"\n\n"+event.place.name+"\n\n"+"Link- facebook.com/events/"+event.id);
+        }
+        catch(e)
+        {
+            console.log("-----------------------------");
+            console.log(event);
+            console.log(e);
+            console.log("-----------------------------");
+            
+        }
     }
     return ans;
 }
