@@ -1,13 +1,16 @@
 var fs = require("fs-extra");
 var course_db_file = (process.env.NODE_ENV=="development")?"./database/courses.json":"D:\\home\\site\\wwwroot\\messages\\database\\courses.json";
 var course_db = JSON.parse(fs.readFileSync(course_db_file));
-
+var course_prof_db_file = (process.env.NODE_ENV=="development")?"./database/course_prof.json":"D:\\home\\site\\wwwroot\\messages\\database\\course_prof.json";
+var course_prof_db = JSON.parse(fs.readFileSync(course_prof_db_file));
 function get_course(code)
 {
 	code = code.toUpperCase();
 	if(code in course_db)
 	{
-		return course_db[code];
+		var temp = course_db[code];
+		temp.professor = course_prof_db[code].professor;
+		return temp;
 	}
 	else
 	{
@@ -23,7 +26,7 @@ function pretty_course(course)
 	}
 	else
 	{
-		var pretty = course.name+" ["+course.code+"]\n\nCredit = "+course.credit+"\n\nStructure = "+course.structure;
+		var pretty = course.name+" ["+course.code+"]\n\nCredit = "+course.credit+"\n\nStructure = "+course.structure + "\n\nCourse Coordinator: " + course.professor;
 		return pretty;
 	}
 }
