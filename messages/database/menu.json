@@ -30,6 +30,11 @@
 			"LUNCH":[""],
 			"DINNER":[""]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"UDAIGIRI":{
 		"MONDAY":{
@@ -58,6 +63,11 @@
 			"DINNER":[""]
 		},
 		"SATURDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
+		"SUNDAY":{
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
@@ -94,6 +104,11 @@
 			"LUNCH":[""],
 			"DINNER":[""]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"JWALAMUKHI":{
 		"MONDAY":{
@@ -126,6 +141,11 @@
 			"LUNCH":["Aloo Phool Gobi,Mix veg raita, Plain rice, Salad,Achar+ Lemon, Dal Chana"],
 			"DINNER":["Pav Bhaji + Dal Arhar Plain rice, Roti with ghee ,Hot milk"]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"GIRNAR":{
 		"MONDAY":{
@@ -154,6 +174,11 @@
 			"DINNER":[""]
 		},
 		"SATURDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
+		"SUNDAY":{
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
@@ -190,6 +215,11 @@
 			"LUNCH":[""],
 			"DINNER":[""]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"KARAKORAM":{
 		"MONDAY":{
@@ -218,6 +248,11 @@
 			"DINNER":[""]
 		},
 		"SATURDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
+		"SUNDAY":{
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
@@ -254,6 +289,11 @@
 			"LUNCH":[""],
 			"DINNER":[""]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"SHIVALIK":{
 		"MONDAY":{
@@ -282,6 +322,11 @@
 			"DINNER":[""]
 		},
 		"SATURDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
+		"SUNDAY":{
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
@@ -318,6 +363,11 @@
 			"LUNCH":[""],
 			"DINNER":[""]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"VINDHYACHAL":{
 		"MONDAY":{
@@ -346,6 +396,11 @@
 			"DINNER":[""]
 		},
 		"SATURDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
+		"SUNDAY":{
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
@@ -382,6 +437,11 @@
 			"LUNCH":[""],
 			"DINNER":[""]
 		},
+		"SUNDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
 	},
 	"KAILASH":{
 		"MONDAY":{
@@ -410,6 +470,11 @@
 			"DINNER":[""]
 		},
 		"SATURDAY":{
+			"BREAKFAST":[""],
+			"LUNCH":[""],
+			"DINNER":[""]
+		},
+		"SUNDAY":{
 			"BREAKFAST":[""],
 			"LUNCH":[""],
 			"DINNER":[""]
