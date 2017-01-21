@@ -28,18 +28,13 @@ var connector = useEmulator ? new builder.ChatConnector({
         openIdMetadata: process.env['BotOpenIdMetadata']
 });
 
-var connector = new builder.ChatConnector({
-        appId: process.env['MicrosoftAppId'],
-        appPassword: process.env['MicrosoftAppPassword']
-});
-
 var bot = new builder.UniversalBot(connector);
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
 bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
-//var recognizer = new builder_cognitiveservices.QnAMakerRecognizer({
-      //          knowledgeBaseId: process.env.QnAKnowledgebaseId, 
-//    subscriptionKey: process.env.QnASubscriptionKey});
+// var recognizer = new builder_cognitiveservices.QnAMakerRecognizer({
+               // knowledgeBaseId: process.env.QnAKnowledgebaseId, 
+   // subscriptionKey: process.env.QnASubscriptionKey});
 var recognizer = new builder.LuisRecognizer('https://api.projectoxford.ai/luis/v2.0/apps/a03a7e51-dd74-401d-bbe9-071134809292?subscription-key=319a73d29574452fb76a949ea4d42a5e&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
 var recognizerqna = new builder_cognitiveservices.QnAMakerRecognizer({
