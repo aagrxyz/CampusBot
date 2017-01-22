@@ -349,18 +349,20 @@ bot.dialog('/exam',[
                     attach.push(
                         new builder.HeroCard(session)
                             .title("Woohoo! No Exams :D")
+                            .subtitle("Have fun")
                     );
                 }
                 else
                 {
                     session.send("Length non zero");
-
+                    var week = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
                     for(var day in sch)
                     {
                         session.send(sch[day][0]);
                         attach.push(
                             new builder.HeroCard(session)
                                 .title(sch[day][0])
+                                .subtitle(week[new Date(sch[day][0]).getDay()])
                         );
                         for(var i=1;i<sch[day].length;i++)
                         {
@@ -368,7 +370,8 @@ bot.dialog('/exam',[
                             var slot = sch[day][i].slot;
                             attach.push(
                                 new builder.HeroCard(session)
-                                    .title(course.name+" - "+course.code+"("+slot+")")
+                                    .title(course.code+"("+slot+")")
+                                    .subtitle(course.name)
                             );
                         }
                     }

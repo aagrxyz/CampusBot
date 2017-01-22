@@ -65,7 +65,7 @@ function get_exam_schedule(exam_type,courses)
             res.push(resp);
         }
         var final = [];
-        for(var t=0;i<res.length;i++)
+        for(var t=0;t<res.length;t++)
         {
             if(res[t].length > 1)
             {
