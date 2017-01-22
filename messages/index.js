@@ -336,12 +336,16 @@ bot.dialog('/exam',[
                 session.beginDialog('/profile');
             }
             var courses = schedule.courses(session.userData.en);
+            session.send("courses recieved");
             if(courses)
             {
+                session.send("courses valid");
                 var sch = schedule.exam_schedule(results.response.entity,courses.courses);
                 var attach = [];
                 if(sch.length === 0)
                 {
+                    session.send("Length 0");
+
                     attach.push(
                         new builder.HeroCard(session)
                             .title("Woohoo! No Exams :D")
@@ -349,8 +353,11 @@ bot.dialog('/exam',[
                 }
                 else
                 {
+                    session.send("Length non zero");
+
                     for(var day in sch)
                     {
+                        session.send(sch[day][0]);
                         attach.push(
                             new builder.HeroCard(session)
                                 .title(sch[day][0])
@@ -366,8 +373,10 @@ bot.dialog('/exam',[
                         }
                     }
                 }
+                session.send("message sending");
                 var msg = new builder.Message(session)
                             .attachments(attach);
+                session.send("going to end");
                 session.endDialog(msg);
             }
             else
