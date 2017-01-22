@@ -89,9 +89,24 @@ bot.dialog('/main',[
         if(!session.userData.en || !session.userData.name)
         {
             session.beginDialog('/help');
+        }
+        else
+        {
+            next();
+        }
+    },
+    function(session,args,next) {
+        if(!session.userData.en || !session.userData.name)
+        {
             session.beginDialog('/profile');
         }
-        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|TimePass|Profile Setup");
+        else
+        {
+            next();
+        }
+    },
+    function(session,args,next) {
+        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|Profile Setup|Exit");
     },
     function(session,results){
         if(results.response)
@@ -135,6 +150,9 @@ bot.dialog('/main',[
                     break;
                 case "Help":
                     session.beginDialog('/help');
+                    break;
+                case "Exit":
+                    session.endDialog();
                     break;
             }
         }
