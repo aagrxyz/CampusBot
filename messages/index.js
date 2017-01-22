@@ -14,27 +14,28 @@ var review = require('./review');
 var entry2name = require('./entry2name');
 var useEmulator = (process.env.NODE_ENV == 'development');
 var m = require('mitsuku-api')();
+var dropbox = require('./dropbox');
 
 // var Cleverbot = require('cleverbot-node');
 // var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-// var connector = useEmulator ? new builder.ChatConnector({
-//         appId: process.env['MicrosoftAppId'],
-//         appPassword: process.env['MicrosoftAppPassword']
-//     }):
-//     new botbuilder_azure.BotServiceConnector({
-//         appId: process.env['MicrosoftAppId'],
-//         appPassword: process.env['MicrosoftAppPassword'],
-//         stateEndpoint: process.env['BotStateEndpoint'],
-//         openIdMetadata: process.env['BotOpenIdMetadata']
-// });
-var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
-    appId: process.env['MicrosoftAppId'],
-    appPassword: process.env['MicrosoftAppPassword'],
-    stateEndpoint: process.env['BotStateEndpoint'],
-    openIdMetadata: process.env['BotOpenIdMetadata']
+var connector = useEmulator ? new builder.ChatConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword']
+    }):
+    new botbuilder_azure.BotServiceConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword'],
+        stateEndpoint: process.env['BotStateEndpoint'],
+        openIdMetadata: process.env['BotOpenIdMetadata']
 });
+// var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
+//     appId: process.env['MicrosoftAppId'],
+//     appPassword: process.env['MicrosoftAppPassword'],
+//     stateEndpoint: process.env['BotStateEndpoint'],
+//     openIdMetadata: process.env['BotOpenIdMetadata']
+// });
 
 
 var bot = new builder.UniversalBot(connector);
@@ -89,7 +90,7 @@ bot.dialog('/main',[
             session.beginDialog('/help');
             session.beginDialog('/profile');
         }
-        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Profile Setup|FAQ|Help");
+        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Course Material|TimePass|Profile Setup|FAQ|Help");
     },
     function(session,results){
         if(results.response)
@@ -97,14 +98,10 @@ bot.dialog('/main',[
             switch(results.response.entity)
             {
                 case "Upcoming Events":
-                    // console.log("going in events");
                     session.beginDialog('/events');
-                    // console.log("exited from events");
                     break;
                 case "Class Schedule":
-                    // console.log("going in schedule");
                     session.beginDialog('/schedule');
-                    // console.log("coming out");
                     break;
                 case "Papers Download":
                     session.beginDialog('/papers');
@@ -125,6 +122,12 @@ bot.dialog('/main',[
                     break;
                 case "Course Review":
                     session.beginDialog('/review');
+                    break;
+                case "Course Material":
+                    session.beginDialog('/material');
+                    break;
+                case "TimePass":
+                    session.beginDialog('/converse');
                     break;
                 case "Help":
                     session.beginDialog('/help');
@@ -448,11 +451,7 @@ bot.dialog('/course',[
 bot.dialog('/mess',[
     function(session,args,next) {
         session.dialogData.arrr = args;
-        if (!session.userData.hostel) {
-            builder.Prompts.text(session, "What's your Hostel?");
-        } else {
-            next();
-        }
+        builder.Prompts.text(session, "Which Hostel?");
     },
     function(session,results)
     {
@@ -661,6 +660,154 @@ bot.dialog('/converse', [
     }
 ]);
 
+bot.dialog('/material', [
+    function(session) {
+        builder.Prompts.choice(session,"Do you want to contribute material or download it?","Download|Contribute|View Repository");
+    },
+    function(session,results)
+    {
+        if(results.response.entity.toUpperCase() === "DOWNLOAD")
+        {
+            session.beginDialog('/download');
+        }
+        else if(results.response.entity.toUpperCase() === "CONTRIBUTE")
+        {
+            // console.log("Function was here");
+            session.beginDialog('/upload');
+        }
+        else if(results.response.entity.toUpperCase() === "VIEW REPOSITORY")
+        {
+            session.beginDialog('/view_repo');
+        }
+        else
+        {
+            session.endDialog("You entered an invalid response");
+        }
+    }
+]);
+
+bot.dialog('/upload',[
+    function(session,args,next)
+    {
+        // console.log("still going right");
+        builder.Prompts.text(session,"Enter course code of material being uploaded");
+    },
+    function(session,results)
+    {
+        // console.log("what happened? = "+results.response);
+        session.dialogData.course = results.response;
+        if(!dropbox.correct(session.dialogData.course))
+        {
+            session.endDialog("You entered an invalid course code!");
+        }
+        else
+        {
+            builder.Prompts.attachment(session,"Please attach and send the file to be uploaded");
+        }
+    },
+    function(session,results)
+    {
+        if(results.response.length === 0)
+        {
+            session.endDialog("You didn't upload any attachment");
+        }
+        else
+        {
+            results.response.forEach(
+                function(attachment)
+                {
+                    console.log(attachment);
+                    dropbox.put(session.dialogData.course,attachment.contentUrl,function(){console.log("Uploaded");});
+                } 
+            );
+        }
+        session.endDialog("Thank you for contributing");
+    }
+]);
+
+bot.dialog('/download',[
+    function(session)
+    {
+        builder.Prompts.text(session,"Enter code of course that you want to download");
+    },
+    function(session,results)
+    {
+        session.dialogData.course = results.response;
+        if(!dropbox.correct(session.dialogData.course))
+        {
+            session.endDialog("You entered an invalid course code!");
+        }
+        else
+        {
+            try
+            {
+                dropbox.get(session.dialogData.course,function(link)
+                    {
+                        // console.log(link);
+                        var message = new builder.Message(session)
+                                    .attachments([
+                                        new builder.HeroCard(session)
+                                            .title(link.name)
+                                            .subtitle("Course Material")
+                                            .buttons([builder.CardAction.downloadFile(session,link.url.substring(0,link.url.length-1)+"1","Download")])
+                                    ]);
+                        session.endDialog(message);
+                    });
+            }
+            catch(e)
+            {
+                session.endDialog("Sorry, some error occurred :(");
+            }
+
+        }
+    }
+]);
+
+bot.dialog('/view_repo',[
+    function(session)
+    {
+        builder.Prompts.text(session,"Enter code of course that you want to download");
+    },
+    function(session,results)
+    {
+        session.dialogData.course = results.response;
+        if(!dropbox.correct(session.dialogData.course))
+        {
+            session.endDialog("You entered an invalid course code!");
+        }
+        else
+        {
+            try
+            {
+                dropbox.list(session.dialogData.course,function(files)
+                    {
+                        // console.log(link);
+                        var attach = [];
+                        files.entries.forEach(
+                            function(val)
+                            {
+                                attach.push(
+                                    new builder.ThumbnailCard(session)
+                                        .title(val.name)
+                                        .subtitle(dropbox.convert(val.size))
+                                );
+                            }
+                        );
+                        var message = new builder.Message(session)
+                                    .attachments(attach);
+                        session.endDialog(message);
+                    });
+            }
+            catch(e)
+            {
+                session.endDialog("Sorry, some error occurred :(");
+            }
+
+        }
+    }
+]);
+
+
 bot.dialog('/review', [
     function (session, args) {
 
@@ -683,7 +830,7 @@ bot.dialog('/review', [
                 else
                 {
         			if(res.length==0){
-        				session.send("Sorry there are no reviews yet.")
+        				session.send("Sorry there are no reviews yet.");
         			}
         			else{
         				session.send("Reviews for this course are - ");
@@ -708,7 +855,7 @@ bot.dialog('/review', [
 				builder.Prompts.text(session, "What is your review?");
 			}
 			else{
-                session.send("Okay.")
+                session.send("Okay.");
 				session.endDialog();
 			}
 		}
@@ -716,32 +863,21 @@ bot.dialog('/review', [
     },
 	function (session, results) {
 		if (results.response) {
-			review.record_review(session.dialogData.cod,results.response);
-			session.send("Thanks! Your review has been recorded.");
-		}
-        session.endDialog();
-	}
-]);
-
-bot.dialog('/material', [
-    function (session,args,next) {
-        builder.Prompts.attachment(session, "Thanks. Now upload a file.");
-    },
-    function (session, results) {
-        session.send(results.response);
-        console.log(results.response);
+            review.record_review(session.dialogData.cod,results.response);
+            session.send("Thanks! Your review has been recorded.");
+        }
         session.endDialog();
     }
 ]);
 
 
 if (useEmulator) {
-    // var restify = require('restify');
-    // var server = restify.createServer();
-    // server.listen(8000, function() {
-    //     console.log('test bot endpoint at http://localhost:8000/api/messages');
-    // });
-    // server.post('/api/messages', connector.listen());    
+    var restify = require('restify');
+    var server = restify.createServer();
+    server.listen(8000, function() {
+        console.log('test bot endpoint at http://localhost:8000/api/messages');
+    });
+    server.post('/api/messages', connector.listen());    
 } else {
     module.exports = { default: connector.listen() };
 }
