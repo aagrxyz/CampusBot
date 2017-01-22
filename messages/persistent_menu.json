@@ -4,7 +4,7 @@
   "call_to_actions":[
     {
       "type":"postback",
-      "title":"Menu",
+      "title":"Options",
       "payload":"action?main"
     },
     {
