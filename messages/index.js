@@ -14,28 +14,28 @@ var review = require('./review');
 var entry2name = require('./entry2name');
 var useEmulator = (process.env.NODE_ENV == 'development');
 var m = require('mitsuku-api')();
+var dropbox = require('./dropbox');
 
 // var Cleverbot = require('cleverbot-node');
 // var cleverbot = new Cleverbot;
 
-var dropbox = require('./dropbox');
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-// var connector = useEmulator ? new builder.ChatConnector({
-//         appId: process.env['MicrosoftAppId'],
-//         appPassword: process.env['MicrosoftAppPassword']
-//     }):
-//     new botbuilder_azure.BotServiceConnector({
-//         appId: process.env['MicrosoftAppId'],
-//         appPassword: process.env['MicrosoftAppPassword'],
-//         stateEndpoint: process.env['BotStateEndpoint'],
-//         openIdMetadata: process.env['BotOpenIdMetadata']
-// });
-var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
-    appId: process.env['MicrosoftAppId'],
-    appPassword: process.env['MicrosoftAppPassword'],
-    stateEndpoint: process.env['BotStateEndpoint'],
-    openIdMetadata: process.env['BotOpenIdMetadata']
+var connector = useEmulator ? new builder.ChatConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword']
+    }):
+    new botbuilder_azure.BotServiceConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword'],
+        stateEndpoint: process.env['BotStateEndpoint'],
+        openIdMetadata: process.env['BotOpenIdMetadata']
 });
+// var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
+//     appId: process.env['MicrosoftAppId'],
+//     appPassword: process.env['MicrosoftAppPassword'],
+//     stateEndpoint: process.env['BotStateEndpoint'],
+//     openIdMetadata: process.env['BotOpenIdMetadata']
+// });
 
 
 var bot = new builder.UniversalBot(connector);
@@ -90,7 +90,7 @@ bot.dialog('/main',[
             session.beginDialog('/help');
             session.beginDialog('/profile');
         }
-        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Course Material|Profile Setup|FAQ|Help");
+        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Course Material|TimePass|Profile Setup|FAQ|Help");
     },
     function(session,results){
         if(results.response)
@@ -125,6 +125,9 @@ bot.dialog('/main',[
                     break;
                 case "Course Material":
                     session.beginDialog('/material');
+                    break;
+                case "TimePass":
+                    session.beginDialog('/converse');
                     break;
                 case "Help":
                     session.beginDialog('/help');
@@ -869,12 +872,12 @@ bot.dialog('/review', [
 
 
 if (useEmulator) {
-    // var restify = require('restify');
-    // var server = restify.createServer();
-    // server.listen(8000, function() {
-    //     console.log('test bot endpoint at http://localhost:8000/api/messages');
-    // });
-    // server.post('/api/messages', connector.listen());    
+    var restify = require('restify');
+    var server = restify.createServer();
+    server.listen(8000, function() {
+        console.log('test bot endpoint at http://localhost:8000/api/messages');
+    });
+    server.post('/api/messages', connector.listen());    
 } else {
     module.exports = { default: connector.listen() };
 }
