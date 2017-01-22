@@ -362,8 +362,9 @@ bot.dialog('/exam',[
                         attach.push(
                             new builder.HeroCard(session)
                                 .title(sch[day][0])
-                                .subtitle(week[new Date(sch[day][0]).getDay()])
+                                .subtitle(week[new Date(Date(sch[day][0])).getDay()])
                         );
+                        session.send("Date added");
                         for(var i=1;i<sch[day].length;i++)
                         {
                             var course = course.get_course(sch[day][i].course);
