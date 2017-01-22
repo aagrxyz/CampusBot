@@ -13,7 +13,7 @@ var mess = require('./mess');
 var review = require('./review');
 var entry2name = require('./entry2name');
 var useEmulator = (process.env.NODE_ENV == 'development');
-var m = require('mitsuku-api')();
+// var m = require('mitsuku-api')();
 var dropbox = require('./dropbox');
 
 // var Cleverbot = require('cleverbot-node');
