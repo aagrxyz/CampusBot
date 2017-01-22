@@ -358,7 +358,7 @@ bot.dialog('/exam',[
                     var week = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
                     for(var day in sch)
                     {
-                        session.send(sch[day][0]);
+                        session.send(JSON.stringify(sch[day]));
                         attach.push(
                             new builder.HeroCard(session)
                                 .title(sch[day][0])
@@ -367,8 +367,12 @@ bot.dialog('/exam',[
                         session.send("Date added");
                         for(var i=1;i<sch[day].length;i++)
                         {
+                            session.send("inside loop - "+i);
                             var course = course.get_course(sch[day][i].course);
+                            session.send("course");
+                            session.send(JSON.stringify(course));
                             var slot = sch[day][i].slot;
+                            session.send(slot);
                             attach.push(
                                 new builder.HeroCard(session)
                                     .title(course.code+"("+slot+")")
