@@ -80,6 +80,7 @@ intents.matches('mess','/mess');
 intents.matches('review','/review');
 intents.matches('main','/main');
 intents.matches('material','/material');
+intents.matches('exam','/exam');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 
@@ -90,7 +91,7 @@ bot.dialog('/main',[
             session.beginDialog('/help');
             session.beginDialog('/profile');
         }
-        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Course Material|TimePass|Profile Setup|FAQ");
+        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|TimePass|Profile Setup");
     },
     function(session,results){
         if(results.response)
@@ -128,6 +129,9 @@ bot.dialog('/main',[
                     break;
                 case "TimePass":
                     session.beginDialog('/converse');
+                    break;
+                case "Exam Schedule":
+                    session.beginDialog('/exam');
                     break;
                 case "Help":
                     session.beginDialog('/help');
@@ -315,6 +319,66 @@ bot.dialog('/repeat', [
     function (session, results) {
         session.send(results.response);
         session.endDialog();
+    }
+]);
+
+bot.dialog('/exam',[
+    function(session)
+    {
+        builder.Prompts.choice(session,"Select exam","Minor1","Minor2","Major");
+    },
+    function(session,results)
+    {
+        if((["MINOR1","MINOR2","MAJOR"]).includes(results.response.entity.toUpperCase))
+        {
+            if(!session.userData.en)
+            {
+                session.beginDialog('/profile');
+            }
+            var courses = schedule.courses(session.userData.en);
+            if(courses)
+            {
+                var sch = schedule.exam_schedule(results.response.entity,courses.courses);
+                var attach = [];
+                if(sch.length === 0)
+                {
+                    attach.push(
+                        new builder.HeroCard(session)
+                            .title("Woohoo! No Exams :D")
+                    );
+                }
+                else
+                {
+                    for(var day in sch)
+                    {
+                        attach.push(
+                            new builder.HeroCard(session)
+                                .title(sch[day][0])
+                        );
+                        for(var i=1;i<sch[day].length;i++)
+                        {
+                            var course = course.get_course(sch[day][i].course);
+                            var slot = sch[day][i].slot;
+                            attach.push(
+                                new builder.HeroCard(session)
+                                    .title(course.name+" - "+course.code+"("+slot+")")
+                            );
+                        }
+                    }
+                }
+                var msg = new builder.Message(session)
+                            .attachments(attach);
+                session.endDialog(msg);
+            }
+            else
+            {
+                session.endDialog("Sorry, some error occurred");
+            }
+        }
+        else
+        {
+            session.endDialog("You entered an invalid response");
+        }
     }
 ]);
 

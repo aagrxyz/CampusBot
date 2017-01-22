@@ -28,12 +28,53 @@
 var fs = require("fs-extra");
 var course_db = (process.env.NODE_ENV=="development")?"./database/course_database.json":"D:\\home\\site\\wwwroot\\messages\\database\\course_database.json";
 var slot_db = (process.env.NODE_ENV=="development")?"./database/slot_database.json":"D:\\home\\site\\wwwroot\\messages\\database\\slot_database.json";
+var exam_slot_db = (process.env.NODE_ENV=='development')?"./database/slot_exam.json":"D:\\home\\site\\wwwroot\\messages\\database\\slot_exam.json";
 var course_list_db = (process.env.NODE_ENV=="development")?"./database/data_base.json":"D:\\home\\site\\wwwroot\\messages\\database\\data_base.json";
  
 var course_database = JSON.parse(fs.readFileSync(course_db));
+var exam_slot_database = JSON.parse(fs.readFileSync(exam_slot_db));
 var slot_database = JSON.parse(fs.readFileSync(slot_db));
 var course_list = JSON.parse(fs.readFileSync(course_list_db));
 
+
+function get_exam_schedule(exam_type,courses)
+{
+    exam_type = exam_type.toUpperCase().trim();
+    if(!(exam_type in exam_slot_database))
+    {
+        return undefined;
+    }
+    else
+    {
+        var sch = exam_slot_database[exam_type];
+        var res = [];
+        for(var i=0;i<sch.length;i++)
+        {
+            var resp = [];
+            resp.push(sch[i][0]);
+            for(var j=1;j<sch[i].length;j++)
+            {
+                for(var k=0;k<courses.length;k++)
+                {
+                    if(courses[k].slot === sch[i][j])
+                    {
+                        resp.push(courses[k]);
+                    }
+                }
+            }
+            res.push(resp);
+        }
+        var final = [];
+        for(var t=0;i<res.length;i++)
+        {
+            if(res[t].length > 1)
+            {
+                final.push(res[t]);
+            }
+        }
+        return final;
+    }
+}
 
 /* pass an object containing fields course and slot */
 function get_class_schedule(course)
@@ -152,6 +193,7 @@ module.exports = {
     "week_schedule" : get_week_schedule,
     "day_schedule" : get_day_schedule,
     "class_schedule" : get_class_schedule,
+    "exam_schedule": get_exam_schedule,
     "pretty_week" : pretty_week_schedule,
     "pretty_day" : pretty_day_schedule,
     "pretty_schedule": pretty_schedule
