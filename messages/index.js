@@ -111,55 +111,63 @@ bot.dialog('/main',[
     function(session,results){
         if(results.response)
         {
-            switch(results.response.entity)
+            if(results.response.entity === 'Exit')
             {
-                case "Upcoming Events":
-                    session.beginDialog('/events');
-                    break;
-                case "Class Schedule":
-                    session.beginDialog('/schedule');
-                    break;
-                case "Papers Download":
-                    session.beginDialog('/papers');
-                    break;
-                case "Who is":
-                    session.beginDialog('/whois');
-                    break;
-                case "Mess Schedule":
-                    session.beginDialog('/mess');
-                    break;
-                case "Profile Setup":
-                    session.userData.en = undefined;
-                    session.userData.name = undefined;
-                    session.beginDialog('/profile');
-                    break;
-                case "FAQ":
-                    session.beginDialog('/qna');
-                    break;
-                case "Course Review":
-                    session.beginDialog('/review');
-                    break;
-                case "Course Material":
-                    session.beginDialog('/material');
-                    break;
-                case "TimePass":
-                    session.beginDialog('/converse');
-                    break;
-                case "Exam Schedule":
-                    session.beginDialog('/exam');
-                    break;
-                case "Help":
-                    session.beginDialog('/help');
-                    break;
-                case "Exit":
-                    session.endDialog();
-                    break;
+                session.endDialog("Thanks for using. You can call again by saying Hi");
+            }
+            else
+            {
+                switch(results.response.entity)
+                {
+                    case "Upcoming Events":
+                        session.beginDialog('/events');
+                        break;
+                    case "Class Schedule":
+                        session.beginDialog('/schedule');
+                        break;
+                    case "Papers Download":
+                        session.beginDialog('/papers');
+                        break;
+                    case "Who is":
+                        session.beginDialog('/whois');
+                        break;
+                    case "Mess Schedule":
+                        session.beginDialog('/mess');
+                        break;
+                    case "Profile Setup":
+                        session.userData.en = undefined;
+                        session.userData.name = undefined;
+                        session.beginDialog('/profile');
+                        break;
+                    case "FAQ":
+                        session.beginDialog('/qna');
+                        break;
+                    case "Course Review":
+                        session.beginDialog('/review');
+                        break;
+                    case "Course Material":
+                        session.beginDialog('/material');
+                        break;
+                    case "TimePass":
+                        session.beginDialog('/converse');
+                        break;
+                    case "Exam Schedule":
+                        session.beginDialog('/exam');
+                        break;
+                    case "Help":
+                        session.beginDialog('/help');
+                        break;
+                }
             }
         }
         else
         {
-            session.endDialog();
+            session.endDialog("Invalid Response. You can call again by saying Hi");
         }
+    },
+    function (session, results) {
+        // The menu runs a loop until the user chooses to (quit).
+        session.replaceDialog('/main');
     }
 ]);
 
