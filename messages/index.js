@@ -13,20 +13,29 @@ var mess = require('./mess');
 var review = require('./review');
 var entry2name = require('./entry2name');
 var useEmulator = (process.env.NODE_ENV == 'development');
-var Cleverbot = require('cleverbot-node');
-var cleverbot = new Cleverbot;
+var m = require('mitsuku-api')();
+
+// var Cleverbot = require('cleverbot-node');
+// var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-var connector = useEmulator ? new builder.ChatConnector({
-        appId: process.env['MicrosoftAppId'],
-        appPassword: process.env['MicrosoftAppPassword']
-    }):
-    new botbuilder_azure.BotServiceConnector({
-        appId: process.env['MicrosoftAppId'],
-        appPassword: process.env['MicrosoftAppPassword'],
-        stateEndpoint: process.env['BotStateEndpoint'],
-        openIdMetadata: process.env['BotOpenIdMetadata']
+// var connector = useEmulator ? new builder.ChatConnector({
+//         appId: process.env['MicrosoftAppId'],
+//         appPassword: process.env['MicrosoftAppPassword']
+//     }):
+//     new botbuilder_azure.BotServiceConnector({
+//         appId: process.env['MicrosoftAppId'],
+//         appPassword: process.env['MicrosoftAppPassword'],
+//         stateEndpoint: process.env['BotStateEndpoint'],
+//         openIdMetadata: process.env['BotOpenIdMetadata']
+// });
+var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
+    appId: process.env['MicrosoftAppId'],
+    appPassword: process.env['MicrosoftAppPassword'],
+    stateEndpoint: process.env['BotStateEndpoint'],
+    openIdMetadata: process.env['BotOpenIdMetadata']
 });
+
 
 var bot = new builder.UniversalBot(connector);
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
@@ -642,11 +651,10 @@ bot.dialog('/converse', [
         }
         else
         {
-            Cleverbot.prepare(function(){
-                cleverbot.write(results.response, function (resp) {
-                    session.endDialog();
-                    session.beginDialog('/converse',{in_conv: "yes",msg: resp.message});
-                });
+            m.send(results.response).then(function(response)
+            {
+                session.endDialog();
+                session.beginDialog('/converse',{in_conv: "yes",msg: response});
             });
         }
     }
@@ -727,12 +735,12 @@ bot.dialog('/material', [
 
 
 if (useEmulator) {
-    var restify = require('restify');
-    var server = restify.createServer();
-    server.listen(8000, function() {
-        console.log('test bot endpoint at http://localhost:8000/api/messages');
-    });
-    server.post('/api/messages', connector.listen());    
+    // var restify = require('restify');
+    // var server = restify.createServer();
+    // server.listen(8000, function() {
+    //     console.log('test bot endpoint at http://localhost:8000/api/messages');
+    // });
+    // server.post('/api/messages', connector.listen());    
 } else {
     module.exports = { default: connector.listen() };
 }
