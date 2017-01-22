@@ -715,7 +715,7 @@ bot.dialog('/review', [
 ]);
 
 bot.dialog('/material', [
-    function (session,results) {
+    function (session,args,next) {
         builder.Prompts.attachment(session, "Thanks. Now upload a file.");
     },
     function (session, results) {
