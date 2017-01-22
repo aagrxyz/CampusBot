@@ -215,9 +215,10 @@ bot.dialog('/whois', [
         else
         {
             var attach = [];
+            result = whois.priority(result,session.userData.en);
             if(result.length > 4)
             {
-                session.send("Your query was too general. Here are top 4 results :");
+                session.send("Your query was too general. Here are top 4 results personalized for you :");
             }
             for(var i=0;i<result.length && i < 4;i++)
             {
