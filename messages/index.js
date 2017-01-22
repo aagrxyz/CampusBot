@@ -353,12 +353,11 @@ bot.dialog('/exam',[
                     var week = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
                     for(var day in sch)
                     {
-                        attach.push(
-                            new builder.HeroCard(session)
-                                .title(sch[day][0])
-                                .subtitle(week[new Date(Date(sch[day][0])).getDay()])
-                        );
-                        session.send(new Date(Date(sch[day][0])).toDateString());
+                        var parts = sch[day][0].split("/");
+                        var dt = new Date(parseInt(parts[2], 10),
+                                          parseInt(parts[1], 10) - 1,
+                                          parseInt(parts[0], 10));
+                        session.send(dt.toDateString());
                         for(var i=1;i<sch[day].length;i++)
                         {
                             var c = course.get_course(sch[day][i].course);
