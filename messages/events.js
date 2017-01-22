@@ -1,6 +1,6 @@
 var FB = require("fb");
 FB.setAccessToken(process.env.ACCESS_TOKEN);
-var page_ids = ["music.iitd","rendezvous.iitd","acesacm"];
+// var page_ids = ["music.iitd","rendezvous.iitd","acesacm"];
 var page_ids = [
 "music.iitd",           //Music Club
 "iitd.delhi",           //IIT Delhi

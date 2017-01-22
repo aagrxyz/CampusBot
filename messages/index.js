@@ -90,7 +90,7 @@ bot.dialog('/main',[
             session.beginDialog('/help');
             session.beginDialog('/profile');
         }
-        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Course Material|TimePass|Profile Setup|FAQ|Help");
+        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Course Review|Course Material|TimePass|Profile Setup|FAQ");
     },
     function(session,results){
         if(results.response)

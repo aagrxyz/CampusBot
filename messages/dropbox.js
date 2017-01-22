@@ -3,7 +3,6 @@ var request = require("request");
 var course_database = (process.env.NODE_ENV=="development")?"./database/courses.json":"D:\\home\\site\\wwwroot\\messages\\database\\courses.json";
 var course_db = JSON.parse(fs.readFileSync(course_database));
 var droptoken = process.env['dropboxaccess'];
-var Promise = require('bluebird');
 var requestP = require("request-promise").defaults({encoding:null});
 
 
