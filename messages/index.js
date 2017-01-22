@@ -20,22 +20,22 @@ var dropbox = require('./dropbox');
 // var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-var connector = useEmulator ? new builder.ChatConnector({
-        appId: process.env['MicrosoftAppId'],
-        appPassword: process.env['MicrosoftAppPassword']
-    }):
-    new botbuilder_azure.BotServiceConnector({
-        appId: process.env['MicrosoftAppId'],
-        appPassword: process.env['MicrosoftAppPassword'],
-        stateEndpoint: process.env['BotStateEndpoint'],
-        openIdMetadata: process.env['BotOpenIdMetadata']
-});
-// var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
-//     appId: process.env['MicrosoftAppId'],
-//     appPassword: process.env['MicrosoftAppPassword'],
-//     stateEndpoint: process.env['BotStateEndpoint'],
-//     openIdMetadata: process.env['BotOpenIdMetadata']
+// var connector = useEmulator ? new builder.ChatConnector({
+//         appId: process.env['MicrosoftAppId'],
+//         appPassword: process.env['MicrosoftAppPassword']
+//     }):
+//     new botbuilder_azure.BotServiceConnector({
+//         appId: process.env['MicrosoftAppId'],
+//         appPassword: process.env['MicrosoftAppPassword'],
+//         stateEndpoint: process.env['BotStateEndpoint'],
+//         openIdMetadata: process.env['BotOpenIdMetadata']
 // });
+var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
+    appId: process.env['MicrosoftAppId'],
+    appPassword: process.env['MicrosoftAppPassword'],
+    stateEndpoint: process.env['BotStateEndpoint'],
+    openIdMetadata: process.env['BotOpenIdMetadata']
+});
 
 
 var bot = new builder.UniversalBot(connector);
@@ -131,6 +131,7 @@ bot.dialog('/main',[
                     session.beginDialog('/converse');
                     break;
                 case "Exam Schedule":
+                    session.send("Going to exam");
                     session.beginDialog('/exam');
                     break;
                 case "Help":
@@ -325,11 +326,12 @@ bot.dialog('/repeat', [
 bot.dialog('/exam',[
     function(session)
     {
+        session.send("getting choice");
         builder.Prompts.choice(session,"Select exam","Minor1","Minor2","Major");
     },
     function(session,results)
     {
-        if((["MINOR1","MINOR2","MAJOR"]).includes(results.response.entity.toUpperCase))
+        if((["MINOR1","MINOR2","MAJOR"]).includes(results.response.entity.toUpperCase()))
         {
             if(!session.userData.en)
             {
@@ -936,12 +938,12 @@ bot.dialog('/review', [
 
 
 if (useEmulator) {
-    var restify = require('restify');
-    var server = restify.createServer();
-    server.listen(8000, function() {
-        console.log('test bot endpoint at http://localhost:8000/api/messages');
-    });
-    server.post('/api/messages', connector.listen());    
+    // var restify = require('restify');
+    // var server = restify.createServer();
+    // server.listen(8000, function() {
+    //     console.log('test bot endpoint at http://localhost:8000/api/messages');
+    // });
+    // server.post('/api/messages', connector.listen());    
 } else {
     module.exports = { default: connector.listen() };
 }
