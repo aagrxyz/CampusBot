@@ -367,16 +367,16 @@ bot.dialog('/exam',[
                         session.send("Date added");
                         for(var i=1;i<sch[day].length;i++)
                         {
-                            session.send("inside loop - "+i);
-                            var course = course.get_course(sch[day][i].course);
+                            session.send("inside loop - "
+                            var c = course.get_course(sch[day][i].course);
                             session.send("course");
-                            session.send(JSON.stringify(course));
+                            session.send(JSON.stringify(c));
                             var slot = sch[day][i].slot;
                             session.send(slot);
                             attach.push(
                                 new builder.HeroCard(session)
-                                    .title(course.code+"("+slot+")")
-                                    .subtitle(course.name)
+                                    .title(c.code+"("+slot+")")
+                                    .subtitle(c.name)
                             );
                         }
                     }
