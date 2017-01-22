@@ -69,6 +69,7 @@ intents.matches('course','/course');
 intents.matches('mess','/mess');
 intents.matches('review','/review');
 intents.matches('main','/main');
+intents.matches('material','/material');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 
