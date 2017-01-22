@@ -713,6 +713,18 @@ bot.dialog('/review', [
 	}
 ]);
 
+bot.dialog('/material', [
+    function (session,results) {
+        builder.Prompts.attachment(session, "Thanks. Now upload a file.");
+    },
+    function (session, results) {
+        session.send(results.response);
+        console.log(results.response);
+        session.endDialog();
+    }
+]);
+
+
 if (useEmulator) {
     var restify = require('restify');
     var server = restify.createServer();
