@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "botbuilder": "^3.5.0-rc8",
     "botbuilder-azure": "0.0.1",
     "botbuilder-cognitiveservices": "^1.0.1",
@@ -18,7 +19,8 @@
     "http": "0.0.0",
     "path": "^0.12.7",
     "readline": "^1.3.0",
-    "request": "^2.78.0"
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1"
   },
   "devDependencies": {
     "restify": "^4.1.1"

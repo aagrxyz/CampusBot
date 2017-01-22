@@ -5,7 +5,7 @@
     {
       "type":"postback",
       "title":"Options",
-      "payload":"action?main"
+      "payload":"action?hi"
     },
     {
       "type":"postback",
