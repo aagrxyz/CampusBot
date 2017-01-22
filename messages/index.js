@@ -367,7 +367,7 @@ bot.dialog('/exam',[
                         session.send("Date added");
                         for(var i=1;i<sch[day].length;i++)
                         {
-                            session.send("inside loop - "
+                            session.send("inside loop - "+i);
                             var c = course.get_course(sch[day][i].course);
                             session.send("course");
                             session.send(JSON.stringify(c));
