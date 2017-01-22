@@ -131,7 +131,6 @@ bot.dialog('/main',[
                     session.beginDialog('/converse');
                     break;
                 case "Exam Schedule":
-                    session.send("Going to exam");
                     session.beginDialog('/exam');
                     break;
                 case "Help":
@@ -326,8 +325,7 @@ bot.dialog('/repeat', [
 bot.dialog('/exam',[
     function(session)
     {
-        session.send("getting choice");
-        builder.Prompts.choice(session,"Select exam","Minor1","Minor2","Major");
+        builder.Prompts.choice(session,"Select exam","Minor1|Minor2|Major");
     },
     function(session,results)
     {
