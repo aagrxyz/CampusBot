@@ -339,20 +339,23 @@ bot.dialog('/exam',[
             if(courses)
             {
                 var sch = schedule.exam_schedule(results.response.entity,courses.courses);
-                var attach = [];
                 if(sch.length === 0)
                 {
+                    var attach = [];
                     attach.push(
                         new builder.HeroCard(session)
                             .title("Woohoo! No Exams :D")
                             .subtitle("Have fun")
                     );
+                    var msg = new builder.Message(session)
+                                    .attachments(attach);
                 }
                 else
                 {
                     var week = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
                     for(var day in sch)
                     {
+                        var attach = [];
                         var parts = sch[day][0].split("/");
                         var dt = new Date(parseInt(parts[2], 10),
                                           parseInt(parts[1], 10) - 1,
