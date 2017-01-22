@@ -336,16 +336,12 @@ bot.dialog('/exam',[
                 session.beginDialog('/profile');
             }
             var courses = schedule.courses(session.userData.en);
-            session.send("courses recieved");
             if(courses)
             {
-                session.send("courses valid");
                 var sch = schedule.exam_schedule(results.response.entity,courses.courses);
                 var attach = [];
                 if(sch.length === 0)
                 {
-                    session.send("Length 0");
-
                     attach.push(
                         new builder.HeroCard(session)
                             .title("Woohoo! No Exams :D")
@@ -354,38 +350,31 @@ bot.dialog('/exam',[
                 }
                 else
                 {
-                    session.send("Length non zero");
                     var week = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
                     for(var day in sch)
                     {
-                        session.send(JSON.stringify(sch[day]));
                         attach.push(
                             new builder.HeroCard(session)
                                 .title(sch[day][0])
                                 .subtitle(week[new Date(Date(sch[day][0])).getDay()])
                         );
-                        session.send("Date added");
+                        session.send(new Date(Date(sch[day][0])).toDateString());
                         for(var i=1;i<sch[day].length;i++)
                         {
-                            session.send("inside loop - "+i);
                             var c = course.get_course(sch[day][i].course);
-                            session.send("course");
-                            session.send(JSON.stringify(c));
                             var slot = sch[day][i].slot;
-                            session.send(slot);
                             attach.push(
                                 new builder.HeroCard(session)
                                     .title(c.code+"("+slot+")")
                                     .subtitle(c.name)
                             );
                         }
+                        var msg = new builder.Message(session)
+                                    .attachments(attach);
+                        session.send(msg);
                     }
                 }
-                session.send("message sending");
-                var msg = new builder.Message(session)
-                            .attachments(attach);
-                session.send("going to end");
-                session.endDialog(msg);
+                session.endDialog();
             }
             else
             {
