@@ -40,8 +40,8 @@ Publication
 The bot is presently published on various platforms as described below :
 
 1.  [Web App](http://bit.ly/campusbot)
-2. Skype: Campus-Bot
-3. Telegram: @Super_Campus_Bot
-4. It is presently for review on fb Messenger.
+2. Search for @tech.iitd on fb Messenger and say Hi.
+3. Skype: Campus-Bot
+4. Telegram: @Super_Campus_Bot
 
 For the demo video, follow the Link [CampusBot Demo Video](https://youtu.be/dz85KdvNZTs)
