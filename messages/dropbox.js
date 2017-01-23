@@ -46,6 +46,7 @@ function get_files(code,callback) {
         return -1;
     }
     code = code.toLowerCase().trim();
+    console.log(code);
     var urlr;
     var options = {
         method: 'POST',
@@ -62,12 +63,17 @@ function get_files(code,callback) {
     };
     request(options, function(error, response, body) {
         if (error) throw new Error(error);
+        var flag = false;
+        // console.log("-----------------------");
+        // console.log(body);
+        // console.log("--------------------------");
         if (body.links.length === 0) {
             flag = true;
         } else {
             urlr = body.links[0];
             flag = false;
         }
+        console.log(flag);
         if (flag) {
             var options = {
                 method: 'POST',
@@ -87,12 +93,14 @@ function get_files(code,callback) {
             };
             request(options, function(error, response, body) {
                 if (error) throw new Error(error);
-                // console.log(body);
+                callback(body);
             });
-            urlr = body.url;
         }
-        // console.log(body);
-        callback(urlr);
+        else
+        {
+            // console.log(body);
+            callback(urlr);
+        }
     });
 }
 

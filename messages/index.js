@@ -20,31 +20,27 @@ var dropbox = require('./dropbox');
 // var cleverbot = new Cleverbot;
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
-// var connector = useEmulator ? new builder.ChatConnector({
-//         appId: process.env['MicrosoftAppId'],
-//         appPassword: process.env['MicrosoftAppPassword']
-//     }):
-//     new botbuilder_azure.BotServiceConnector({
-//         appId: process.env['MicrosoftAppId'],
-//         appPassword: process.env['MicrosoftAppPassword'],
-//         stateEndpoint: process.env['BotStateEndpoint'],
-//         openIdMetadata: process.env['BotOpenIdMetadata']
-// });
-var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
-    appId: process.env['MicrosoftAppId'],
-    appPassword: process.env['MicrosoftAppPassword'],
-    stateEndpoint: process.env['BotStateEndpoint'],
-    openIdMetadata: process.env['BotOpenIdMetadata']
+var connector = useEmulator ? new builder.ChatConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword']
+    }):
+    new botbuilder_azure.BotServiceConnector({
+        appId: process.env['MicrosoftAppId'],
+        appPassword: process.env['MicrosoftAppPassword'],
+        stateEndpoint: process.env['BotStateEndpoint'],
+        openIdMetadata: process.env['BotOpenIdMetadata']
 });
+// var connector = useEmulator ? new builder.ConsoleConnector().listen() : new botbuilder_azure.BotServiceConnector({
+//     appId: process.env['MicrosoftAppId'],
+//     appPassword: process.env['MicrosoftAppPassword'],
+//     stateEndpoint: process.env['BotStateEndpoint'],
+//     openIdMetadata: process.env['BotOpenIdMetadata']
+// });
 
 
 var bot = new builder.UniversalBot(connector);
-bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^goodbye/i });
-bot.beginDialogAction('help', '/help', { matches: /^help/i });
+bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^(goodbye)|(bye)|(exit)|(end)|(quit)/i });
 
-// var recognizer = new builder_cognitiveservices.QnAMakerRecognizer({
-               // knowledgeBaseId: process.env.QnAKnowledgebaseId, 
-   // subscriptionKey: process.env.QnASubscriptionKey});
 var recognizer = new builder.LuisRecognizer('https://api.projectoxford.ai/luis/v2.0/apps/a03a7e51-dd74-401d-bbe9-071134809292?subscription-key=319a73d29574452fb76a949ea4d42a5e&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
 var recognizerqna = new builder_cognitiveservices.QnAMakerRecognizer({
@@ -65,6 +61,13 @@ var introMessage = ['Main functionalities are described below-\n\nProfile : Say 
 
 
 bot.dialog('/', intents);
+// bot.dialog('/',[
+    // function(session)
+    // {
+        // console.log(session);
+        // session.endDialog("hha");
+    // }
+// ]);
 
 intents.matches('qna', '/qna');
 intents.matches('Converse', '/converse');
@@ -88,16 +91,6 @@ bot.dialog('/main',[
     function(session,args,next) {
         if(!session.userData.en || !session.userData.name)
         {
-            session.beginDialog('/help');
-        }
-        else
-        {
-            next();
-        }
-    },
-    function(session,args,next) {
-        if(!session.userData.en || !session.userData.name)
-        {
             session.beginDialog('/profile');
         }
         else
@@ -106,7 +99,9 @@ bot.dialog('/main',[
         }
     },
     function(session,args,next) {
-        builder.Prompts.choice(session, "What would you like to get?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|Profile Setup|Exit");
+        // console.log(typeof(intents));
+        // console.log(intents);
+        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|Profile Setup|Help");
     },
     function(session,results){
         if(results.response)
@@ -119,6 +114,7 @@ bot.dialog('/main',[
             {
                 switch(results.response.entity)
                 {
+                    // console.log("In Casse");
                     case "Upcoming Events":
                         session.beginDialog('/events');
                         break;
@@ -847,7 +843,7 @@ bot.dialog('/download',[
                                         new builder.HeroCard(session)
                                             .title(link.name)
                                             .subtitle("Course Material")
-                                            .buttons([builder.CardAction.downloadFile(session,link.url.substring(0,link.url.length-1)+"1","Download")])
+                                            .buttons([builder.CardAction.downloadFile(session,link.url,"Download")])
                                     ]);
                         session.endDialog(message);
                     });
@@ -970,12 +966,12 @@ bot.dialog('/review', [
 
 
 if (useEmulator) {
-    // var restify = require('restify');
-    // var server = restify.createServer();
-    // server.listen(8000, function() {
-    //     console.log('test bot endpoint at http://localhost:8000/api/messages');
-    // });
-    // server.post('/api/messages', connector.listen());    
+    var restify = require('restify');
+    var server = restify.createServer();
+    server.listen(8000, function() {
+        console.log('test bot endpoint at http://localhost:8000/api/messages');
+    });
+    server.post('/api/messages', connector.listen());    
 } else {
     module.exports = { default: connector.listen() };
 }
