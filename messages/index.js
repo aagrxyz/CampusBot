@@ -40,6 +40,7 @@ var connector = useEmulator ? new builder.ChatConnector({
 
 var bot = new builder.UniversalBot(connector);
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^(goodbye)|(bye)|(exit)|(end)|(quit)/i });
+bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
 var recognizer = new builder.LuisRecognizer('https://api.projectoxford.ai/luis/v2.0/apps/a03a7e51-dd74-401d-bbe9-071134809292?subscription-key=319a73d29574452fb76a949ea4d42a5e&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });

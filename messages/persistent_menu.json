@@ -4,18 +4,18 @@
   "call_to_actions":[
     {
       "type":"postback",
-      "title":"Options",
-      "payload":"action?hi"
+      "title":"Start",
+      "payload":"Hi"
     },
     {
       "type":"postback",
       "title":"Help",
-      "payload":"action?help"
+      "payload":"help"
     },
     {
       "type":"postback",
       "title":"Exit",
-      "payload":"action?goodbye"
+      "payload":"quit"
     }
   ]
 }
