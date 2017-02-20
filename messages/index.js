@@ -753,7 +753,7 @@ bot.dialog('/converse', [
           
 		cleverbot.write(results.response, function (response) {
      		session.endDialog();
-                session.beginDialog('/converse',{in_conv: "yes",msg: response});
+                session.beginDialog('/converse',{in_conv: "yes",msg: response.message});
     		});
 
 		
