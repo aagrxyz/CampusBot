@@ -16,8 +16,9 @@ var useEmulator = (process.env.NODE_ENV == 'development');
 // var m = require('mitsuku-api')();
 var dropbox = require('./dropbox');
 
-// var Cleverbot = require('cleverbot-node');
-// var cleverbot = new Cleverbot;
+var Cleverbot = require('cleverbot-node');
+var cleverbot = new Cleverbot;
+cleverbot.configure({botapi: "4795226bb2cf8dfefe88b1e7defe66b5"});
 
 // var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
 var connector = useEmulator ? new builder.ChatConnector({
@@ -42,11 +43,11 @@ var bot = new builder.UniversalBot(connector);
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^(goodbye)|(bye)|(exit)|(end)|(quit)/i });
 bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
-var recognizer = new builder.LuisRecognizer('https://api.projectoxford.ai/luis/v2.0/apps/a03a7e51-dd74-401d-bbe9-071134809292?subscription-key=319a73d29574452fb76a949ea4d42a5e&verbose=true');
+var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8f01707e-7af2-4f48-8cd1-27ec08c7cb69?subscription-key=e6c045b1b51e4ce1891dd4e75f916e6f&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
 var recognizerqna = new builder_cognitiveservices.QnAMakerRecognizer({
-            knowledgeBaseId: "03d2ac21-ace5-4cbf-88ac-d0e272037e1b", 
-    subscriptionKey: "9e13de47c0cd4210b08592d36559fbd6"});
+            knowledgeBaseId: "ed4f7426-23cc-4522-9294-fb2aba145168", 
+    subscriptionKey: "2fae0729b5cb475fa89c5175ff98164d"});
 
 var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
    recognizers: [recognizerqna],
@@ -121,6 +122,9 @@ bot.dialog('/main',[
                         break;
                     case "Class Schedule":
                         session.beginDialog('/schedule');
+                        break;
+		case "Converse":
+                        session.beginDialog('/converse');
                         break;
                     case "Papers Download":
                         session.beginDialog('/papers');
@@ -746,11 +750,13 @@ bot.dialog('/converse', [
         }
         else
         {
-            m.send(results.response).then(function(response)
-            {
-                session.endDialog();
+          
+		cleverbot.write(results.response, function (response) {
+     		session.endDialog();
                 session.beginDialog('/converse',{in_conv: "yes",msg: response});
-            });
+    		});
+
+		
         }
     }
 ]);
