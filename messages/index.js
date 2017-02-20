@@ -103,7 +103,7 @@ bot.dialog('/main',[
     function(session,args,next) {
         // console.log(typeof(intents));
         // console.log(intents);
-        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|Profile Setup|Help");
+        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Converse|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Review|Course Material|Profile Setup|Help");
     },
     function(session,results){
         if(results.response)
