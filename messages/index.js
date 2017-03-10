@@ -46,7 +46,7 @@ bot.beginDialogAction('help', '/help', { matches: /^help/i });
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8f01707e-7af2-4f48-8cd1-27ec08c7cb69?subscription-key=e6c045b1b51e4ce1891dd4e75f916e6f&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
 var recognizerqna = new builder_cognitiveservices.QnAMakerRecognizer({
-            knowledgeBaseId: "ed4f7426-23cc-4522-9294-fb2aba145168", 
+            knowledgeBaseId: "ed4f7426-23cc-4522-9294-fb2aba145168",
     subscriptionKey: "2fae0729b5cb475fa89c5175ff98164d"});
 
 var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
@@ -86,6 +86,7 @@ intents.matches('review','/review');
 intents.matches('main','/main');
 intents.matches('material','/material');
 intents.matches('exam','/exam');
+intents.matches('developers','/developers');
 intents.onDefault(builder.DialogAction.send("I'm sorry. I didn't understand."));
 
 
@@ -103,7 +104,7 @@ bot.dialog('/main',[
     function(session,args,next) {
         // console.log(typeof(intents));
         // console.log(intents);
-        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Converse|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Material|Profile Setup|Help");
+        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Material|Developers|Profile Setup|Help");
     },
     function(session,results){
         if(results.response)
@@ -154,6 +155,9 @@ bot.dialog('/main',[
                         break;
                     case "Exam Schedule":
                         session.beginDialog('/exam');
+                        break;
+                    case "Developers":
+                        session.beginDialog('/developers');
                         break;
                     case "Help":
                         session.beginDialog('/help');
@@ -274,7 +278,7 @@ bot.dialog('/whois', [
 bot.dialog('/qna', [
     function (session) {
         builder.Prompts.text(session, 'Ask me anything!');
-    },  
+    },
     function (session, results) {
         var postBody = '{"question":"' + results.response + '"}';
             request({
@@ -326,7 +330,7 @@ bot.dialog('/papers', [
         //         contentType: "application/zip",
         //         contentUrl: "https://www.cse.iitd.ernet.in/aces-acm/download/"+ session.userData.en.toUpperCase() + ".zip"
         //     }]);
-        //     
+        //
         var message = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
@@ -335,8 +339,8 @@ bot.dialog('/papers', [
                         .buttons([builder.CardAction.downloadFile(session,"https://www.cse.iitd.ernet.in/aces-acm/download/"+ session.userData.en.toUpperCase() + ".zip","Download")])
                 ]);
         session.endDialog(message);
-        
-    }      
+
+    }
 ]);
 
 bot.dialog('/repeat', [
@@ -345,6 +349,12 @@ bot.dialog('/repeat', [
     },
     function (session, results) {
         session.send(results.response);
+        session.endDialog();
+    }
+]);
+bot.dialog('/developers', [
+    function (session) {
+        session.send(session, 'The Developers are : 1. Aman Agrawal \n2. Suyash Agrawal \n3. Madhur Singhal');
         session.endDialog();
     }
 ]);
@@ -463,11 +473,11 @@ bot.dialog('/complaint', [
         var request = require("request");
         var options = { method: 'POST',
           url: 'http://www.cse.iitd.ernet.in/aces-acm/api',
-          headers: 
+          headers:
            { 'postman-token': '504d20da-90fb-ec0b-fa29-7c90d5652c36',
              'cache-control': 'no-cache',
              'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
-          formData: 
+          formData:
            { action: 'postcomplaint',
              Subject: session.dialogData.sub,
              Description: session.dialogData.desc,
@@ -581,7 +591,7 @@ bot.dialog('/mess',[
         {
             var dd = new Date(Date.now());
             var day =dd.toLocaleDateString('en-US',{weekday: "long", timeZone: "Asia/Kolkata"});
-            day = day.toUpperCase();  
+            day = day.toUpperCase();
         }
         session.dialogData.arrr = undefined;
 
@@ -661,7 +671,7 @@ bot.dialog('/schedule',[
                 // {
                 //     session.send(sch[i]);
                 // }
-                
+
                 // console.log("after msg");
                 for(var i in week)
                 {
@@ -750,13 +760,13 @@ bot.dialog('/converse', [
         }
         else
         {
-          
+
 		cleverbot.write(results.response, function (response) {
      		session.endDialog();
                 session.beginDialog('/converse',{in_conv: "yes",msg: response.message});
     		});
 
-		
+
         }
     }
 ]);
@@ -819,7 +829,7 @@ bot.dialog('/upload',[
                 {
                     console.log(attachment);
                     dropbox.put(session.dialogData.course,attachment.contentUrl,function(){console.log("Uploaded");});
-                } 
+                }
             );
         }
         session.endDialog("Thank you for contributing");
@@ -951,7 +961,7 @@ bot.dialog('/review', [
     function (session, results) {
         if (results.response) {
 			var rr = results.response;
-			rr = rr.toUpperCase();  
+			rr = rr.toUpperCase();
 			if(rr=="YES"||rr=="YEAH"||rr=="Y"){
 				builder.Prompts.text(session, "What is your review?");
 			}
@@ -978,7 +988,7 @@ if (useEmulator) {
     server.listen(8000, function() {
         console.log('test bot endpoint at http://localhost:8000/api/messages');
     });
-    server.post('/api/messages', connector.listen());    
+    server.post('/api/messages', connector.listen());
 } else {
     module.exports = { default: connector.listen() };
 }
