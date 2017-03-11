@@ -354,7 +354,7 @@ bot.dialog('/repeat', [
 ]);
 bot.dialog('/developers', [
     function (session) {
-        session.send(session, 'The Developers are : 1. Aman Agrawal \n2. Suyash Agrawal \n3. Madhur Singhal');
+        session.send('The Developers are : 1. Aman Agrawal \n2. Suyash Agrawal \n3. Madhur Singhal');
         session.endDialog();
     }
 ]);
