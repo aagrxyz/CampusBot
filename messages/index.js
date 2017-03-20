@@ -43,7 +43,7 @@ var bot = new builder.UniversalBot(connector);
 bot.endConversationAction('goodbye', 'Goodbye :)', { matches: /^(goodbye)|(bye)|(exit)|(end)|(quit)/i });
 bot.beginDialogAction('help', '/help', { matches: /^help/i });
 
-var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8f01707e-7af2-4f48-8cd1-27ec08c7cb69?subscription-key=e6c045b1b51e4ce1891dd4e75f916e6f&verbose=true');
+var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/c8688c1f-9f26-4a53-b483-fff51504267d?subscription-key=64d20937fda5430887384a37186e652f&verbose=true');
 var intents = new builder.IntentDialog({ recognizers: [recognizer] });
 var recognizerqna = new builder_cognitiveservices.QnAMakerRecognizer({
             knowledgeBaseId: "ed4f7426-23cc-4522-9294-fb2aba145168",
