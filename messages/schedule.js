@@ -125,6 +125,19 @@ function get_courses(number)
     }
 }
 
+function iscoursePresent(entry,course_code) 
+{
+    courses = get_courses(entry);
+    courses= courses.courses;
+    for(var i=0;i<courses.length;i++)
+    {
+        if(course_code == courses[i].course.toUpperCase().trim()){
+            return true;
+        }
+    }
+    return false;
+}
+
 function get_course_exam_date(course_code,exam_type) 
 {
     course_code = course_code.toUpperCase();
@@ -226,5 +239,6 @@ module.exports = {
     "pretty_week" : pretty_week_schedule,
     "pretty_day" : pretty_day_schedule,
     "pretty_schedule": pretty_schedule,
-    "course_exam_date" : get_course_exam_date
+    "course_exam_date" : get_course_exam_date,
+    "iscoursePresent" : iscoursePresent
 };
