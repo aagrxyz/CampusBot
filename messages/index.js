@@ -426,7 +426,7 @@ bot.dialog('/exam',[
             session.endDialog("You entered an invalid response");
         }
     },
-    function(session,results)
+    function(session,results,next)
     {
         if(results.response.entity.toUpperCase().trim() == 'YES')
         {
