@@ -20,6 +20,7 @@ It has many functionalities which are described below:
 	8. **Course Material :** The bot can also provide with the course material like books, notes, tutorial sheets etc.  of  any course being taught. The database is built using a crowd-sourcing model that allows different users to upload course files just from the bot. The mode can be invoked by sending the message *"course review"*.
 	7. **Class Schedule :** The user can ask about his/her classes schedule for the day, for tomorrow, for a specific date or for the complete week. This can be achieved by the message *"schedule for < specific_date >"* or by *"schedule"* to get the full week's schedule.
 	8. **Paper Download :** The user can download Past Question papers for the courses they are registered in by just sending a message *"Question papers"*. These question papers can be really helpful while preparing for exams.
+	9. **Exam Schedule :** The user can download view the schedule of the examinations and can set up SMS reminders for the courses they are registered in by just sending a message *"Exam Schedule"*. These reminders and examination schedule can be really helpful while preparing for exams.
  6. **Complaint System :** This is a very useful feature as it lets the user lodge a complaint for any problem by just sending a message *"complaint"* and then answering the questions regarding the complaint. The complaints logged can be viewed at [Complaints Page](http://www.cse.iitd.ernet.in/aces-acm/complaints).
  7. **Conversation :** At last the bot can perform intelligent chats with the user. This dialog mode can be started by the *"converse"* message. To exit the mode send the message *"end"*.
 
@@ -31,6 +32,7 @@ Technology and APIs used
 2.  It uses the [Language Understanding Intelligent Service (LUIS)](https://www.luis.ai/) that lets the bot to understand language.
 3. It uses the [QnA Maker](https://qnamaker.ai/) that enabled us to build, train and publish a simple question and answer bot based on FAQ URLs.
 4. It uses the [Graph API](https://developers.facebook.com/docs/graph-api) to parse the fb Pages and then display events.
+5. It uses [Twilio REST API](https://www.twilio.com/docs/api/rest) to send Programmable SMS to the user for SMS Reminders.
 5. It uses a [web2py](http://www.web2py.com/) server to provide the details of the complaints logged, class schedule, paper download, and the course info.
 6. It uses [CleverBot](http://www.cleverbot.com/) API to converse with the user in the conversation mode.
 
