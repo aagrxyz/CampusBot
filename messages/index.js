@@ -212,8 +212,21 @@ bot.dialog('/profile', [
                 var name = session.userData.name.split(" ")[0].toLowerCase();
                 session.userData.name = name[0].toUpperCase()+name.substring(1);
                 session.send('Hi '+session.userData.name+", Welcome to CampusBot");
-                session.endDialog();
+        		builder.Prompts.text(session, "What your phone number?");
             }
+        }
+        else
+        {
+            session.endDialog();
+        }
+    },
+    function (session, results, next) {
+        if (results.response) {
+             session.userData.phone = results.response;
+            if(results.response[0]!='+'){
+            	session.userData.phone = '+91' + session.userData.phone;
+         	}
+         	session.endDialog("Profile Updated");
         }
         else
         {
