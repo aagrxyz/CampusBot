@@ -8,8 +8,8 @@ cfg.twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
 cfg.twilioAuthToken = process.env.TWILIO_AUTH_TOKEN;
 cfg.twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
-// var cronjob = new CronJob('00 06 00 * * *', function() {
-var cronjob = new CronJob('* * * * * *', function() {
+var cronjob = new CronJob('00 06 00 * * *', function() {
+// var cronjob = new CronJob('* * * * * *', function() {
         console.log('Running Send Notifications Worker for ' +  moment().format());
         run();
     }, null, true, '');
@@ -70,7 +70,7 @@ function send_notifications(messages)
         var options = {
                 to: "+" + student.phoneNumber,
                 from: cfg.twilioPhoneNumber,
-                body: "Hi " + student.name + ". Just a reminder that you have "+student.exam+" coming up on " + dt +".\nBest of Luck!"
+                body: "Hi " + student.name + ".\nJust a reminder that you have "+student.exam+" coming up on " + dt +".\nBest of Luck!\n -- CampusBot"
             };
         console.log(options);
         client.sendMessage(options, function(err, response) {
