@@ -375,6 +375,7 @@ bot.dialog('/exam',[
             var courses = schedule.courses(session.userData.en);
             if(courses)
             {
+                session.userData.exam_type = results.response.entity;
                 var sch = schedule.exam_schedule(results.response.entity,courses.courses);
                 if(sch.length === 0)
                 {
@@ -413,7 +414,6 @@ bot.dialog('/exam',[
                         session.send(msg);
                     }
                 }
-                session.endDialog();
             }
             else
             {
@@ -423,6 +423,53 @@ bot.dialog('/exam',[
         else
         {
             session.endDialog("You entered an invalid response");
+        }
+    },
+    function(session,results)
+    {
+        if(results.response.entity.toUpperCase().trim() == 'YES')
+        {
+        	if(!session.userData.phone)
+        	{
+            	builder.Prompts.text(session, "What's your Phone Number?");
+        	}
+        	else
+        	{
+        		next();
+        	}
+        }
+        else
+        {
+            session.endDialog("All the Best for Exams");
+        }        
+    },
+     function (session,results,next) {
+        if (results.response) {
+             session.userData.phone = results.response;
+            if(results.response[0]!='+'){
+            	session.userData.phone = '+91' + session.userData.phone;
+         	}
+         	builder.Prompts.text(session,"For which Courses do you want reminders?");
+        }
+        else{
+        next();
+        }
+    },
+    function (session,results,next) {
+        if (results.response) {
+        	var courses_to_msg = results.response.split(",");
+            for(var i=0;i<courses_to_msg.length;i++)
+            {
+            	var date_of_exam = schedule.course_exam_date(courses_to_msg[i],session.userData.exam_type);
+            	var parts =date_of_exam.split('/');
+				var examDate = new Date(parts[2],parts[0]-1,parts[1]);
+				var msgBody = "Hi "+ session.userData.name + ", Your " + session.userData.exam_type +  " for the course " + courses_to_msg[i].toUpperCase() + "is on "+ date_of_exam ". All the Best -- CampusBot";
+        		session.endDialog(msgBody);
+        		// sms.schedule_msgs(session.userData.phone,msgBody,examDate);
+            }
+        }
+        else{
+                session.endDialog("Sorry, some error occurred");
         }
     }
 ]);

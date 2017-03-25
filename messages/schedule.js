@@ -125,6 +125,35 @@ function get_courses(number)
     }
 }
 
+function get_course_exam_date(course_code,exam_type) 
+{
+    course_code = course_code.toUpperCase();
+    exam_type = exam_type.toUpperCase().trim();
+    if(course_code in course_database){
+        var res = course_database[course_code];
+        var keys = Object.keys(res);
+        var slot = keys[0];
+        if(!(exam_type in exam_slot_database)){
+            return undefined;
+        }
+        else{
+            var sch = exam_slot_database[exam_type];
+            for(var i=0;i<sch.length;i++){
+                var resp = [];
+                resp.push(sch[i][0]);
+                for(var j=1;j<sch[i].length;j++){
+                    if(slot == sch[i][j]){
+                        return sch[i][0];
+                    }
+                }
+            }
+        }
+    }
+    else{
+        return undefined;
+    }
+}
+
 function get_week_schedule(courses)
 {
     var week = ["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"];
@@ -196,5 +225,6 @@ module.exports = {
     "exam_schedule": get_exam_schedule,
     "pretty_week" : pretty_week_schedule,
     "pretty_day" : pretty_day_schedule,
-    "pretty_schedule": pretty_schedule
+    "pretty_schedule": pretty_schedule,
+    "course_exam_date" : get_course_exam_date
 };
