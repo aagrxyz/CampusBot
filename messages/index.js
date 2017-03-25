@@ -360,7 +360,7 @@ bot.dialog('/developers', [
 ]);
 
 bot.dialog('/exam',[
-    function(session,args)
+    function(session)
     {
         builder.Prompts.choice(session,"Select exam","Minor1|Minor2|Major");
     },
@@ -426,18 +426,17 @@ bot.dialog('/exam',[
             session.endDialog("You entered an invalid response");
         }
     },
-    function(session,results)
+    function(session,results,next)
     {
         if(results.response.entity.toUpperCase().trim() == 'YES')
         {
-        	// if(!session.userData.phone)
-        	// {
+        	if(!session.userData.phone)
+        	{
             	builder.Prompts.text(session, "What's your Phone Number?");
-        	// }
-        	// else
-        	// {
-        	// 	next();
-        	// }
+        	}
+        	else{
+        		next();
+        	}
         }
         else
         {
@@ -450,11 +449,8 @@ bot.dialog('/exam',[
             if(results.response[0]!='+'){
             	session.userData.phone = '+91' + session.userData.phone;
          	}
-         	builder.Prompts.text(session,"For which Courses do you want reminders?");
         }
-        // else{
-        // next();
-        // }
+     	builder.Prompts.text(session,"For which Courses do you want reminders?");
     },
     function (session,results) {
         if (results.response) {
