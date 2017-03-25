@@ -462,7 +462,7 @@ bot.dialog('/exam',[
             	session.userData.phone = '+91' + session.userData.phone;
          	}
         }
-     	builder.Prompts.text(session,"For which Courses do you want reminders?");
+     	builder.Prompts.text(session,"For which Courses do you want reminders (comma separated values)?");
     },
     function (session,results) {
         if (results.response) {
