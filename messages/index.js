@@ -15,7 +15,7 @@ var entry2name = require('./entry2name');
 var useEmulator = (process.env.NODE_ENV == 'development');
 // var m = require('mitsuku-api')();
 var dropbox = require('./dropbox');
-
+var notification = require("./notification");
 var Cleverbot = require('cleverbot-node');
 var cleverbot = new Cleverbot;
 cleverbot.configure({botapi: "4795226bb2cf8dfefe88b1e7defe66b5"});
@@ -474,9 +474,19 @@ bot.dialog('/exam',[
             	{
             		var date_of_exam = schedule.course_exam_date(courses_to_msg[i],session.userData.exam_type);
 	            	var parts =date_of_exam.split('/');
-					var examDate = new Date(""+parts[2]+"-"+(parts[0]-1)+"-"+parts[1]+" GMT+0530 ");
+					// var examDate = new Date(""+parts[2]+"-"+(parts[0]-1)+"-"+parts[1]+" GMT+0530 ");
+					var examDate = new Date("2017-03-27 GMT+0530");
 					var msgBody = "Hi "+ session.userData.name + ", Your " + session.userData.exam_type +  " for the course " + courses_to_msg[i].toUpperCase() + " is on "+ date_of_exam + ". All the Best -- CampusBot"  +" Your phone number is " + session.userData.phone;
-	        		session.send(msgBody);
+                    notification.add(
+                        {
+                            examDate: examDate,
+                            name: session.userData.name,
+                            phoneNumber: session.userData.phone,
+                            exam: courses_to_msg[i].toUpperCase()
+                        }
+                    );
+                    
+                    session.send(msgBody);
 	        	}
 	        	else
 	        	{
