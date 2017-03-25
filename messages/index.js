@@ -360,11 +360,11 @@ bot.dialog('/developers', [
 ]);
 
 bot.dialog('/exam',[
-    function(session,args,next)
+    function(session,args)
     {
         builder.Prompts.choice(session,"Select exam","Minor1|Minor2|Major");
     },
-    function(session,results,next)
+    function(session,results)
     {
         if((["MINOR1","MINOR2","MAJOR"]).includes(results.response.entity.toUpperCase()))
         {
@@ -426,25 +426,25 @@ bot.dialog('/exam',[
             session.endDialog("You entered an invalid response");
         }
     },
-    function(session,results,next)
+    function(session,results)
     {
         if(results.response.entity.toUpperCase().trim() == 'YES')
         {
-        	if(!session.userData.phone)
-        	{
+        	// if(!session.userData.phone)
+        	// {
             	builder.Prompts.text(session, "What's your Phone Number?");
-        	}
-        	else
-        	{
-        		next();
-        	}
+        	// }
+        	// else
+        	// {
+        	// 	next();
+        	// }
         }
         else
         {
             session.endDialog("All the Best for Exams");
         }        
     },
-     function (session,results,next) {
+     function (session,results) {
         if (results.response) {
              session.userData.phone = results.response;
             if(results.response[0]!='+'){
@@ -452,15 +452,16 @@ bot.dialog('/exam',[
          	}
          	builder.Prompts.text(session,"For which Courses do you want reminders?");
         }
-        else{
-        next();
-        }
+        // else{
+        // next();
+        // }
     },
     function (session,results) {
         if (results.response) {
         	var courses_to_msg = results.response.split(",");
             for(var i=0;i<courses_to_msg.length;i++)
             {
+            	courses_to_msg[i] = courses_to_msg[i].toUpperCase();
             	if(schedule.iscoursePresent(session.userData.en,courses_to_msg[i]))
             	{
             		var date_of_exam = schedule.course_exam_date(courses_to_msg[i],session.userData.exam_type);
