@@ -128,6 +128,7 @@ function get_courses(number)
 function iscoursePresent(entry,course_code) 
 {
     courses = get_courses(entry);
+    course_code = course_code.toUpperCase().trim();
     courses= courses.courses;
     for(var i=0;i<courses.length;i++)
     {
