@@ -464,10 +464,11 @@ bot.dialog('/exam',[
             	var date_of_exam = schedule.course_exam_date(courses_to_msg[i],session.userData.exam_type);
             	var parts =date_of_exam.split('/');
 				var examDate = new Date(parts[2],parts[0]-1,parts[1]);
-				var msgBody = "Hi "+ session.userData.name + ", Your " + session.userData.exam_type +  " for the course " + courses_to_msg[i].toUpperCase() + "is on "+ date_of_exam + ". All the Best -- CampusBot";
-        		session.endDialog(msgBody);
+				var msgBody = "Hi "+ session.userData.name + ", Your " + session.userData.exam_type +  " for the course " + courses_to_msg[i].toUpperCase() + " is on "+ date_of_exam + ". All the Best -- CampusBot"  +" Your phone number is " + session.userData.phone;
+        		session.send(msgBody);
         		// sms.schedule_msgs(session.userData.phone,msgBody,examDate);
             }
+            session.endDialog();
         }
         else{
                 session.endDialog("Sorry, some error occurred");
