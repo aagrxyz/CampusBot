@@ -227,10 +227,10 @@ bot.dialog('/profile', [
             session.userData.name = name[0].toUpperCase()+name.substring(1);
             session.send('Hi '+session.userData.name+", Welcome to CampusBot");
         }
-        else
-        {
+        // else
+        // {
             session.endDialog();
-        }
+        // }
     }
 ]);
 
