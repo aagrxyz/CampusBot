@@ -468,7 +468,7 @@ bot.dialog('/exam',[
         		session.send(msgBody);
         		// sms.schedule_msgs(session.userData.phone,msgBody,examDate);
             }
-            session.endDialog();
+            session.endDialog("SMS Scheduled");
         }
         else{
                 session.endDialog("Sorry, some error occurred");
