@@ -412,6 +412,7 @@ bot.dialog('/exam',[
                         var msg = new builder.Message(session)
                                     .attachments(attach);
                         session.send(msg);
+       					builder.Prompts.choice(session,"Want SMS Reminders?","YES|NO");
                     }
                 }
             }
