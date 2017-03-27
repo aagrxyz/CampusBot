@@ -104,7 +104,7 @@ bot.dialog('/main',[
     function(session,args,next) {
         // console.log(typeof(intents));
         // console.log(intents);
-        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Material|Developers|Profile Setup|Help");
+        builder.Prompts.choice(session, "What would you like to get (type end to quit)?", "Upcoming Events|Class Schedule|Papers Download|Who is|Mess Schedule|Exam Schedule|Course Info|FAQ|Complaint|Help");
     },
     function(session,results){
         if(results.response)
@@ -123,6 +123,9 @@ bot.dialog('/main',[
                         break;
                     case "Class Schedule":
                         session.beginDialog('/schedule');
+                        break;
+                    case "Complaint":
+                        session.beginDialog('/complaint');
                         break;
                     case "Converse":
                         session.beginDialog('/converse');
@@ -155,6 +158,9 @@ bot.dialog('/main',[
                         break;
                     case "Exam Schedule":
                         session.beginDialog('/exam');
+                        break;
+                    case "Course Info":
+                        session.beginDialog('/course');
                         break;
                     case "Developers":
                         session.beginDialog('/developers');
