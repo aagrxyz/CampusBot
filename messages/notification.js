@@ -8,8 +8,8 @@ cfg.twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
 cfg.twilioAuthToken = process.env.TWILIO_AUTH_TOKEN;
 cfg.twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
+// var cronjob = new CronJob('00 00 06 * * *', function() {
 var cronjob = new CronJob('* * * * * *', function() {
-// var cronjob = new CronJob('* * * * * *', function() {
         console.log('Running Send Notifications Worker for ' +  moment().format());
         run();
     }, null, true, '');
@@ -27,8 +27,8 @@ function add(obj)
  */
 function requires_notification(date)
 {
-    var current_date = moment(Date.now()).utc();
-    var exam_date = moment(date).utc();
+    var current_date = moment(Date.now()).tz('Asia/Calcutta');
+    var exam_date = moment(date).tz('Asia/Calcutta');
     if(current_date.isBefore(exam_date,"day"))
     {
         if(current_date.add(1,"day").isSame(exam_date,"day"))
@@ -68,7 +68,7 @@ function send_notifications(messages)
     messages.forEach( function(student) {
         var dt = student.examDate.toLocaleDateString('en-US',{weekday: "short", day: "2-digit", month: "short",timeZone: "Asia/Kolkata"});
         var options = {
-                to: "+" + student.phoneNumber,
+                to: student.phoneNumber,
                 from: cfg.twilioPhoneNumber,
                 body: "Hi " + student.name + ".\nJust a reminder that you have "+student.exam+" coming up on " + dt +".\nBest of Luck!\n -- CampusBot"
             };
