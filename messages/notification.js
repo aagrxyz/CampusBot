@@ -8,8 +8,8 @@ cfg.twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
 cfg.twilioAuthToken = process.env.TWILIO_AUTH_TOKEN;
 cfg.twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
-// var cronjob = new CronJob('00 00 06 * * *', function() {
-var cronjob = new CronJob('* * * * * *', function() {
+var cronjob = new CronJob('00 00 06 * * *', function() {
+// var cronjob = new CronJob('* * * * * *', function() {
         console.log('Running Send Notifications Worker for ' +  moment().format());
         run();
     }, null, true, '');
