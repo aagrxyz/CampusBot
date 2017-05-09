@@ -475,7 +475,7 @@ bot.dialog('/exam',[
         	var courses_to_msg = results.response.split(",");
             for(var i=0;i<courses_to_msg.length;i++)
             {
-            	courses_to_msg[i] = courses_to_msg[i].toUpperCase();
+            	courses_to_msg[i] = courses_to_msg[i].trim().toUpperCase();
             	if(schedule.iscoursePresent(session.userData.en,courses_to_msg[i]))
             	{
             		var date_of_exam = schedule.course_exam_date(courses_to_msg[i],session.userData.exam_type);
