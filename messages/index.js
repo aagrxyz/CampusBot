@@ -202,7 +202,7 @@ bot.dialog('/help',[
 
 bot.dialog('/profile', [
     function (session, args, next) {
-        builder.Prompts.text(session, "What your entry number?");
+        builder.Prompts.text(session, "What is your entry number?");
     },
     function (session, results, next) {
         if (results.response) {
@@ -215,7 +215,7 @@ bot.dialog('/profile', [
             }
             else
             {
-               builder.Prompts.text(session, "What your phone number?");
+               builder.Prompts.text(session, "What is your phone number?");
             }
         }
         else
